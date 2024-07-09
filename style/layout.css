@@ -1,3 +1,12 @@
+:root {
+    --button-color: white;
+    --button-background-color: #1BA4ED;
+}
+
+.btn-primary {
+    color: var(--button-color);
+    background-color: var(--button-background-color);
+}  
 
 .navbar-toggler:focus{
     outline: none;
@@ -36,4 +45,19 @@
     position: relative;
     height: 305px;
     z-index: 1;
+}
+
+section {
+    padding: 70px 0;
+}
+.section-title {
+    font-family: 'Noto Sans TC';
+    font-size: 36px;
+    font-weight: 500;
+}
+
+
+.section-join {
+    height: 420px;
+    background: url(../images/join_bg.png);
 }
