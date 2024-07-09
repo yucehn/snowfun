@@ -1,12 +1,72 @@
+ 
+/* remove init css */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* ------- */
+
 :root {
     --button-color: white;
     --button-background-color: #1BA4ED;
+    --primary-color: #00558F;
+}
+.text-blue-light{
+    color: #1BA4ED;
 }
 
 .btn-primary {
     color: var(--button-color);
     background-color: var(--button-background-color);
-}  
+    border-color: transparent;
+} 
+.btn-outline-primary { 
+    min-width: 92px;
+    padding: 7px 30px;
+    color: var(--primary-color);
+    border-radius: 20px;
+    border: 1px solid var(--primary-color);
+}
 
 .navbar-toggler:focus{
     outline: none;
@@ -14,50 +74,51 @@
 }
 
 
-.banner {
-    position: relative;
-    width: 100%;
-    height: 600px;
-    background: url(../images/pic.png) no-repeat;
-    background-position: center;
-    background-size: cover;
-}
-.banner::after{
-    content: '';
-    position: absolute;
-    right: 0;
-    bottom: -70px;
-    width: 1290px;
-    height: 305px;
-    border-radius: 16px 0 0 16px;
-    background: linear-gradient(to bottom,  rgba(210,211,215,.7) 0%,rgba(228,230,234,1) 29%,rgba(240,241,244,1) 40%,rgba(255,255,255,1) 50%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-
-}
-.banner h1 {
-    height: 300px;
+footer {
+    font-size: 14px;
+    line-height: 18px;
+    height: 280px;
+    padding: 24px 0;
+    color: white;
+    background-color: var(--primary-color);
+    border-radius: 12px 12px 0 0;
 }
 
-.select-title {
-    font-size: 32px;
-    font-weight: 500;
+.social-box {
+    display: flex;
+    gap: 16px;
 }
-.selectDate-box {
-    position: relative;
-    height: 305px;
-    z-index: 1;
-}
-
-section {
-    padding: 70px 0;
-}
-.section-title {
-    font-family: 'Noto Sans TC';
-    font-size: 36px;
-    font-weight: 500;
+.social-box li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+    border: 1px solid white;
+    border-radius: 50%;
 }
 
+.footer-title {
+    font-size: 20px;
+    line-height: 51.5px;
+}
+.footer-link li {
+    color: #C2C2C2;
+    padding: 8px 0;
+}
+.footer-link li a {
+    color: inherit;
+}
 
-.section-join {
-    height: 420px;
-    background: url(../images/join_bg.png);
+.footer-bottom {
+    margin-top: 20px;
+    padding-top: 20px;
+    color: #C2C2C2;
+    border-top: 1px solid #C2C2C2;
+}
+.footer-bottom li {
+    white-space: nowrap;
+}
+.footer-bottom li a {
+    color: inherit;
 }
