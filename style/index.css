@@ -19,7 +19,7 @@
     content: '';
     position: absolute;
     right: 0;
-    bottom: -70px;
+    bottom: -40px;
     width: 1290px;
     height: 305px;
     border-radius: 16px 0 0 16px;
@@ -31,6 +31,10 @@
     height: 200px;
 }
 
+.selectDate-year {
+    line-height: 23px;
+    color: #666;
+}
 .select-title {
     font-size: 32px;
     font-weight: 500;
@@ -39,6 +43,13 @@
     position: relative;
     height: 305px;
     z-index: 1;
+}
+
+.selectDate-form {
+    height: 60px;
+}
+.formDate input{
+    width: 204px;
 }
 
 section {
