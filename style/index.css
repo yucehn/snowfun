@@ -50,11 +50,41 @@ section {
     font-weight: 500;
     line-height: 52px;
 }
+.section-title .more {
+    font-size: 16px;
+    color: #666;
+}
+.section-title .more::after {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background: url(../images/arrow_left.svg);
+    background-position-y: -2px;
+    vertical-align: middle;
+}
+
+.section-title .more span {
+    color: #1ba4ed;
+    margin-left: 10px;
+}
 .section-subTitle {
     color: #444;
     line-height: 23px;
 }
 
+.section-skiResort .nav-link {
+    color: #00558f;
+    width: 109.5px;
+    height: 50px;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 30px;
+}
+.section-skiResort .nav-pills .nav-link.active {
+    color: white;
+    background-color:#00558f ;
+}
 
 .section-join {
     height: 420px;
