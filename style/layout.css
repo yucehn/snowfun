@@ -56,6 +56,11 @@ a:hover {
     --button-background-color: #1BA4ED;
     --primary-color: #00558F;
 }
+
+.bold {
+    font-weight: bold;
+}
+
 .text-blue-light{
     color: #1BA4ED;
 }
@@ -123,4 +128,70 @@ footer {
 }
 .footer-bottom li {
     white-space: nowrap;
+}
+
+
+/* modal */
+.modal-content {
+    border-radius: 30px;
+    font-size: 18px;
+}
+.modal-header, .modal-footer {
+    border: none;
+    height: 97px;
+}
+.modal-title {
+    font-size: 32px;
+    font-weight: 700;
+}
+.modal-footer {
+    background-color: #F5F5F5;
+    border-radius: 0 0 30px 30px;
+}
+.modal-wrapper{
+    max-width: 380px;
+    margin: 0 auto;
+}
+
+.btn {
+    min-width: 92px;
+}
+.btn-login{
+    font-family: "NotoSansTc-Medium", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    padding:  17px 37px;
+    border-radius: 30px;
+}
+.btn-forgetPw {
+    color: #666666;
+    font-family: "NotoSansTc-Medium", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+}
+.login-info {
+    font-size: 14px;
+    line-height: 20px;
+    margin: 30px 0 0;
+    color: #858585;
+    text-align: center;
+}
+
+.login-dialog {
+    max-width: 584px;
+}
+.login-dialog .col-form-label {
+    font-weight: bold;
+    padding: 0;
+}
+.login-dialog input {
+    background: #f5f5f5;
+    border-radius: 8px;
+    border:solid 1px #c2c2c2;
+    line-height: 44px;
+    padding: 0 16px;
+    font-size: 14px;
+}
+.btn-login {
+    margin: 0 0 32px;
 }
