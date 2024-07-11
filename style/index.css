@@ -38,19 +38,108 @@
 .select-title {
     font-size: 32px;
     font-weight: 500;
+    margin: 16px 0;
 }
 .selectDate-box {
     position: relative;
-    height: 305px;
+    margin-top: 150px;
     z-index: 1;
 }
-
-.selectDate-form {
-    height: 60px;
+.selectDate-wrapper {
+    position: relative;
+    max-width: 780px;
+    width: 100%;
 }
-.formDate input{
+.selectDate-wrapper .card {
+    border-radius: 30px;
+}
+
+.selectDate-btn-group {
+    border: 1px solid #c2c2c2;
+    font-size: 16px;
+    border-radius: 30px;
+    width: 100%;
+    max-width: 780px;
+    /* line-height: 60px; */
+}
+.selectDate-btn-group .btn {
+    color: #666666;
+    height: 60px;
+    border-radius: 30px;
+    width: 100%;
+    text-align: left;
+}
+.selectDate-btn-group .btn[type="submit"]{
+    color: #fff;
+    font-size: 18px;
+    width: 148px;
+    text-align: center;
+}
+.btn-select-place{
+    max-width: 276px;
+    width: 100%;
+}
+.btn-select-type {
+    max-width: 124px;
+    width: 100%;
+}
+.btn-select-place .btn{
+    
+    padding-left: 20px;
+}
+.btn-select-submit {
+    position: absolute;
+    right: 0;
+}
+.btn-select-date {
+    width: 311px;
+}
+.btn-select-date input{
     width: 204px;
 }
+.btn.btn-radio {
+    min-width: 116px;
+    padding: 0;
+    line-height: 50px;
+    border-radius: 30px;
+    border: 1px solid #c2c2c2;
+    box-shadow: none;
+}
+.btn.btn-radio:hover, 
+.btn-check:checked+.btn {
+    border-color: #00558F;
+}
+
+.selectPlaceLine-box {
+    box-sizing: border-box;
+    padding: 20px 0px 10px 0px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    position: relative;
+    color: #000000;
+    text-align: center;
+    font-family: "NotoSansTamil-Bold", sans-serif;
+    font-size: 18px;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+    position: relative;
+}
+.selectPlaceLine {
+    margin-top: -1px;
+    border-style: solid;
+    border-color: #c2c2c2;
+    border-width: 1px 0 0 0;
+    flex: 1;
+    height: 0px;
+    position: relative;
+    transform-origin: 0 0;
+    transform: rotate(0deg) scale(1, 1);
+}
+
 
 section {
     padding: 70px 0;

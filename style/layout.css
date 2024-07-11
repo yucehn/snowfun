@@ -156,6 +156,9 @@ footer {
 .btn {
     min-width: 92px;
 }
+.btn-rounded {
+    border-radius: 30px
+}
 .btn-login{
     font-family: "NotoSansTc-Medium", sans-serif;
     font-size: 18px;
