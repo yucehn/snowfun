@@ -1,0 +1,238 @@
+{
+    "hokkaido": [
+        {
+            "name": "Sahoro",
+            "value": 48
+        },
+        {
+            "name": "二世谷 Moiwa",
+            "value": 19
+        },
+        {
+            "name": "二世谷聯合 (Annupuri)",
+            "value": 43
+        },
+        {
+            "name": "二世谷聯合 (Grand HIRAFU)",
+            "value": 60
+        },
+        {
+            "name": "夕張",
+            "value": 20
+        },
+        {
+            "name": "小樽天狗山",
+            "value": 13
+        },
+        {
+            "name": "札幌 手稻",
+            "value": 17
+        },
+        {
+            "name": "札幌 札幌國際",
+            "value": 12
+        },
+        {
+            "name": "札幌 盤溪",
+            "value": 18
+        },
+        {
+            "name": "札幌 藻岩山",
+            "value": 16
+        },
+        {
+            "name": "星野 Tomamu",
+            "value": 6
+        },
+        {
+            "name": "留壽都",
+            "value": 4
+        },
+        {
+            "name": "富良野",
+            "value": 7
+        },
+        {
+            "name": "喜樂樂",
+            "value": 5
+    }
+    ],
+    "tohoku": [
+        {
+            "name": "雫石王子",
+            "value": 59
+        },
+        {
+            "name": "八甲田滑國際雪場",
+            "value": 15
+        },
+        {
+            "name": "安比高原",
+            "value": 1
+        },
+        {
+            "name": "青森之泉",
+            "value": 21
+        },
+        {
+            "name": "星野 猫魔",
+            "value": 50
+        },
+        {
+            "name": "星野 ALTS 磐梯",
+            "value": 3
+        },
+        {
+            "name": "夏油高原",
+            "value": 14
+        },
+        {
+            "name": "宮城藏王 白石",
+            "value": 58
+        },
+        {
+            "name": "宮城藏王 烏帽子",
+            "value": 56
+        },
+        {
+            "name": "宮城藏王 澄川",
+            "value": 57
+        },
+        {
+            "name": "藏王溫泉",
+            "value": 2
+        }
+    ],
+    "niigata":[
+        {
+            "name": "妙高 休暇村妙高 RunRun",
+            "value": 27
+        },
+        {
+            "name": "妙高 妙高 Ski Park",
+            "value": 26
+        },
+        {
+            "name": "妙高 妙高杉之原",
+            "value": 22
+        },
+        {
+            "name": "妙高 赤倉溫泉",
+            "value": 24
+        },
+        {
+            "name": "妙高 赤倉觀光",
+            "value": 61
+        },
+        {
+            "name": "妙高 關溫泉",
+            "value": 25
+        },
+        {
+            "name": "妙高池之平溫泉",
+            "value": 23
+        },
+        {
+            "name": "邱比特",
+            "value": 39
+        },
+        {
+            "name": "苗場 / 神樂",
+            "value": 10
+        },
+        {
+            "name": "越後湯澤 Gala",
+            "value": 28
+        },
+        {
+            "name": "越後湯澤 NASPA 新大谷",
+            "value": 49
+        },
+        {
+            "name": "越後湯澤 上越國際",
+            "value": 11
+        },
+        {
+            "name": "越後湯澤 石打丸山",
+            "value": 53
+        },
+        {
+            "name": "越後湯澤 岩原",
+            "value": 32
+        },
+        {
+            "name": "越後湯澤 神立高原",
+            "value": 29
+        },
+        {
+            "name": "越後湯澤 湯澤中里",
+            "value": 31
+        },
+        {
+            "name": "越後湯澤 舞子高原",
+            "value": 30
+        },
+        {
+            "name": "樂天",
+            "value": 40
+        }
+    ],
+    "nagano": [
+        {
+            "name": "白馬 栂池高原",
+            "value": 36
+        },
+        {
+            "name": "白馬 Cortina / 乘鞍",
+            "value": 35
+        },
+        {
+            "name": "白馬 八方尾根",
+            "value": 33
+        },
+        {
+            "name": "白馬 五龍 / 47",
+            "value": 34
+        },
+        {
+            "name": "白馬 岩岳",
+            "value": 37
+        },
+        {
+            "name": "白馬 鹿島槍",
+            "value": 38
+        },
+        {
+            "name": "白樺高原",
+            "value": 62
+        },
+        {
+            "name": "志賀高原",
+            "value": 42
+        },
+        {
+            "name": "志賀高原 奧志賀",
+            "value": 52
+        },
+        {
+            "name": "志賀高原 燒額山",
+            "value": 51
+        },
+        {
+            "name": "野澤溫泉",
+            "value": 8
+        },
+        {
+            "name": "斑尾高原 / 斑尾東急",
+            "value": 41
+        },
+        {
+            "name": "萬座",
+            "value": 55
+        },
+        {
+            "name": "輕井澤",
+            "value": 9
+        }
+    ]    
+}

@@ -105,6 +105,10 @@
     border: 1px solid #c2c2c2;
     box-shadow: none;
 }
+.btn-radio-lg {
+    max-width: 172px;
+    width: 100%;
+}
 .btn.btn-radio:hover, 
 .btn-check:checked+.btn {
     border-color: #00558F;
