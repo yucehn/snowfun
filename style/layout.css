@@ -46,9 +46,6 @@ table {
 a {
     color: inherit;
 }
-a:hover {
-    opacity: .8;
-} 
 /* ------- */
 
 :root {
