@@ -5,15 +5,15 @@
             "value": 48
         },
         {
-            "name": "二世谷 Moiwa",
+            "name": "Moiwa",
             "value": 19
         },
         {
-            "name": "二世谷聯合 (Annupuri)",
+            "name": "Annupuri",
             "value": 43
         },
         {
-            "name": "二世谷聯合 (Grand HIRAFU)",
+            "name": "Grand HIRAFU",
             "value": 60
         },
         {
@@ -25,23 +25,23 @@
             "value": 13
         },
         {
-            "name": "札幌 手稻",
+            "name": "手稻",
             "value": 17
         },
         {
-            "name": "札幌 札幌國際",
+            "name": "札幌國際",
             "value": 12
         },
         {
-            "name": "札幌 盤溪",
+            "name": "盤溪",
             "value": 18
         },
         {
-            "name": "札幌 藻岩山",
+            "name": "藻岩山",
             "value": 16
         },
         {
-            "name": "星野 Tomamu",
+            "name": "Tomamu",
             "value": 6
         },
         {
@@ -63,7 +63,7 @@
             "value": 59
         },
         {
-            "name": "八甲田滑國際雪場",
+            "name": "八甲田滑",
             "value": 15
         },
         {
@@ -75,11 +75,11 @@
             "value": 21
         },
         {
-            "name": "星野 猫魔",
+            "name": "猫魔",
             "value": 50
         },
         {
-            "name": "星野 ALTS 磐梯",
+            "name": "ALTS",
             "value": 3
         },
         {
@@ -87,15 +87,15 @@
             "value": 14
         },
         {
-            "name": "宮城藏王 白石",
+            "name": "白石",
             "value": 58
         },
         {
-            "name": "宮城藏王 烏帽子",
+            "name": "烏帽子",
             "value": 56
         },
         {
-            "name": "宮城藏王 澄川",
+            "name": "澄川",
             "value": 57
         },
         {
@@ -105,31 +105,31 @@
     ],
     "niigata":[
         {
-            "name": "妙高 休暇村妙高 RunRun",
+            "name": "RunRun",
             "value": 27
         },
         {
-            "name": "妙高 妙高 Ski Park",
+            "name": "Ski Park",
             "value": 26
         },
         {
-            "name": "妙高 妙高杉之原",
+            "name": "杉之原",
             "value": 22
         },
         {
-            "name": "妙高 赤倉溫泉",
+            "name": "赤倉溫泉",
             "value": 24
         },
         {
-            "name": "妙高 赤倉觀光",
+            "name": "赤倉觀光",
             "value": 61
         },
         {
-            "name": "妙高 關溫泉",
+            "name": "關溫泉",
             "value": 25
         },
         {
-            "name": "妙高池之平溫泉",
+            "name": "池之平",
             "value": 23
         },
         {
@@ -141,35 +141,35 @@
             "value": 10
         },
         {
-            "name": "越後湯澤 Gala",
+            "name": "Gala",
             "value": 28
         },
         {
-            "name": "越後湯澤 NASPA 新大谷",
+            "name": "NASPA",
             "value": 49
         },
         {
-            "name": "越後湯澤 上越國際",
+            "name": "上越國際",
             "value": 11
         },
         {
-            "name": "越後湯澤 石打丸山",
+            "name": "石打丸山",
             "value": 53
         },
         {
-            "name": "越後湯澤 岩原",
+            "name": "岩原",
             "value": 32
         },
         {
-            "name": "越後湯澤 神立高原",
+            "name": "神立高原",
             "value": 29
         },
         {
-            "name": "越後湯澤 湯澤中里",
+            "name": "湯澤中里",
             "value": 31
         },
         {
-            "name": "越後湯澤 舞子高原",
+            "name": "舞子高原",
             "value": 30
         },
         {
@@ -179,27 +179,27 @@
     ],
     "nagano": [
         {
-            "name": "白馬 栂池高原",
+            "name": "栂池高原",
             "value": 36
         },
         {
-            "name": "白馬 Cortina / 乘鞍",
+            "name": "Cortina / 乘鞍",
             "value": 35
         },
         {
-            "name": "白馬 八方尾根",
+            "name": "八方尾根",
             "value": 33
         },
         {
-            "name": "白馬 五龍 / 47",
+            "name": "五龍 / 47",
             "value": 34
         },
         {
-            "name": "白馬 岩岳",
+            "name": "岩岳",
             "value": 37
         },
         {
-            "name": "白馬 鹿島槍",
+            "name": "鹿島槍",
             "value": 38
         },
         {
@@ -211,11 +211,11 @@
             "value": 42
         },
         {
-            "name": "志賀高原 奧志賀",
+            "name": "奧志賀",
             "value": 52
         },
         {
-            "name": "志賀高原 燒額山",
+            "name": "燒額山",
             "value": 51
         },
         {

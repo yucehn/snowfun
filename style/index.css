@@ -53,6 +53,7 @@
 }
 .selectDate-wrapper .card {
     border-radius: 30px;
+    overflow: hidden;
 }
 
 .selectDate-btn-group {
@@ -144,7 +145,42 @@
     transform-origin: 0 0;
     transform: rotate(0deg) scale(1, 1);
 }
+.btn-selectPlaceLine {
+    height: 50px;
+    width: 106px;
+}
+.btn-selectPlaceLine img {
+    vertical-align: middle;
+}
 
+.input-style {
+    height: 50px;
+    background: #f5f5f5;
+    border-radius: 8px;
+    border-style: solid;
+    border-color:  #c2c2c2;
+    color: #858585;
+    font-family: "NotoSansTc-Medium", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+}
+.input-search {
+    position: relative;
+}
+.input-search::after{
+    content: '';
+    position: absolute;
+    top: 8px;
+    right: 0;
+    width: 60px;
+    height: 36px;
+    background: url('../images/icon_search.svg') no-repeat;
+}
+
+#collapseSelectPlace .card-body {
+    max-height: 584px;
+    overflow-y: scroll;
+}
 
 section {
     padding: 70px 0;
@@ -321,4 +357,11 @@ section {
 	.item-group-rate .amount {
 		font-size: 18px;
 	}
+}
+
+.w-full {
+    width: 100%;
+}
+.text-right {
+    text-align: right;
 }
