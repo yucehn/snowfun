@@ -438,3 +438,40 @@ section {
 .swiper-button-prev::after {
     transform: rotate(180deg);
 }
+
+/* card-strategy */
+.card-strategy {
+    position: relative;
+    display: inline-block;
+}
+.strategy-title {
+    position: absolute;
+    bottom: 0;
+    padding: 16px 10px;
+}
+.strategy-title p {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 700;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+.strategy-tag {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: #444444;
+    background: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    font-family: "NotoSansTc-Medium", sans-serif;
+    font-size: 14px;
+    border-radius: 20px;
+    padding: 5px 23px 5px 23px;
+}
+.sponsor {
+    color: #ffffff;
+    background: rgba(68, 68, 68, 0.8);
+}

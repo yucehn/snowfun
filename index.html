@@ -326,7 +326,7 @@
           </ul>
           <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
-              <div class="swiper mySwiper owl-carousel-snowPlace">
+              <div class="swiper mySwiper">
                 <div class="swiper-wrapper">
                   <div class="swiper-slide">
                     <a href="#">
@@ -484,7 +484,7 @@
               </div>
             </div>
             <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
-              <div class="swiper mySwiper owl-carousel-snowPlace">
+              <div class="swiper mySwiper">
                 <div class="swiper-wrapper">
                   <div class="swiper-slide">
                     <a href="#">
@@ -642,7 +642,7 @@
               </div>
             </div>
             <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
-              <div class="swiper mySwiper owl-carousel-snowPlace">
+              <div class="swiper mySwiper">
                 <div class="swiper-wrapper">
                   <div class="swiper-slide">
                     <a href="#">
@@ -800,7 +800,7 @@
               </div>
             </div>
             <div class="tab-pane fade" id="pills-disabled" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">
-              <div class="swiper mySwiper owl-carousel-snowPlace">
+              <div class="swiper mySwiper">
                 <div class="swiper-wrapper">
                   <div class="swiper-slide">
                     <a href="#">
@@ -962,7 +962,7 @@
       </section>
 
       <!-- 旅遊攻略 -->
-       <section>
+       <section class="strategy">
         <div class="container">
           <div class="section-title d-flex justify-content-between">
             <h2>旅遊攻略，新fun送</h2>
@@ -970,6 +970,55 @@
               <a class="link-underline link-underline-opacity-0" href="#">查看更多攻略</a>
             </div>
           </div>
+          <div class="swiper strategy-swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <a href="#">
+                  <div class="card-strategy">
+                    <div class="strategy-tag sponsor">贊助</div>
+                    <img src="./images/strategy01.png">
+                  </div>
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a href="#">
+                  <div class="card-strategy">
+                    <div class="strategy-tag">贊助</div>
+                    <img src="./images/strategy02.png">
+                    <div class="strategy-title">
+                      <p>[ 2024-25 最新 ] 日本雪場開放時間</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a href="#">
+                  <div class="card-strategy">
+                    <div class="strategy-tag">贊助</div>
+                    <img src="./images/strategy02.png">
+                    <div class="strategy-title">
+                      <p>[ 2024-25 最新 ] 日本雪場開放時間日本雪場開放時間日本雪場開放時間日本雪場開放時間</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a href="#">
+                  <div class="card-strategy">
+                    <div class="strategy-tag">贊助</div>
+                    <img src="./images/strategy02.png">
+                    <div class="strategy-title">
+                      <p>[ 2024-25 最新 ] 日本雪場開放時間</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+          
+          
         </div>
        </section>
       <!-- 成為教練 -->
@@ -1178,32 +1227,7 @@
 
       <!-- Swiper JS -->
       <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
       <!-- Initialize Swiper -->
-      <script>
-        var swiper = new Swiper(".mySwiper", {
-          slidesPerView: 1,
-          spaceBetween: 10,
-          centeredSlides: true,
-          navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-          },
-          breakpoints: {
-            640: {
-              slidesPerView: 1,
-              spaceBetween: 20,
-            },
-            768: {
-              slidesPerView: 2,
-              spaceBetween: 20,
-            },
-            1024: {
-              slidesPerView: 3.5,
-              spaceBetween: 20,
-            },
-          },
-        });
-      </script>
+      <script src="./js/swiper.js"></script>
   </body>
 </html>
