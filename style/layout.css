@@ -195,3 +195,19 @@ footer {
 .btn-login {
     margin: 0 0 32px;
 }
+
+/* footer */
+.footer-mb {
+    display: none;
+}
+@media(max-width:768px) {
+    .footer-pc {
+        display: none;
+    }
+    .footer-mb {
+        display: block;
+    }
+    footer {
+        height: auto;
+    }
+}
