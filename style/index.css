@@ -369,6 +369,8 @@ section {
 /* 雪場輪播 */
 .card-snowPlace {
     position: relative;
+    border-radius: 16px;
+    overflow: hidden;
 }
 .card-snowPlace .tag-top {
     position: absolute;
