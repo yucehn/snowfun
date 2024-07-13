@@ -32,8 +32,8 @@ var swiper = new Swiper(".skiResort-swiper", {
   var swiper = new Swiper(".strategy-swiper", {
     slidesPerView: 5.5,
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+      nextEl: ".strategy-next",
+      prevEl: ".strategy-prev",
     },
     breakpoints: {
       390: {
