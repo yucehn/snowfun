@@ -191,6 +191,21 @@ section {
     font-weight: 500;
     line-height: 52px;
 }
+.section-title-box .container{
+    position: relative;
+    z-index: 2;
+}
+.section-title-box::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1370px;
+    height: 220px;
+    background: #fff;
+    border-radius: 0px 16px 16px 0px;
+    z-index: 1;
+}
 .section-title .more {
     font-size: 16px;
     color: #666;
@@ -215,6 +230,10 @@ section {
     line-height: 23px;
 }
 
+/* 雪場 */
+.section-skiResort {
+    position: relative;
+}
 .section-skiResort .nav-link {
     color: #00558f;
     width: 109.5px;
@@ -238,6 +257,14 @@ section {
     margin-top: 20px;
     border-radius: 30px;
 }
+.skiResort-map {
+    position: absolute;
+    top: 120px;
+}
+#map {
+    width: 100vw;
+    height: 600px;
+  }
 
 /* coach owl*/
 .owl-carousel .owl-item img {
