@@ -106,6 +106,9 @@ $(document).ready(function () {
     $('#single-date').click(function() {
         if (selectedDate) {
             highlightSingleDate();
+            $("#single-date").addClass("selected");
+            $("#highlight-range").removeClass("selected");
+            $("#week-range").removeClass("selected");
         }
     });
 

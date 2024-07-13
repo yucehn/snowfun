@@ -53,7 +53,7 @@
 }
 .selectDate-wrapper .card {
     border-radius: 30px;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .selectDate-btn-group {
@@ -92,21 +92,93 @@
     margin-right: 10px;
 }
 
-.btn-select-place{
+
+@media (max-width:575px) {
+    #collapseSelectDate  .card-footer {
+        flex-direction: column;
+        height: 132px;
+    }
+}
+
+
+.btn-select-place {
     max-width: 276px;
     width: 100%;
 }
+.btn-select-place .btn {
+    padding-left: 20px;
+}
 .btn-select-type {
-    max-width: 124px;
+    max-width: 162px;
     width: 100%;
 }
-.btn-select-place .btn{
-    
-    padding-left: 20px;
+.selectDate-btn-group .btn{
+    position: relative;
+}
+.selectDate-btn-group .btn::after {
+    content: '';
+    background: #ebf1f5;
+    border-radius: 30px;
+    border: 1px solid #c2c2c2;
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    right: 0px;
+    bottom: -2px;
+    z-index: -1;
+}
+.selectDate-btn-group .btn-select-date  .btn::after {
+    left: -15px;
+}
+.selectDate-btn-group .btn-select-submit .btn::after {
+    display: none;
+}
+.selectDate-btn-group .btn.collapsed::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 12px;
+    height: 10px;
+    transform: translateY(-50%);
+    background: url(../images/select_down.svg) no-repeat;
+}
+.selectDate-btn-group .btn-select-date .btn.collapsed::before {
+    right: 50%;
+}
+.selectDate-btn-group .btn.collapsed::after {
+    content: '';
+    background: #c2c2c2;
+    width: 1px;
+    height: 40px;
+    left: initial;
+    bottom: inherit;
+    top: 9px;
+    right: -8px;
+    border: none;
+}
+.selectDate-btn-group .btn-select-date .btn.collapsed::after {
+    display: none;
 }
 .btn-select-submit {
     position: absolute;
     right: 0;
+}
+
+@media (max-width:767px) {
+    .btn-select-place {
+        min-width: 126px;
+        width: 155px;
+    }
+}
+@media (max-width:575px){
+    
+	.selectDate-btn-group .btn[type="submit"] {
+		width: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+	}
 }
 .btn-select-date {
     width: 311px;
@@ -115,22 +187,42 @@
     width: 204px;
 }
 .btn.btn-radio {
-    min-width: 116px;
+    min-width: 132px;
     padding: 0;
     line-height: 50px;
     border-radius: 30px;
     border: 1px solid #c2c2c2;
     box-shadow: none;
+    background-color: #fff;
 }
+.btn.btn-radio.selected {
+    background-color: #ebf1f5;
+}
+#collapseSelectDate .btn.btn-radio{
+    min-width: auto;
+    padding: 0 20px;
+}
+
 .btn-radio-lg {
     max-width: 172px;
     width: 100%;
 }
-.btn.btn-radio:hover, 
+.btn.btn-radio:hover {
+    border-color: #00558F;
+} 
 .btn-check:checked+.btn {
+    background-color: #ebf1f5;
     border-color: #00558F;
 }
-
+@media (max-width:767px) {
+    .card .btn.btn-radio {
+        padding: 0 10px;
+        min-width: auto;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
 .selectPlaceLine-box {
     box-sizing: border-box;
     padding: 20px 0px 10px 0px;
@@ -195,6 +287,14 @@
 #collapseSelectPlace .card-body {
     max-height: 584px;
     overflow-y: scroll;
+    padding: 20px;
+}
+#collapseSelectType .card-body {
+    padding: 32px;
+}
+.banner .card-footer {
+    height: 90px;
+    align-items: center;
 }
 
 section {
@@ -545,22 +645,20 @@ section {
     justify-content: center;
     margin-top: 20px;
   }
-
-  .calendar {
-    /* margin: 0 20px; */
+.calendar {
     text-align: center;
-  }
-  #calendar-right {
+}
+#calendar-right {
     margin-left: 40px;
-  }
+}
 
-  .calendar table {
+.calendar table {
     width: 100%;
     border-collapse: collapse;
-  }
+}
 
-  .calendar th,
-  .calendar td {
+.calendar th,
+.calendar td {
     position: relative;
     /* padding: 7px; */
     width: 50px;
@@ -568,16 +666,12 @@ section {
     z-index: 1;
     text-align: center;
     line-height: 50px;
-  }
-  .calendar td {
-    cursor: pointer;
-  }
+    }
+.calendar td {
+cursor: pointer;
+}
 
-  .calendar th {
-    /* background-color: #f0f0f0; */
-  }
-
-  #prev-month, #next-month {
+#prev-month, #next-month {
     position: absolute;
     top: 0;
     width: 50px;
@@ -586,48 +680,47 @@ section {
     border-radius: 50%;
     border: 1px solid #c2c2c2;
     background: url(../images/date_arrow_left.svg) center no-repeat;
-  }
-  #prev-month {
+}
+#prev-month {
     left: 0;
-  }
-  #next-month {
+}
+#next-month {
     right: 0;
     transform: rotate(180deg);
-  }
-  .calendar th.data-title {
+}
+.calendar th.data-title {
     font-size: 18px;
     letter-spacing: 0.1em;
     font-weight: 700;
     line-height: 50px;
     padding: 0;
     pointer-events: none;
-  }
-  .calendar .date-weekName {
+}
+.calendar .date-weekName {
     font-size: 16px;
     font-weight: 500;
-  }
-  td.in-range {
+}
+td.in-range {
     background-color: #ebf1f5;
-    /* color: #fff; */
     border-radius: 0;
-  }
-  td.active.in-range, 
-  td.in-range.end-date,
-  td.start-date.in-range {
+}
+td.active.in-range, 
+td.in-range.end-date,
+td.start-date.in-range {
     border-radius: 30px;
-  }
+}
 
-  td.active {
+td.active {
     background-color: #00558f;
     color: #fff;
-  }
+}
 
-  .start-date,
-  .end-date {
+.start-date,
+.end-date {
     background-color: #ebf1f5;
-    /* color: #fff; */
-  }
-  .start-date::after{
+/* color: #fff; */
+}
+.start-date::after{
     content: '';
     position: absolute;
     top: 0;
@@ -636,8 +729,8 @@ section {
     height: 50px;
     background: #ebf1f5;
     z-index: -1;
-  }
-  .end-date::after {
+}
+.end-date::after {
     content: '';
     position: absolute;
     top: 0;
@@ -646,13 +739,13 @@ section {
     height: 50px;
     background: #ebf1f5;
     z-index: -1;
-  }
-  td.active.in-range {
+}
+td.active.in-range {
     background: #ebf1f5;
     border-radius: 0;
     z-index: 2;
-  }
-  .active.in-range::after {
+}
+.active.in-range::after {
     content: '';
     position: absolute;
     top: 0;
@@ -664,9 +757,9 @@ section {
     border-radius: 30px;
     z-index: -1;
     overflow: hidden;
-  }
+}
 
-  td.today::after {
+td.today::after {
     content: '';
     position: absolute;
     left: 0;
@@ -674,4 +767,4 @@ section {
     height: 50px;
     border: 1px solid #c2c2c2;
     border-radius: 50%;
-  }
+}

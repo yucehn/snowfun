@@ -46,6 +46,10 @@ table {
 a {
     color: inherit;
 }
+
+.btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active {
+    border: inherit;
+}
 /* ------- */
 
 :root {
@@ -150,9 +154,6 @@ footer {
     margin: 0 auto;
 }
 
-.btn {
-    min-width: 92px;
-}
 .btn-rounded {
     border-radius: 30px
 }
