@@ -53,7 +53,9 @@
 }
 .selectDate-wrapper .card {
     border-radius: 30px;
-    /* overflow: hidden; */
+    overflow-x: hidden;
+    overflow-y: scroll;
+    max-height: 574px;
 }
 
 .selectDate-btn-group {
@@ -262,16 +264,30 @@
 }
 
 #collapseSelectPlace .card-body {
-    max-height: 584px;
-    overflow-y: scroll;
+    /* max-height: 574px;
+    overflow-y: scroll; */
     padding: 20px;
 }
 #collapseSelectType .card-body {
     padding: 32px;
 }
 .banner .card-footer {
+    position: sticky;
+    bottom: 0;
     height: 90px;
     align-items: center;
+    background: #fff;
+}
+.banner .card-footer::before {
+    content: "";
+    position: absolute;
+    top: -50px;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background: url(../images/select-shadow.png) no-repeat;
+    background-size: cover;
+    background-position: bottom;
 }
 @media (max-width:767px) {
     .btn-select-place {
