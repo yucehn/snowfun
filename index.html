@@ -145,11 +145,14 @@
                 </button>
               </div>
               <div class="btn-select-date">
-                <button id="selectDaterange" class="btn" type="button"  aria-expanded="false">
+                <!-- <button id="selectDaterange" class="btn" type="button" aria-expanded="false">
+                  選擇日期
+                </button> -->
+                <button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSelectDate" aria-expanded="false" aria-controls="collapseSelectType">
                   選擇日期
                 </button>
               </div>
-              <input type="text" name="daterange" style="display: none;" />
+              
               <div class="btn-select-submit">
                 <button type="submit" class="btn btn-primary btn-rounded">馬上搜尋</button>
               </div>
@@ -243,6 +246,46 @@
                 </div>
               </div>
             </div>
+            <!-- date -->
+             <div class="collapse" id="collapseSelectDate">
+              <div class="card">
+                  <div class="card-body">
+                    <form class="row">
+                      <input type="text" name="daterange" style="display: none;" />
+                      <div class="collapseSelectDate-info">暫無教練暫無教練空堂，歡迎聯繫客服為您媒合教練</div>
+                    </form> 
+                    <div class="calendar-container">
+                      <button id="prev-month" class="btn"></button>
+                      <button id="next-month" class="btn"></button>
+                      <div id="calendar-left" class="calendar"></div>
+                      <div id="calendar-right" class="calendar"></div>
+                    </div>
+                    <!-- <div>
+                      <button id="highlight-range">含前後兩日</button>
+                      <button id="week-range">含前後week</button>
+                      <button id="date-submit">確定</button>
+                    </div> -->
+                  </div>
+                  <div class="card-footer text-body-secondary row">
+                    <div class="col">
+                      <input type="radio" class="btn-check" name="options-base" id="option8" autocomplete="off">
+                      <label id="single-date" class="btn btn-radio bg-white" for="option8">確切日期</label>
+
+                      <input type="radio" class="btn-check" name="options-base" id="option9" autocomplete="off">
+                      <label id="highlight-range" class="btn btn-radio bg-white" for="option9">含前後兩日</label>
+
+                      <input type="radio" class="btn-check" name="options-base" id="option10" autocomplete="off">
+                      <label id="week-range" class="btn btn-radio bg-white" for="option10">含前後一週</label>
+                    </div>
+                    <div class="col text-right">
+                      <button id="clear-button" class="btn">清除</button>
+                      <button id="date-submit" type="submit" class="btn btn-primary btn-rounded btn-selectPlaceLine">確定
+                        <img src="../images/icon_arrow_right.svg">
+                      </button>
+                    </div>
+                  </div>
+              </div>
+             </div>
           </div>
         </div>
       </section>
@@ -1309,5 +1352,6 @@
       <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
       <!-- Initialize Swiper -->
       <script src="./js/swiper.js"></script>
+      <script src="./js/date.js"></script>
   </body>
 </html>

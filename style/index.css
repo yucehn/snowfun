@@ -77,6 +77,21 @@
     width: 148px;
     text-align: center;
 }
+.collapseSelectDate-info {
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+}
+.collapseSelectDate-info::before {
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #c2c2c2;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
 .btn-select-place{
     max-width: 276px;
     width: 100%;
@@ -233,6 +248,7 @@ section {
 /* 雪場 */
 .section-skiResort {
     position: relative;
+    overflow: hidden;
 }
 .section-skiResort .nav-link {
     color: #00558f;
@@ -520,3 +536,142 @@ section {
         height: 30px;
     }
 }
+
+/* 月曆 */
+.calendar-container {
+    position: relative;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .calendar {
+    /* margin: 0 20px; */
+    text-align: center;
+  }
+  #calendar-right {
+    margin-left: 40px;
+  }
+
+  .calendar table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .calendar th,
+  .calendar td {
+    position: relative;
+    /* padding: 7px; */
+    width: 50px;
+    border-radius: 30px;
+    z-index: 1;
+    text-align: center;
+    line-height: 50px;
+  }
+  .calendar td {
+    cursor: pointer;
+  }
+
+  .calendar th {
+    /* background-color: #f0f0f0; */
+  }
+
+  #prev-month, #next-month {
+    position: absolute;
+    top: 0;
+    width: 50px;
+    height: 50px;
+    min-width: auto;
+    border-radius: 50%;
+    border: 1px solid #c2c2c2;
+    background: url(../images/date_arrow_left.svg) center no-repeat;
+  }
+  #prev-month {
+    left: 0;
+  }
+  #next-month {
+    right: 0;
+    transform: rotate(180deg);
+  }
+  .calendar th.data-title {
+    font-size: 18px;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+    line-height: 50px;
+    padding: 0;
+    pointer-events: none;
+  }
+  .calendar .date-weekName {
+    font-size: 16px;
+    font-weight: 500;
+  }
+  td.in-range {
+    background-color: #ebf1f5;
+    /* color: #fff; */
+    border-radius: 0;
+  }
+  td.active.in-range, 
+  td.in-range.end-date,
+  td.start-date.in-range {
+    border-radius: 30px;
+  }
+
+  td.active {
+    background-color: #00558f;
+    color: #fff;
+  }
+
+  .start-date,
+  .end-date {
+    background-color: #ebf1f5;
+    /* color: #fff; */
+  }
+  .start-date::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -25px;
+    width: 50px;
+    height: 50px;
+    background: #ebf1f5;
+    z-index: -1;
+  }
+  .end-date::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -25px;
+    width: 50px;
+    height: 50px;
+    background: #ebf1f5;
+    z-index: -1;
+  }
+  td.active.in-range {
+    background: #ebf1f5;
+    border-radius: 0;
+    z-index: 2;
+  }
+  .active.in-range::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    /* background: #ebf1f5; */
+    background-color: #00558f;
+    border-radius: 30px;
+    z-index: -1;
+    overflow: hidden;
+  }
+
+  td.today::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #c2c2c2;
+    border-radius: 50%;
+  }
