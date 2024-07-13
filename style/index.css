@@ -399,7 +399,6 @@ section {
     background-position-y: -2px;
     vertical-align: middle;
 }
-
 .section-title .more span {
     color: #1ba4ed;
     margin-left: 10px;
@@ -457,6 +456,21 @@ section {
     .section-skiResort .nav-link{
         font-size: 14px;
         width: 89px;
+    }
+}
+
+/* 成為教練 */
+@media (max-width:768px) {
+    .section-join {
+        display: flex;
+        align-items: flex-end;
+    }
+    .section-join {
+        height: 400px;
+        background: url(../images/join_bg_mb.png);
+        background-size: cover;
+        padding-bottom: 16px;
+        text-align: center;
     }
 }
 
