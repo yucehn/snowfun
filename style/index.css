@@ -39,7 +39,7 @@
 .select-title {
     font-size: 32px;
     font-weight: 500;
-    margin: 16px 0;
+    margin: 16px 0 32px;
 }
 .selectDate-box {
     position: relative;
@@ -92,7 +92,6 @@
     margin-right: 10px;
 }
 
-
 @media (max-width:575px) {
     #collapseSelectDate  .card-footer {
         flex-direction: column;
@@ -112,6 +111,7 @@
     max-width: 162px;
     width: 100%;
 }
+
 .selectDate-btn-group .btn{
     position: relative;
 }
@@ -164,22 +164,6 @@
     position: absolute;
     right: 0;
 }
-
-@media (max-width:767px) {
-    .btn-select-place {
-        min-width: 126px;
-        width: 155px;
-    }
-}
-@media (max-width:575px){
-    
-	.selectDate-btn-group .btn[type="submit"] {
-		width: 60px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-	}
-}
 .btn-select-date {
     width: 311px;
 }
@@ -214,15 +198,7 @@
     background-color: #ebf1f5;
     border-color: #00558F;
 }
-@media (max-width:767px) {
-    .card .btn.btn-radio {
-        padding: 0 10px;
-        min-width: auto;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-    }
-}
+
 .selectPlaceLine-box {
     box-sizing: border-box;
     padding: 20px 0px 10px 0px;
@@ -296,6 +272,60 @@
     height: 90px;
     align-items: center;
 }
+@media (max-width:767px) {
+    .btn-select-place {
+        min-width: 126px;
+        width: 155px;
+    }
+}
+@media (max-width:575px){
+    
+	.selectDate-btn-group .btn[type="submit"] {
+		width: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+	}
+}
+@media (max-width:475px) {
+
+    section.banner {
+        padding: 0;
+        margin-bottom: 55px;
+        height: 340px;
+        background-position: center -25px;
+    }
+    .banner::after {
+        bottom: -60px;
+        height: 224px;
+  }
+    .banner h1 {
+        font-size: 32px;
+    }
+    .selectDate-box {
+        margin-top: 20px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .btn-select-place{
+        width: 126px;
+    }
+    .btn-select-type {
+        max-width: 65px;
+    }
+    .btn-select-date {
+        width: 163px;
+    }
+}
+@media (max-width:767px) {
+    .card .btn.btn-radio {
+        padding: 0 10px;
+        min-width: auto;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
 
 section {
     padding: 70px 0;
@@ -344,6 +374,13 @@ section {
     color: #444;
     line-height: 23px;
 }
+@media (max-width:475px) {
+    .section-title h2{
+        width: 120px;
+        font-size: 24px;
+        line-height: 1.2;
+    }
+}
 
 /* 雪場 */
 .section-skiResort {
@@ -380,7 +417,13 @@ section {
 #map {
     width: 100vw;
     height: 600px;
-  }
+}
+@media (max-width:475px) {
+    .section-skiResort .nav-link{
+        font-size: 14px;
+        width: 89px;
+    }
+}
 
 /* coach owl*/
 .owl-carousel .owl-item img {
