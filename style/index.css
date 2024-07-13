@@ -420,7 +420,8 @@ section {
 
 .section-join {
     height: 420px;
-    background: url(../images/join_bg.png);
+    background: url(../images/join_bg.png) no-repeat;
+    background-size: cover;
 }
 .join-btn {
     font-size: 18px;
@@ -635,6 +636,10 @@ section {
     margin-top: -50px;
     background-color: #1ba4ed;
     border-radius: 50%;
+}
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+    background-color: #00558f;
 }
 .swiper-button-prev::after,
 .swiper-button-next::after{
