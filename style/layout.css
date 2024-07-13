@@ -46,10 +46,6 @@ table {
 a {
     color: inherit;
 }
-
-.btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active {
-    border: inherit;
-}
 /* ------- */
 
 :root {
@@ -71,6 +67,9 @@ a {
     background-color: var(--button-background-color);
     border-color: transparent;
 } 
+.btn-primary:hover {
+    background-color: #0f80bd;
+}
 .btn-outline-primary { 
     min-width: 92px;
     padding: 7px 30px;

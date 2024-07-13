@@ -70,6 +70,7 @@
     border-radius: 30px;
     width: 100%;
     text-align: left;
+    transition: all .3s;
 }
 .selectDate-btn-group .btn[type="submit"]{
     color: #fff;
@@ -330,16 +331,22 @@
 section {
     padding: 70px 0;
 }
+@media (max-width:390px) {
+    section {
+        padding: 40px 0;
+    }
+}
 .section-title {
     font-family: 'Noto Sans TC';
     font-size: 36px;
     font-weight: 500;
     line-height: 52px;
 }
-.section-title-box .container{
+.section-title-box .container {
     position: relative;
     z-index: 2;
 }
+
 .section-title-box::after {
     content: '';
     position: absolute;
@@ -350,6 +357,17 @@ section {
     background: #fff;
     border-radius: 0px 16px 16px 0px;
     z-index: 1;
+}
+@media (max-width:391px) {
+    .section-title-box .container {
+        padding: 0;
+    }
+    .section-title-box::after {
+        height: 174px;
+    }
+    .tab-content {
+        margin-top: 80px;
+    }
 }
 .section-title .more {
     font-size: 16px;
@@ -613,6 +631,8 @@ section {
 .swiper-button-next {
     height: 100px;
     width: 100px;
+    top: 50%;
+    margin-top: -50px;
     background-color: #1ba4ed;
     border-radius: 50%;
 }
@@ -623,6 +643,30 @@ section {
 }
 .swiper-button-prev::after {
     transform: rotate(180deg);
+}
+.section-skiResort .swiper-button-next.swiper-button-disabled, 
+.section-skiResort .swiper-button-prev.swiper-button-disabled {
+    opacity: 0;
+}
+.container-swiperBox {
+    position: relative; 
+    top: -300px;
+}
+@media (max-width:475px){
+	.swiper-button-prev,
+    .swiper-button-next {
+        display: none;
+    }
+}
+@media (max-width:625px){
+    .container-swiperBox {
+        top: -205px;
+    }
+}
+@media (max-width:767px) {
+    .container-swiperBox {
+        top: -265px;
+    }
 }
 
 /* card-strategy */
