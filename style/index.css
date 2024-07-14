@@ -780,8 +780,8 @@ section {
 }
 @media (max-width:390px){
 	.float-bar img{
-        width: 30px;
-        height: 30px;
+        width: 64px;
+        height: 64px;
     }
 }
 
