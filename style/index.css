@@ -161,6 +161,11 @@
 .selectDate-btn-group .btn-select-date .btn.collapsed::before {
     right: 50%;
 }
+@media (max-width:471px) {
+    .selectDate-btn-group .btn-select-date .btn.collapsed::before {
+        right: 41%;
+    } 
+}
 .selectDate-btn-group .btn.collapsed::after {
     content: '';
     background: #c2c2c2;
@@ -489,6 +494,13 @@ section {
         text-align: center;
     }
 }
+
+@media (max-width:475px) {
+    .section-join {
+        background-position-x: right;
+    }
+}
+
 
 /* coach owl*/
 .owl-carousel .owl-item img {
