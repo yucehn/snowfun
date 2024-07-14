@@ -465,6 +465,9 @@ section {
     height: 600px;
 }
 @media (max-width:475px) {
+    .section-skiResort {
+        padding-bottom: 0;
+    }
     .section-skiResort .nav-link{
         font-size: 14px;
         width: 89px;
@@ -619,6 +622,7 @@ section {
     border-radius: 16px;
     overflow: hidden;
 }
+
 .card-snowPlace .tag-top {
     position: absolute;
     font-size: 14px;
@@ -678,10 +682,17 @@ section {
     margin-top: -50px;
     background-color: #1ba4ed;
     border-radius: 50%;
+    opacity: 0;
 }
 .swiper-button-prev:hover,
 .swiper-button-next:hover {
+    opacity: 1;
     background-color: #00558f;
+}
+.swiper-wrapper:hover ~ .container .swiper-button-prev,
+.swiper-wrapper:hover ~ .container .swiper-button-next {
+    opacity: 1;
+    transition: all .2s;
 }
 .swiper-button-prev::after,
 .swiper-button-next::after{
@@ -691,14 +702,17 @@ section {
 .swiper-button-prev::after {
     transform: rotate(180deg);
 }
-.section-skiResort .swiper-button-next.swiper-button-disabled, 
-.section-skiResort .swiper-button-prev.swiper-button-disabled {
+.swiper-button-prev.swiper-button-disabled,
+.swiper-button-next.swiper-button-disabled,
+.swiper-wrapper:hover ~ .container .swiper-button-next.swiper-button-disabled, 
+.swiper-wrapper:hover ~ .container .swiper-button-prev.swiper-button-disabled {
     opacity: 0;
 }
 .container-swiperBox {
     position: relative; 
     top: -300px;
 }
+
 @media (max-width:475px){
 	.swiper-button-prev,
     .swiper-button-next {

@@ -7,12 +7,18 @@ var swiper = new Swiper(".skiResort-swiper", {
     },
     breakpoints: {
       390: {
+        slidesPerView: 1.5,
+        spaceBetween: 10,
+        centeredSlides: false,
+      },
+      470: {
         slidesPerView: 1.8,
         spaceBetween: 10,
+        centeredSlides: false,
       },
       640: {
-        slidesPerView: 1.8,
-        spaceBetween: 10,
+        slidesPerView: 2.1,
+        spaceBetween: 20,
       },
       768: {
         slidesPerView: 2.5,
@@ -53,7 +59,7 @@ var swiper = new Swiper(".skiResort-swiper", {
         spaceBetween: 10,
       },
       1440: {
-        slidesPerView: 5.5,
+        slidesPerView: 4.8,
         spaceBetween: 10,
       }
     },
