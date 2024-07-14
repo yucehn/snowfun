@@ -461,6 +461,9 @@ section {
     font-weight: 700;
     border-radius: 30px;
 }
+.section-skiResort .nav-link:hover {
+    background-color: #ebf1f5;
+}
 .section-skiResort .nav-pills .nav-link.active {
     color: white;
     background-color:#00558f ;
@@ -857,6 +860,10 @@ cursor: pointer;
     border-radius: 50%;
     border: 1px solid #c2c2c2;
     background: url(../images/date_arrow_left.svg) center no-repeat;
+}
+#prev-month:hover,
+#next-month:hover {
+    background-color: #ebf1f5;
 }
 #prev-month {
     left: 0;
