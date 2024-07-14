@@ -239,3 +239,21 @@ footer {
         padding-top: 24px;
     }
 }
+
+/* float */
+.float-bar{
+    right: 22px;
+    position: fixed;
+    bottom: 20px;
+    z-index:2;
+    flex-flow: column;
+}
+.float-bar a+a {
+    margin-top: 10px;
+}
+@media (max-width:390px){
+	.float-bar img{
+        width: 30px;
+        height: 30px;
+    }
+}
