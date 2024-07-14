@@ -64,3 +64,31 @@ var swiper = new Swiper(".skiResort-swiper", {
       }
     },
   });
+
+  $(document).ready(function() {
+    $('.container-swiperBox').hide();
+    $('.skiResort-swiper').hover(
+      function() {
+        // 滑鼠進入時顯示按鈕
+        $('.container-swiperBox').show();
+        
+      },
+      function() {
+        // 滑鼠離開時隱藏按鈕
+        $('.container-swiperBox').hide();
+      }
+      );
+
+
+    $('.strategy-arrow').hide();
+    $('.strategy-swiper').hover(
+      function() {
+        // 滑鼠進入時顯示按鈕
+        $('.strategy-arrow').show();
+      },
+      function() {
+        // 滑鼠離開時隱藏按鈕
+        $('.strategy-arrow').hide();
+      }
+    );
+  });

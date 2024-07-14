@@ -695,18 +695,14 @@ section {
     margin-top: -50px;
     background-color: #1ba4ed;
     border-radius: 50%;
-    opacity: 0;
+    transition: all .2s;
 }
 .swiper-button-prev:hover,
 .swiper-button-next:hover {
     opacity: 1;
     background-color: #00558f;
 }
-.swiper-wrapper:hover ~ .container .swiper-button-prev,
-.swiper-wrapper:hover ~ .container .swiper-button-next {
-    opacity: 1;
-    transition: all .2s;
-}
+
 .swiper-button-prev::after,
 .swiper-button-next::after{
     color: transparent;
@@ -715,11 +711,15 @@ section {
 .swiper-button-prev::after {
     transform: rotate(180deg);
 }
-.swiper-button-prev.swiper-button-disabled,
+.swiper-wrapper:hover ~ .container .swiper-button-prev,
+.swiper-wrapper:hover ~ .container .swiper-button-next {
+    opacity: 1;
+} 
 .swiper-button-next.swiper-button-disabled,
+.swiper-button-prev.swiper-button-disabled,
 .swiper-wrapper:hover ~ .container .swiper-button-next.swiper-button-disabled, 
 .swiper-wrapper:hover ~ .container .swiper-button-prev.swiper-button-disabled {
-    opacity: 0;
+    display: none;
 }
 .container-swiperBox {
     position: relative; 
