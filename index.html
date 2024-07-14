@@ -61,6 +61,7 @@
               class="btn btn-outline-primary px-1 px-lg-2"
               data-bs-toggle="modal"
               data-bs-target="#exampleModal"
+              onclick="loginModal()"
             >
               登入
             </button>
@@ -1253,13 +1254,15 @@
         class="modal fade"
         id="exampleModal"
         tabindex="-1"
-        aria-labelledby="exampleModalLabel"
         aria-hidden="true"
-      >
+        >
+        
         <div class="login-dialog modal-dialog modal-dialog-centered">
-          <div class="modal-content">
+          <!-- aria-labelledby="exampleModalLabel" -->
+          <!-- 登入 -->
+          <div class="modal-content login-content">
             <div class="modal-header">
-              <h5 class="modal-title mx-auto" id="exampleModalLabel">登入</h5>
+              <h5 class="modal-title mx-auto">登入</h5>
               <!-- <button
                 type="button"
                 class="btn-close"
@@ -1296,10 +1299,81 @@
             <div class="modal-footer">
               <p class="bold">尚未加入會員？</p>
               <button
+                id="register"
                 type="button"
                 class="btn more_arrow"
               >
                 註冊
+              </button>
+              <!-- data-bs-dismiss="modal" -->
+            </div>
+          </div>
+          <!-- 忘記密碼 -->
+          <div class="modal-content forgetPW-content">
+            <div class="modal-header">
+              <h5 class="modal-title mx-auto" id="forgetPW">忘記密碼</h5>
+            </div>
+            <div class="modal-body">
+              <div class="modal-wrapper">
+                <p class="forget-info">
+                  請輸入您的信箱，系統將會發送重設密碼連結至您的信箱
+                </p>
+                <form>
+                  <div class="mb-3">
+                    <label for="email" class="col-form-label">Email</label>
+                    <input type="text" class="form-control" id="email" placeholder="請輸入您的電子郵件">
+                  </div>
+                </form>
+                <div class="d-flex justify-content-center">
+                  <button type="submit" data-bs-dismiss="modal" class="btn btn-primary btn-login">
+                    發送
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+            </div>
+          </div>
+          <!-- 註冊 -->
+          <div class="modal-content register-content">
+            <div class="modal-header">
+              <h5 class="modal-title mx-auto">註冊</h5>
+            </div>
+            <div class="modal-body">
+              <div class="modal-wrapper">
+                <form>
+                  <div class="mb-3">
+                    <label for="nickname" class="col-form-label">暱稱</label>
+                    <input type="text" class="form-control" id="nickname" placeholder="請輸入您的姓名或暱稱">
+                  </div>
+                  <div class="mb-3">
+                    <label for="email" class="col-form-label">Email</label>
+                    <input type="text" class="form-control" id="email" placeholder="請輸入您的電子郵件(帳號)">
+                  </div>
+                  <div class="mb-3">
+                    <label for="pw" class="col-form-label">密碼</label>
+                    <input type="text" class="form-control" id="pw" placeholder="請輸入6~16位密碼">
+                  </div>
+                  <div class="mb-3">
+                    <label for="pw_2" class="col-form-label">確認密碼</label>
+                    <input type="text" class="form-control" id="pw_2" placeholder="請再次輸入您的密碼">
+                  </div>
+                </form>
+                <div class="d-flex justify-content-center">
+                  <button type="submit" class="btn btn-primary btn-login">
+                    註冊
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <p class="bold">已有帳號？</p>
+              <button
+                type="button"
+                class="btn more_arrow"
+                onclick="loginModal()"
+              >
+                登入
               </button>
               <!-- data-bs-dismiss="modal" -->
             </div>
@@ -1350,5 +1424,28 @@
       <script src="./js/swiper.js"></script>
       <script src="./js/date.js"></script>
       <script src="./js/selectPlace.js"></script>
+
+      <script>
+        document.querySelectorAll('.btn-forgetPw').forEach(button => {
+          button.addEventListener('click', function() {
+            document.querySelector('.login-content').classList.remove('show');
+            document.querySelector('.register-content').classList.remove('show');
+            document.querySelector('.forgetPW-content').classList.add('show');
+          });
+        });
+
+        $('#register').click(() => {
+          document.querySelector('.forgetPW-content').classList.remove('show');
+          document.querySelector('.login-content').classList.remove('show');
+          document.querySelector('.register-content').classList.add('show');
+        });
+
+        function loginModal(){
+          document.querySelector('.forgetPW-content').classList.remove('show');
+          document.querySelector('.register-content').classList.remove('show');
+          document.querySelector('.login-content').classList.add('show');
+        }
+        // btn-login
+      </script>
   </body>
 </html>

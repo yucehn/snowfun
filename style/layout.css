@@ -139,8 +139,12 @@ footer {
 
 /* modal */
 .modal-content {
+    display: none;
     border-radius: 30px;
     font-size: 18px;
+}
+.modal-content.show {
+    display: block;
 }
 .modal-header, .modal-footer {
     border: none;
@@ -182,9 +186,16 @@ footer {
     color: #858585;
     text-align: center;
 }
+.forget-info {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
 
 .login-dialog {
-    max-width: 584px;
+    max-width: 560px;
+}
+.login-dialog .modal-body {
+    min-height: 420px;;
 }
 .login-dialog .col-form-label {
     font-weight: bold;
