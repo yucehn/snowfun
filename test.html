@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css"
+    />
+    <link
+      rel="stylesheet"
+      href=" https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    />
+    <!-- -->
+
+    <style rel="stylesheet">
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: "Poppins", sans-serif;
+      }
+      .carousel-section {
+        padding-top: 80px;
+        padding-bottom: 80px;
+        overflow: hidden;
+      }
+      .carousel-section .owl-carousel .owl-stage {
+        padding-left: 0 !important;
+      }
+      .carousel-section .owl-carousel .owl-stage-outer {
+        overflow: unset;
+      }
+      .carousel-section .owl-carousel .owl-nav .owl-next,
+      .carousel-section .owl-carousel .owl-nav .owl-prev {
+        width: 50px;
+        border: 1px solid #c3c3c3;
+        border-radius: 50%;
+        height: 50px;
+        font-size: 30px;
+      }
+      .carousel-section .owl-carousel .owl-nav .owl-next:focus,
+      .carousel-section .owl-carousel .owl-nav .owl-prev:focus {
+        outline: 0;
+      }
+      .carousel-section h2 {
+        font-size: 34px;
+        text-align: left;
+        font-weight: 700;
+      }
+      .carousel-container {
+        max-width: 1140px;
+        padding-left: 15px;
+        padding-right: 15px;
+        margin: 0 auto;
+        width: 100%;
+      }
+      .carousel-item {
+        margin: 20px 0;
+      }
+      .carousel-item__card {
+        box-shadow: 0 13px 31px #dce1ed;
+        height: 300px;
+        border-radius: 12px;
+        margin: 30px 0 35px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+        font-weight: 500;
+        border: 1px solid #dddddd;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="carousel-section">
+      <div class="carousel-container">
+        <h2>Stage Padding OwlCarousel2</h2>
+        <div class="owl-carousel owl-theme">
+          <div class="carousel-item">
+            <div class="carousel-item__card">1</div>
+          </div>
+          <div class="carousel-item">
+            <div class="carousel-item__card">2</div>
+          </div>
+          <div class="carousel-item">
+            <div class="carousel-item__card">3</div>
+          </div>
+          <div class="carousel-item">
+            <div class="carousel-item__card">4</div>
+          </div>
+          <div class="carousel-item">
+            <div class="carousel-item__card">5</div>
+          </div>
+          <div class="carousel-item">
+            <div class="carousel-item__card">6</div>
+          </div>
+          <div class="carousel-item">
+            <div class="carousel-item__card">7</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script>
+      jQuery(document).ready(function ($) {
+        let slider = $(".owl-carousel");
+        slider.each(function () {
+          $(this).owlCarousel({
+            nav: true,
+            loop: false,
+            dots: false,
+            pagination: false,
+            margin: 25,
+            autoHeight: false,
+            stagePadding: 50,
+            responsive: {
+              0: {
+                items: 1,
+                stagePadding: 0,
+                margin: 30,
+              },
+              767: {
+                items: 3,
+                stagePadding: 25,
+              },
+              1000: {
+                items: 3,
+              },
+            },
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

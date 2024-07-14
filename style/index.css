@@ -522,11 +522,11 @@ section {
 
 
 /* coach owl*/
-.owl-carousel .owl-item img {
+.owl-carousel-coach .owl-item img {
 	width: 100%;
 	height: auto;
 }
-.owl-carousel img.star {
+.owl-carousel-coach img.star {
     width: auto;
 }
 
@@ -953,3 +953,55 @@ td.today::after {
     border: 1px solid #c2c2c2;
     border-radius: 50%;
 }
+
+/* test */
+.carousel-section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    overflow: hidden;
+  }
+  .carousel-section .owl-carousel-test .owl-stage {
+    padding-left: 0 !important;
+  }
+  .carousel-section .owl-carousel-test .owl-stage-outer {
+    overflow: unset;
+  }
+  .carousel-section .owl-carousel-test .owl-nav .owl-next,
+  .carousel-section .owl-carousel-test .owl-nav .owl-prev {
+    width: 50px;
+    border: 1px solid #c3c3c3;
+    border-radius: 50%;
+    height: 50px;
+    font-size: 30px;
+  }
+  .carousel-section .owl-carousel-test .owl-nav .owl-next:focus,
+  .carousel-section .owl-carousel-test .owl-nav .owl-prev:focus {
+    outline: 0;
+  }
+  .carousel-section h2 {
+    font-size: 34px;
+    text-align: left;
+    font-weight: 700;
+  }
+  .carousel-container {
+    max-width: 1140px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .carousel-item {
+    margin: 20px 0;
+  }
+  .carousel-item__card {
+    box-shadow: 0 13px 31px #dce1ed;
+    height: 300px;
+    border-radius: 12px;
+    margin: 30px 0 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: 500;
+    border: 1px solid #dddddd;
+  }

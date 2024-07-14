@@ -1,4 +1,4 @@
-$('.owl-carousel').owlCarousel({
+$('.owl-carousel-coach').owlCarousel({
   loop:true,
   margin:12,
   autoplay: true,
@@ -24,4 +24,4 @@ $('.owl-carousel').owlCarousel({
         items:5.5
     }
   }
-})
+});
