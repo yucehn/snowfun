@@ -1,5 +1,9 @@
 .banner {
     position: relative;
+    padding-top: 0;
+}
+.banner-box {
+    position: relative;
     width: 100%;
     height: 600px;
     background: url(../images/pic.png) no-repeat;
@@ -7,7 +11,12 @@
     background-size: cover;
     z-index: 2;
 }
-.banner::before {
+.banner-box h1 {
+    position: relative;
+    font-size: 48px;
+    padding-top: 200px;
+}
+.banner-box::before {
     content: '';
     position: absolute;
     top: 0;
@@ -16,7 +25,7 @@
     left: 0;
     background: linear-gradient( 0deg,rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.3) 100%);
 }
-.banner::after {
+.banner-box::after {
     content: '';
     position: absolute;
     right: 0;
@@ -25,11 +34,6 @@
     height: 305px;
     border-radius: 16px 0 0 16px;
     background: linear-gradient(to bottom,  rgba(210,211,215,.7) 0%,rgba(228,230,234,1) 29%,rgba(240,241,244,1) 40%,rgba(255,255,255,1) 50%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-}
-.banner h1 {
-    position: relative;
-    font-size: 48px;
-    height: 200px;
 }
 
 .selectDate-year {
@@ -42,9 +46,13 @@
     margin: 16px 0 32px;
 }
 .selectDate-box {
-    position: relative;
-    margin-top: 150px;
-    z-index: 1;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 390px;
+    z-index: 3;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 .selectDate-wrapper {
     position: relative;
@@ -129,6 +137,7 @@
 
 .selectDate-btn-group .btn{
     position: relative;
+    border: none;
 }
 .selectDate-btn-group .btn::after {
     content: '';
@@ -323,23 +332,23 @@
 }
 @media (max-width:475px) {
 
-    section.banner {
+    .banner-box {
         padding: 0;
         margin-bottom: 55px;
         height: 340px;
         background-position: center -25px;
     }
-    .banner::after {
+    .banner-box::after {
         bottom: -60px;
         height: 224px;
   }
-    .banner h1 {
+    .banner-box h1 {
+        padding-top: 0;
+        height: 175px;
         font-size: 32px;
     }
     .selectDate-box {
-        margin-top: 20px;
-        margin-left: 20px;
-        margin-right: 20px;
+        top: 230px;
     }
     .btn-select-place{
         width: 126px;
