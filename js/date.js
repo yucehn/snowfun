@@ -112,6 +112,13 @@ $(document).ready(function () {
         }
     });
 
+    $('#date-submit').click(function(e) {
+      e.preventDefault();
+      if (selectedDate) {
+          updateSelectDateButton();
+      }
+  });
+
     function highlightSingleDate() {
         $('td').removeClass('start-date end-date in-range');
         $(`td[data-date="${selectedDate}"]`).addClass('active');
@@ -164,6 +171,17 @@ $(document).ready(function () {
       let month = String(date.getMonth() + 1).padStart(2, "0");
       let day = String(date.getDate()).padStart(2, "0");
       return `${year}-${month}-${day}`;
+    }
+
+    function updateSelectDateButton() {
+      const selectedOption = $('input[name="options-base3"]:checked').attr('aria-value');
+      let formattedText = `
+      <div class="inputSelectDate">
+          ${selectedDate}
+          <span>${selectedOption}</span>
+      </div>`;
+      $('#selectDateButton').html(formattedText);
+      $('#collapseSelectDate').collapse('hide');
     }
 
     updateCalendars();

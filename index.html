@@ -140,15 +140,15 @@
                 </button>
               </div>
               <div class="btn-select-type">
-                <button class="btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSelectType" aria-expanded="false" aria-controls="collapseSelectType">
+                <button id="selectTypeButton" class="btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSelectType" aria-expanded="false" aria-controls="collapseSelectType">
                   雪板類型
                 </button>
               </div>
-              <div class="btn-select-date">
+              <div id="selectDateButton" class="btn-select-date">
                 <!-- <button id="selectDaterange" class="btn" type="button" aria-expanded="false">
                   選擇日期
                 </button> -->
-                <button class="btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSelectDate" aria-expanded="false" aria-controls="collapseSelectType">
+                <button id="selectDateButton" class="btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSelectDate" aria-expanded="false" aria-controls="collapseSelectType">
                   選擇日期
                 </button>
               </div>
@@ -211,7 +211,7 @@
                       <label class="btn btn-radio w-full" for="option1_none">雪場不拘</label>
                     </div>
                     <div class="col text-right">
-                      <button id="selectPlace_confirmButton" type="submit" class="btn btn-primary btn-rounded btn-selectPlaceLine">確定
+                      <button id="selectPlace_confirmButton" type="button" class="btn btn-primary btn-rounded btn-selectPlaceLine">確定
                         <img src="../images/icon_arrow_right.svg">
                       </button>
                     </div>
@@ -241,7 +241,7 @@
                       <label class="btn btn-radio w-full" for="selectTypeNone">雪板類型不拘</label>
                     </div>
                     <div class="col text-right">
-                      <button type="submit" class="btn btn-primary btn-rounded btn-selectPlaceLine">確定
+                      <button id="selectType_confirmButton" type="button" class="btn btn-primary btn-rounded btn-selectPlaceLine">確定
                         <img src="../images/icon_arrow_right.svg">
                       </button>
                     </div>
@@ -266,18 +266,18 @@
                   </div>
                   <div class="card-footer text-body-secondary d-flex justify-content-between">
                     <div class="">
-                      <input type="radio" class="btn-check" name="options-base" id="option8" autocomplete="off">
+                      <input aria-value="確切日期" type="radio" class="btn-check" name="options-base3" id="option8" autocomplete="off">
                       <label id="single-date" class="btn btn-radio" for="option8">確切日期</label>
 
-                      <input type="radio" class="btn-check" name="options-base" id="option9" autocomplete="off">
+                      <input aria-value="含前後兩日" type="radio" class="btn-check" name="options-base3" id="option9" autocomplete="off">
                       <label id="highlight-range" class="btn btn-radio" for="option9">含前後兩日</label>
 
-                      <input type="radio" class="btn-check" name="options-base" id="option10" autocomplete="off">
+                      <input aria-value="含前後一週" type="radio" class="btn-check" name="options-base3" id="option10" autocomplete="off">
                       <label id="week-range" class="btn btn-radio" for="option10">含前後一週</label>
                     </div>
                     <div class="text-right">
                       <button id="clear-button" class="btn">清除</button>
-                      <button id="date-submit" type="submit" class="btn btn-primary btn-rounded btn-selectPlaceLine">確定
+                      <button id="date-submit" type="button" class="btn btn-primary btn-rounded btn-selectPlaceLine">確定
                         <img src="../images/icon_arrow_right.svg">
                       </button>
                     </div>

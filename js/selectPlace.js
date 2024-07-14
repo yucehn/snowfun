@@ -38,7 +38,7 @@ $(document).ready(function() {
                 document.getElementById(keyId).innerHTML = generateHtml(data[keyId], keyId);
             });
             
-            // 綁定Radio事件
+            // 確定選擇雪場
             $('#selectPlace_confirmButton').on('click', function() {
                 const selectedRadio = $('input[name="options-base"]:checked');
                 if (selectedRadio.length > 0) {
@@ -52,4 +52,23 @@ $(document).ready(function() {
         })
         .catch(error => console.error('Error loading JSON data:', error));
   });
+  
+// collapseSelectType
+$(document).ready(function() {
+  // 確定選擇雪板類型
+  $('#selectType_confirmButton').on('click', function() {
+    const selectedRadio = $('input[name="options-base2"]:checked');
+    if (selectedRadio.length > 0) {
+      let selectedText = $('label[for="' + selectedRadio.attr('id') + '"]').text();
+      const selectedTextList = selectedText.split(" ");
+      if(selectedTextList.length > 1){
+          selectedText= selectedTextList[0];
+      }
+      $('#selectTypeButton').text(selectedText);
+      $('#collapseSelectType').collapse('hide');
+    } else {
+      // alert('請選擇一個雪板類型');
+    }
+  });
+});
   
