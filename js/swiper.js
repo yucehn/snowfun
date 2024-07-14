@@ -1,4 +1,5 @@
 var swiper = new Swiper(".skiResort-swiper", {
+    slidesPerView: 1.5,
     spaceBetween: 10,
     centeredSlides: true,
     navigation: {

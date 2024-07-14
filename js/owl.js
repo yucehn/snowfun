@@ -1,6 +1,6 @@
 $('.owl-carousel-coach').owlCarousel({
   loop:true,
-  margin:12,
+  margin: 12,
   autoplay: true,
   nav:false,
   dots:false,
@@ -39,17 +39,30 @@ jQuery(document).ready(function ($) {
       stagePadding: 50,
       responsive: {
         0: {
-          items: 1,
+          items: 1.3,
           stagePadding: 0,
-          margin: 30,
+          margin: 10,
+        },
+        470: {
+          items: 1.8,
+          stagePadding: 10,
+        },
+        640: {
+          items: 2.1,
+          stagePadding: 20,
         },
         767: {
-          items: 3,
-          stagePadding: 25,
+          items: 2.5,
+          stagePadding: 20,
         },
-        1000: {
-          items: 3,
+        1024: {
+          items: 3.5,
+          stagePadding: 20,
         },
+        1440: {
+          items: 4.5,
+          stagePadding: 20,
+        }
       },
     });
 

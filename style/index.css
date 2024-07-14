@@ -830,7 +830,7 @@ section {
 }
   .carousel-item {
     display: block;
-    margin: 20px 0;
+    text-align: center;
   }
   .carousel-item__card {
     height: 300px;
