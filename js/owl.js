@@ -25,3 +25,44 @@ $('.owl-carousel-coach').owlCarousel({
     }
   }
 });
+
+jQuery(document).ready(function ($) {
+  let slider = $(".owl-carousel-strategy");
+  slider.each(function () {
+    $(".owl-carousel-strategy").owlCarousel({
+      nav: true,
+      loop: false,
+      dots: false,
+      pagination: false,
+      margin: 25,
+      autoHeight: false,
+      stagePadding: 50,
+      responsive: {
+        0: {
+          items: 1,
+          stagePadding: 0,
+          margin: 30,
+        },
+        767: {
+          items: 3,
+          stagePadding: 25,
+        },
+        1000: {
+          items: 3,
+        },
+      },
+    });
+
+    $('.strategy .owl-nav').hide();
+    $('.owl-carousel-strategy').hover(
+      function() {
+        // 滑鼠進入時顯示按鈕
+        $('.strategy .owl-nav').show();
+      },
+      function() {
+        // 滑鼠離開時隱藏按鈕
+        $('.strategy .owl-nav').hide();
+      }
+    );
+  });
+});

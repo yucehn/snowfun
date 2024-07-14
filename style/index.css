@@ -762,6 +762,86 @@ section {
     }
 }
 
+
+/* owl  strategy */
+.carousel-section {
+    position: relative;
+    overflow: hidden;
+}
+.carousel-section .owl-carousel-strategy .owl-stage {
+    padding-left: 0 !important;
+}
+.carousel-section .owl-carousel-strategy .owl-stage-outer {
+    overflow: unset;
+}
+.carousel-section .owl-carousel-strategy .owl-nav {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin-top: -50px;
+}
+.carousel-section .owl-carousel-strategy .owl-nav .owl-next,
+.carousel-section .owl-carousel-strategy .owl-nav .owl-prev {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: #1ba4ed;
+    border-radius: 50%;
+}
+.carousel-section .owl-carousel-strategy .owl-nav .owl-next:hover,
+.carousel-section .owl-carousel-strategy .owl-nav .owl-prev:hover {
+    background-color: #00558f;
+}
+.carousel-section .owl-next.disabled,
+.carousel-section .owl-prev.disabled {
+    display: none;
+}
+.carousel-section .owl-carousel-strategy .owl-nav .owl-next {
+    right: 0;
+}
+.carousel-section .owl-carousel-strategy .owl-nav .owl-prev {
+    left: 0;
+}
+.carousel-section .owl-carousel-strategy .owl-nav .owl-next:focus,
+.carousel-section .owl-carousel-prev .owl-nav .owl-prev:focus {
+    outline: 0;
+}
+
+.carousel-section .owl-next span ,
+.carousel-section .owl-prev span {
+    font-size: 0;
+    display: block;
+    width: 100px;
+    height: 100px;
+    background:url(../images/slide_arrow_right.svg) no-repeat center;
+}
+.carousel-section .owl-prev span {
+    transform: rotate(180deg);
+}
+
+.carousel-container {
+    position: relative;
+    max-width: 1320px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0 auto;
+    width: 100%;
+}
+  .carousel-item {
+    display: block;
+    margin: 20px 0;
+  }
+  .carousel-item__card {
+    height: 300px;
+    border-radius: 12px;
+    margin: 30px 0 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+  }
+
 /* card-strategy */
 .card-strategy {
     position: relative;
@@ -953,55 +1033,3 @@ td.today::after {
     border: 1px solid #c2c2c2;
     border-radius: 50%;
 }
-
-/* test */
-.carousel-section {
-    padding-top: 80px;
-    padding-bottom: 80px;
-    overflow: hidden;
-  }
-  .carousel-section .owl-carousel-test .owl-stage {
-    padding-left: 0 !important;
-  }
-  .carousel-section .owl-carousel-test .owl-stage-outer {
-    overflow: unset;
-  }
-  .carousel-section .owl-carousel-test .owl-nav .owl-next,
-  .carousel-section .owl-carousel-test .owl-nav .owl-prev {
-    width: 50px;
-    border: 1px solid #c3c3c3;
-    border-radius: 50%;
-    height: 50px;
-    font-size: 30px;
-  }
-  .carousel-section .owl-carousel-test .owl-nav .owl-next:focus,
-  .carousel-section .owl-carousel-test .owl-nav .owl-prev:focus {
-    outline: 0;
-  }
-  .carousel-section h2 {
-    font-size: 34px;
-    text-align: left;
-    font-weight: 700;
-  }
-  .carousel-container {
-    max-width: 1140px;
-    padding-left: 15px;
-    padding-right: 15px;
-    margin: 0 auto;
-    width: 100%;
-  }
-  .carousel-item {
-    margin: 20px 0;
-  }
-  .carousel-item__card {
-    box-shadow: 0 13px 31px #dce1ed;
-    height: 300px;
-    border-radius: 12px;
-    margin: 30px 0 35px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 30px;
-    font-weight: 500;
-    border: 1px solid #dddddd;
-  }
