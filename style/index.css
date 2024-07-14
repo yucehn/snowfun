@@ -298,10 +298,10 @@
 .banner .card-footer::before {
     content: "";
     position: absolute;
-    top: -50px;
+    top: -30px;
     left: 0;
     right: 0;
-    height: 50px;
+    height: 30px;
     background: url(../images/select-shadow.png) no-repeat;
     background-size: cover;
     background-position: bottom;

@@ -36,7 +36,7 @@ var swiper = new Swiper(".skiResort-swiper", {
   });
 
   var swiper = new Swiper(".strategy-swiper", {
-    slidesPerView: 5.5,
+    slidesPerView: 1,
     navigation: {
       nextEl: ".strategy-next",
       prevEl: ".strategy-prev",
