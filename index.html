@@ -135,7 +135,7 @@
           <div class="d-flex flex-column selectDate-wrapper">
             <div class="selectDate-btn-group d-flex justify-content-between align-items-center">
               <div class="btn-select-place">
-                <button class="btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSelectPlace" aria-expanded="false" aria-controls="collapseSelectPlace">
+                <button id="selectPlaceButton" class="btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSelectPlace" aria-expanded="false" aria-controls="collapseSelectPlace">
                   選擇雪場
                 </button>
               </div>
@@ -211,7 +211,7 @@
                       <label class="btn btn-radio w-full" for="option1_none">雪場不拘</label>
                     </div>
                     <div class="col text-right">
-                      <button type="submit" class="btn btn-primary btn-rounded btn-selectPlaceLine">確定
+                      <button id="selectPlace_confirmButton" type="submit" class="btn btn-primary btn-rounded btn-selectPlaceLine">確定
                         <img src="../images/icon_arrow_right.svg">
                       </button>
                     </div>
@@ -1315,47 +1315,12 @@
 
     <!-- 雪場 -->
     <script>
-      const dataUrl = '/js/selectPlace.json';
-      // Function to generate HTML
-      function generateHtml(data, keyId) {
-          return data.map((item, index) => `
-              <div class="col-3 mb-2">
-                  <input type="radio" class="btn-check" name="options-base" id="${keyId}_${index + 1}" autocomplete="off">
-                  <label class="btn btn-radio btn-radio-lg" for="${keyId}_${index + 1}">${item.name}</label>
-              </div>
-          `).join('');
-      }
-
-      // Fetch the JSON data and generate the HTML
-      fetch(dataUrl)
-          .then(response => response.json())
-          .then(data => {
-              const listKey = Object.keys(data);
-              listKey.map((keyId)=>{
-                document.getElementById(keyId).innerHTML = generateHtml(data[keyId], keyId);
-              })
-          })
-          .catch(error => console.error('Error loading JSON data:', error));
+      
     </script>
 
-    <!-- select toggle close -->
+    
     <script>
-      document.addEventListener('click', function (event) {
-          const buttons = document.querySelectorAll('[data-bs-toggle="collapse"]');
-          buttons.forEach(button => {
-              const targetSelector = button.getAttribute('data-bs-target');
-              const collapseElement = document.querySelector(targetSelector);
-              const targetElement = event.target; // Clicked element
-
-              // Check if the clicked element is outside the collapse and the button
-              if (!collapseElement.contains(targetElement) && !button.contains(targetElement)) {
-                  const collapseInstance = bootstrap.Collapse.getInstance(collapseElement); // Get collapse instance
-                  if (collapseInstance && collapseElement.classList.contains('show')) {
-                      collapseInstance.hide(); // Close collapse
-                  }
-              }
-          });
-      });
+     
     </script>
 
     <!-- Optional JavaScript -->
@@ -1384,5 +1349,6 @@
       <!-- Initialize Swiper -->
       <script src="./js/swiper.js"></script>
       <script src="./js/date.js"></script>
+      <script src="./js/selectPlace.js"></script>
   </body>
 </html>
