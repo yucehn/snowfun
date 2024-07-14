@@ -20,7 +20,7 @@
     />
     <link href="./style/layout.css" rel="stylesheet" />
     <link href="./style/index.css" rel="stylesheet" />
-    <!-- map 需更換金鑰 -->
+    <!-- map -->
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyARCV0fj5q0dPKTy95aMrhccdqnwKMMh-U"></script>
     <script type="text/javascript" src="./js/map.js"></script>
   </head>
@@ -61,7 +61,7 @@
               type="button"
               class="btn btn-outline-primary px-1 px-lg-2"
               data-bs-toggle="modal"
-              data-bs-target="#exampleModal"
+              data-bs-target="#snowModal"
               onclick="loginModal()"
             >
               登入
@@ -79,7 +79,7 @@
             <img src="./images/icon_hamburger.svg" />
           </button>
           <div
-            class="offcanvas offcanvas-end"
+            class="offcanvas offcanvas-end nav-offcanvas"
             tabindex="-1"
             id="offcanvasNavbarLight"
             style="z-index: 1051"
@@ -118,6 +118,28 @@
                   <a class="nav-link" href="#">聯絡客服</a>
                 </li>
               </ul>
+              <div class="d-flex justify-content-between">
+                <button
+                  type="button"
+                  class="btn"
+                  onclick="loginModal()"
+                  data-bs-toggle="modal"
+                  data-bs-target="#snowModal"
+                  data-bs-dismiss="offcanvas"
+                >
+                  登入
+                </button>
+                <button 
+                  type="button" 
+                  class="btn" 
+                  onclick="registerModal()" 
+                  data-bs-toggle="modal"
+                  data-bs-target="#snowModal" 
+                  data-bs-dismiss="offcanvas"
+                >
+                  註冊
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -1265,13 +1287,13 @@
       <!-- 登入 modal -->
       <div
         class="modal fade"
-        id="exampleModal"
+        id="snowModal"
         tabindex="-1"
         aria-hidden="true"
         >
         
         <div class="login-dialog modal-dialog modal-dialog-centered">
-          <!-- aria-labelledby="exampleModalLabel" -->
+          <!-- aria-labelledby="snowModalLabel" -->
           <!-- 登入 -->
           <div class="modal-content login-content">
             <div class="modal-header">
@@ -1312,9 +1334,9 @@
             <div class="modal-footer">
               <p class="bold">尚未加入會員？</p>
               <button
-                id="register"
                 type="button"
                 class="btn more_arrow"
+                onclick="registerModal()"
               >
                 註冊
               </button>
@@ -1427,11 +1449,11 @@
       <script src="./js/selectPlace.js"></script>
 
       <script>
-        $('#register').click(() => {
+        function registerModal() {
           document.querySelector('.forgetPW-content').classList.remove('show');
           document.querySelector('.login-content').classList.remove('show');
           document.querySelector('.register-content').classList.add('show');
-        });
+        }
         function forgetPwModal() {
           document.querySelector('.login-content').classList.remove('show');
           document.querySelector('.register-content').classList.remove('show');

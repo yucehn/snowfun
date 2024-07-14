@@ -72,6 +72,7 @@
     border-radius: 30px;
     width: 100%;
     max-width: 780px;
+    background-color: #fff;
     /* line-height: 60px; */
 }
 .selectDate-btn-group .btn {

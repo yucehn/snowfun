@@ -88,6 +88,12 @@ a {
     outline: none;
     box-shadow: none;
 }
+.offcanvas.nav-offcanvas {
+    width: 50%;
+}
+.offcanvas.nav-offcanvas .btn:active {
+    border: none;
+}
 
 
 footer {
