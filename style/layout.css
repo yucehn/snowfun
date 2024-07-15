@@ -48,6 +48,12 @@ a {
 }
 ::-webkit-scrollbar {
     display: none;
+}
+.noto-serif-jp-900 {
+    font-family: "Noto Serif JP", serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
   }
 /* ------- */
 

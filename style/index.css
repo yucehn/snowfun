@@ -124,6 +124,13 @@
         flex-direction: column;
         height: 132px;
     }
+    
+}
+@media (max-width:767px) {
+    .selectDate-wrapper .collapse {
+        width: calc(-22px + 100vw);
+        margin-left: -9px;
+    }
 }
 
 
@@ -207,13 +214,18 @@
     width: 204px;
 }
 .btn.btn-radio {
+    position: relative;
     min-width: 132px;
     padding: 0;
     line-height: 50px;
     border-radius: 30px;
+    color: #666;
     border: 1px solid #c2c2c2;
     box-shadow: none;
     background-color: #fff;
+}
+.btn-check+.btn:hover {
+    color: #666;
 }
 .btn.btn-radio.selected {
     background-color: #ebf1f5;
@@ -224,15 +236,28 @@
 }
 
 .btn-radio-lg {
-    max-width: 172px;
+    /* max-width: 172px; */
     width: 100%;
 }
 .btn.btn-radio:hover {
     border-color: #00558F;
 } 
+
 .btn-check:checked+.btn {
+    color: #666;
     background-color: #ebf1f5;
     border-color: #00558F;
+}
+.btn.btn-radio:hover::before,
+.btn-check:checked+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: 1px solid #00558F;
+    border-radius: 30px;
 }
 
 .selectPlaceLine-box {
@@ -267,6 +292,7 @@
 .btn-selectPlaceLine {
     height: 50px;
     width: 106px;
+    line-height: 38px;
 }
 .btn-selectPlaceLine img {
     vertical-align: middle;
@@ -301,8 +327,13 @@
     overflow-y: scroll; */
     padding: 20px;
 }
+
 #collapseSelectType .card-body {
     padding: 32px;
+}
+.selectPlace-area {
+    white-space: nowrap;
+    overflow-y: scroll;
 }
 .banner .card-footer {
     position: sticky;
@@ -368,13 +399,15 @@
     }
 }
 @media (max-width:767px) {
-    .card .btn.btn-radio {
+    .card .btn-radio {
         padding: 0 10px;
         min-width: auto;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
-        margin-bottom: 11px;
+    }
+    .card .btn-radio-lg {
+        padding: 0 5px;
     }
 }
 
@@ -929,7 +962,7 @@ section {
     line-height: 50px;
     }
 .calendar td {
-cursor: pointer;
+    cursor: pointer;
 }
 
 #prev-month, #next-month {
@@ -965,52 +998,52 @@ cursor: pointer;
     font-size: 16px;
     font-weight: 500;
 }
-td.in-range {
+.calendar td.in-range {
     background-color: #ebf1f5;
     border-radius: 0;
 }
-td.active.in-range, 
-td.in-range.end-date,
-td.start-date.in-range {
+.calendar td.active.in-range, 
+.calendar td.in-range.end-date,
+.calendar td.start-date.in-range {
     border-radius: 30px;
 }
 
-td.active {
+.calendar td.active {
     background-color: #00558f;
     color: #fff;
 }
 
-.start-date,
-.end-date {
+.calendar .start-date,
+.calendar .end-date {
     background-color: #ebf1f5;
 /* color: #fff; */
 }
-.start-date::after{
+.calendar .start-date::after{
     content: '';
     position: absolute;
     top: 0;
-    right: -25px;
-    width: 50px;
+    right: 0;
+    width: 30px;
     height: 50px;
     background: #ebf1f5;
     z-index: -1;
 }
-.end-date::after {
+.calendar .end-date::after {
     content: '';
     position: absolute;
     top: 0;
-    left: -25px;
-    width: 50px;
+    left: -16px;
+    width: 34px;
     height: 50px;
     background: #ebf1f5;
     z-index: -1;
 }
-td.active.in-range {
+.calendar td.active.in-range {
     background: #ebf1f5;
     border-radius: 0;
     z-index: 2;
 }
-.active.in-range::after {
+.calendar .active.in-range::after {
     content: '';
     position: absolute;
     top: 0;
@@ -1024,12 +1057,21 @@ td.active.in-range {
     overflow: hidden;
 }
 
-td.today::after {
+.calendar td.today::before,
+.calendar td:hover::before {
     content: '';
     position: absolute;
+    top:0;
     left: 0;
+    bottom: 0;
+    right: 0;
     width: 50px;
-    height: 50px;
+    /* height: 50px; */
     border: 1px solid #c2c2c2;
     border-radius: 50%;
+}
+
+.calendar td:hover::before  {
+    width: 50px;
+    height: 50px;
 }
