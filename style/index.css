@@ -353,6 +353,13 @@
     background-size: cover;
     background-position: bottom;
 }
+.confirmButton {
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    float: right;
+}
 @media (max-width:767px) {
     .btn-select-place {
         min-width: 126px;
