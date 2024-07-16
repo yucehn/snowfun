@@ -360,6 +360,20 @@
     gap: 6px;
     float: right;
 }
+#clear-button {
+    position: relative;
+    height: 50px;
+    color: #666;
+}
+#clear-button::before {
+    content: "";
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    bottom: 14px;
+    height: 1px;
+    background: #666;
+}
 @media (max-width:767px) {
     .btn-select-place {
         min-width: 126px;
@@ -1072,7 +1086,7 @@ section {
     overflow: hidden;
 }
 
-.calendar td.today::before,
+/* .calendar td.today::before, */
 .calendar td:hover::before {
     content: '';
     position: absolute;
@@ -1084,6 +1098,23 @@ section {
     /* height: 50px; */
     border: 1px solid #c2c2c2;
     border-radius: 50%;
+}
+.calendar td.full_day {
+    color: #c2c2c2;
+}
+.calendar td.none_day {
+    pointer-events: none;
+}
+.calendar td.before_day {
+    color: gray;
+    opacity: 0.25;
+    pointer-events: none;
+    background-color: transparent;
+}
+.calendar td.before_day::after,
+.calendar td.before_day::before,
+.calendar td.none_day::before {
+    display: none;
 }
 
 .calendar td:hover::before  {

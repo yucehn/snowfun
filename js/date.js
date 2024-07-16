@@ -2,8 +2,13 @@ $(document).ready(function () {
     let currentDate = new Date();
     let selectedDate = formatDate(currentDate);
     let todayDate = formatDate(currentDate);
-
-    function renderCalendar(monthOffset, calendarId) {
+    let coachDates = [
+      "2024-08-16",
+      "2024-08-17",
+      "2024-08-18",
+      "2024-08-19"
+      ]
+    function renderCalendar(monthOffset, calendarId, fullDays) {
       let date = new Date(
         currentDate.getFullYear(),
         currentDate.getMonth() + monthOffset,
@@ -38,14 +43,16 @@ $(document).ready(function () {
         calendar += "<tr>";
         for (let j = 0; j < 7; j++) {
           if ((i === 0 && j < firstDay) || day > lastDate) {
-            calendar += "<td></td>";
+            calendar += "<td class='none_day'></td>";
           } else {
             let fullDate = `${year}-${String(month + 1).padStart(
               2,
               "0"
             )}-${String(day).padStart(2, "0")}`;
             let todayClass = fullDate === todayDate ? "today" : "";
-            calendar += `<td data-date="${fullDate}" class="${todayClass}">${day}</td>`;
+            let beforeDayClass = fullDate < todayDate ? "before_day" : "";
+            let fullDayClass = fullDays.includes(fullDate) ? "full_day" : "";
+            calendar += `<td data-date="${fullDate}" class="${todayClass} ${beforeDayClass} ${fullDayClass}">${day}</td>`;
             day++;
           }
         }
@@ -57,8 +64,8 @@ $(document).ready(function () {
     }
 
     function updateCalendars() {
-      renderCalendar(0, "calendar-left");
-      renderCalendar(1, "calendar-right");
+      renderCalendar(0, "calendar-left", coachDates);
+      renderCalendar(1, "calendar-right", coachDates);
     }
 
     $("#prev-month").click(function () {
