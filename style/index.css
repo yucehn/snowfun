@@ -820,6 +820,7 @@ section {
     left: 0;
     right: 0;
     margin-top: -50px;
+    transition: all .2s;
 }
 .carousel-section .owl-carousel-strategy .owl-nav .owl-next,
 .carousel-section .owl-carousel-strategy .owl-nav .owl-prev {
@@ -835,7 +836,8 @@ section {
 }
 .carousel-section .owl-next.disabled,
 .carousel-section .owl-prev.disabled {
-    display: none;
+    opacity: 0;
+    pointer-events: none;
 }
 .carousel-section .owl-carousel-strategy .owl-nav .owl-next {
     right: 0;
@@ -859,20 +861,26 @@ section {
 .carousel-section .owl-prev span {
     transform: rotate(180deg);
 }
+@media (max-width:767px) {
+    .carousel-section .owl-carousel-strategy .owl-nav {
+        display: none;
+        pointer-events: none;
+    }
+}
 
 .carousel-container {
     position: relative;
-    max-width: 1320px;
-    padding-left: 15px;
-    padding-right: 15px;
+    /* max-width: 1320px; */
+    /* padding-left: 12px;
+    padding-right: 12px; */
     margin: 0 auto;
     width: 100%;
 }
-  .carousel-item {
+.carousel-item {
     display: block;
     text-align: center;
-  }
-  .carousel-item__card {
+}
+.carousel-item__card {
     height: 300px;
     border-radius: 12px;
     margin: 30px 0 35px;
@@ -880,7 +888,7 @@ section {
     justify-content: center;
     align-items: center;
     font-size: 30px;
-  }
+}
 
 /* card-strategy */
 .card-strategy {

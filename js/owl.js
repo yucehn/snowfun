@@ -34,9 +34,8 @@ jQuery(document).ready(function ($) {
       loop: false,
       dots: false,
       pagination: false,
-      margin: 25,
+      margin: 20,
       autoHeight: false,
-      stagePadding: 50,
       responsive: {
         0: {
           items: 1.3,
@@ -44,37 +43,38 @@ jQuery(document).ready(function ($) {
           margin: 10,
         },
         470: {
-          items: 1.8,
+          items: 1.3,
           stagePadding: 10,
         },
         640: {
-          items: 2.1,
+          items: 1.5,
           stagePadding: 20,
         },
         767: {
-          items: 2.5,
+          items: 1.8,
           stagePadding: 20,
         },
-        1024: {
-          items: 3.5,
+        1000: {
+          items: 2.6,
           stagePadding: 20,
         },
         1440: {
-          items: 4.5,
+          items: 3.1,
           stagePadding: 20,
         }
       },
     });
 
-    $('.strategy .owl-nav').hide();
+    $('.strategy .owl-nav').css('opacity', '0');
     $('.owl-carousel-strategy').hover(
       function() {
         // 滑鼠進入時顯示按鈕
-        $('.strategy .owl-nav').show();
+        $('.strategy .owl-nav').css('opacity', '1');
+        // .css('opacity', '1');
       },
       function() {
         // 滑鼠離開時隱藏按鈕
-        $('.strategy .owl-nav').hide();
+        $('.strategy .owl-nav').css('opacity', '0');
       }
     );
   });
