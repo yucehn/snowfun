@@ -508,6 +508,15 @@ section {
     position: relative;
     overflow: hidden;
 }
+
+/* 0716 待確認
+.skiResort-tab {
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+}
+.skiResort-tab .nav-item + .nav-item{
+    margin-left: 5px;
+} */
 .section-skiResort .nav-link {
     color: #00558f;
     width: 109.5px;

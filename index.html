@@ -393,18 +393,66 @@
                 </div>
               </div>
               <!-- tab選單 -->
-              <ul class="nav nav-pills my-3" id="pills-tab" role="tablist">
+              <ul class="nav nav-pills my-3 skiResort-tab" id="pills-tab" role="tablist">
                 <li class="nav-item" role="presentation">
-                  <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">北海道</button>
+                  <button 
+                    class="nav-link active" 
+                    id="pills-home-tab" 
+                    data-bs-toggle="pill" 
+                    data-bs-target="#pills-home" 
+                    type="button" 
+                    role="tab" 
+                    aria-controls="pills-home" 
+                    aria-selected="true"
+                    onclick="updateMapPosition(43.17411408806869, 142.80809972631752)"
+                  >
+                    北海道
+                  </button>
                 </li>
                 <li class="nav-item" role="presentation">
-                  <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">東北</button>
+                  <button 
+                    class="nav-link" 
+                    id="pills-profile-tab" 
+                    data-bs-toggle="pill" 
+                    data-bs-target="#pills-profile" 
+                    type="button" 
+                    role="tab" 
+                    aria-controls="pills-profile" 
+                    aria-selected="false" 
+                    onclick="updateMapPosition(36.340545141096094, 138.64370855469755)"
+                  >
+                    東北
+                  </button>
                 </li>
                 <li class="nav-item" role="presentation">
-                  <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">新瀉</button>
+                  <button 
+                    class="nav-link" 
+                    id="pills-contact-tab" 
+                    data-bs-toggle="pill" 
+                    data-bs-target="#pills-contact" 
+                    type="button" 
+                    role="tab" 
+                    aria-controls="pills-contact" 
+                    aria-selected="false" 
+                    onclick="updateMapPosition(36.9120149435694, 138.16813408938614)"
+                  >
+                    新瀉
+                  </button>
                 </li>
                 <li class="nav-item" role="presentation">
-                  <button class="nav-link" id="pills-disabled-tab" data-bs-toggle="pill" data-bs-target="#pills-disabled" type="button" role="tab" aria-controls="pills-disabled" aria-selected="false">長野</button>
+                  <button 
+                    class="nav-link" 
+                    id="pills-disabled-tab" 
+                    data-bs-toggle="pill" 
+                    data-bs-target="#pills-disabled" 
+                    type="button" 
+                    role="tab" 
+                    aria-controls="pills-disabled" 
+                    aria-selected="false"
+                    onclick="updateMapPosition(36.749134808174176, 137.86616802587497)"
+                  >
+                    長野
+                  </button>
                 </li>
               </ul> 
             </div>
