@@ -464,7 +464,7 @@ section {
 }
 @media (max-width:391px) {
     .section-title-box .container {
-        padding: 0;
+        /* padding: 0; */
     }
     .section-title-box::after {
         height: 174px;
@@ -509,14 +509,10 @@ section {
     overflow: hidden;
 }
 
-/* 0716 待確認
-.skiResort-tab {
-    flex-wrap: nowrap;
-    overflow-x: scroll;
+.section-skiResort .skiResort-tab {
+    gap: 5px;
 }
-.skiResort-tab .nav-item + .nav-item{
-    margin-left: 5px;
-} */
+
 .section-skiResort .nav-link {
     color: #00558f;
     width: 109.5px;
@@ -532,7 +528,10 @@ section {
     color: white;
     background-color:#00558f ;
 }
-
+.section-skiResort .tab-content {
+    padding-top: 50px;
+}
+/*  */
 .section-join {
     height: 420px;
     background: url(../images/join_bg.png) no-repeat;
@@ -548,10 +547,24 @@ section {
     position: absolute;
     top: 120px;
 }
-#map {
+.skiResort-map #map {
     width: 100vw;
     height: 600px;
 }
+img[alt="Google"],
+.gmnoprint {
+    display: none;
+}
+/* .skiResort-map */
+@media (max-width:768px) {
+    .skiResort-map #map {
+        height: 500px;
+    }
+    .section-skiResort .tab-content {
+        padding-top: 140px;
+    }
+}
+
 @media (max-width:475px) {
     .section-skiResort {
         padding-bottom: 0;
@@ -559,6 +572,14 @@ section {
     .section-skiResort .nav-link{
         font-size: 14px;
         width: 89px;
+    }
+}
+@media (max-width:380px) {
+    .section-skiResort .nav-item {
+        flex: 1;
+    }
+    .section-skiResort .nav-link{
+        width: 100%;
     }
 }
 
@@ -820,8 +841,8 @@ section {
     display: none;
 }
 .container-swiperBox {
-    position: relative; 
-    top: -300px;
+    /* position: relative; 
+    top: -300px; */
 }
 
 @media (max-width:475px){
@@ -842,17 +863,23 @@ section {
 }
 
 
-/* owl  strategy */
+/* owl  strategy */ 
+/* owl-carousel-skiResort */
 .carousel-section {
     position: relative;
     overflow: hidden;
+    pointer-events: none;
 }
+.carousel-section .owl-carousel-skiResort .owl-stage,
 .carousel-section .owl-carousel-strategy .owl-stage {
     padding-left: 0 !important;
+    pointer-events: auto;
 }
+.carousel-section .owl-carousel-skiResort .owl-stage-outer,
 .carousel-section .owl-carousel-strategy .owl-stage-outer {
     overflow: unset;
 }
+.carousel-section .owl-carousel-skiResort .owl-nav,
 .carousel-section .owl-carousel-strategy .owl-nav {
     position: absolute;
     top: 50%;
@@ -860,44 +887,65 @@ section {
     right: 0;
     margin-top: -50px;
     transition: all .2s;
+    pointer-events: auto;
 }
-.carousel-section .owl-carousel-strategy .owl-nav .owl-next,
-.carousel-section .owl-carousel-strategy .owl-nav .owl-prev {
+
+.carousel-section .owl-carousel-skiResort .owl-nav button,
+.carousel-section .owl-carousel-strategy .owl-nav button {
+    border: none;
+    padding: 0;
+}
+
+.carousel-section .owl-carousel-skiResort .owl-nav .skiResort-next,
+.carousel-section .owl-carousel-skiResort .owl-nav .skiResort-prev,
+.carousel-section .owl-carousel-strategy .owl-nav .strategy-next,
+.carousel-section .owl-carousel-strategy .owl-nav .strategy-prev {
     position: absolute;
     width: 100px;
     height: 100px;
     background-color: #1ba4ed;
     border-radius: 50%;
 }
-.carousel-section .owl-carousel-strategy .owl-nav .owl-next:hover,
-.carousel-section .owl-carousel-strategy .owl-nav .owl-prev:hover {
+.carousel-section .owl-carousel-skiResort .owl-nav .skiResort-next:hover,
+.carousel-section .owl-carousel-skiResort .owl-nav .skiResort-prev:hover,
+.carousel-section .owl-carousel-strategy .owl-nav .strategy-next:hover,
+.carousel-section .owl-carousel-strategy .owl-nav .strategy-prev:hover {
     background-color: #00558f;
 }
-.carousel-section .owl-next.disabled,
-.carousel-section .owl-prev.disabled {
+.carousel-section .skiResort-next.disabled,
+.carousel-section .skiResort-prev.disabled,
+.carousel-section .strategy-next.disabled,
+.carousel-section .strategy-prev.disabled {
     opacity: 0;
     pointer-events: none;
 }
-.carousel-section .owl-carousel-strategy .owl-nav .owl-next {
+.carousel-section .owl-carousel-skiResort .owl-nav .skiResort-next,
+.carousel-section .owl-carousel-strategy .owl-nav .strategy-next {
     right: 0;
 }
-.carousel-section .owl-carousel-strategy .owl-nav .owl-prev {
+.carousel-section .owl-carousel-skiResort .owl-nav .skiResort-prev,
+.carousel-section .owl-nav .strategy-prev {
     left: 0;
 }
-.carousel-section .owl-carousel-strategy .owl-nav .owl-next:focus,
-.carousel-section .owl-carousel-prev .owl-nav .owl-prev:focus {
+.carousel-section .owl-carousel-skiResort .owl-nav .skiResort-next:focus,
+.carousel-section .owl-carousel-skiResort .owl-nav .skiResort-prev:focus,
+.carousel-section .owl-nav .strategy-next:focus,
+.carousel-section .owl-nav .strategy-prev:focus {
     outline: 0;
 }
 
-.carousel-section .owl-next span ,
-.carousel-section .owl-prev span {
+.carousel-section .skiResort-next span ,
+.carousel-section .skiResort-prev span,
+.carousel-section .strategy-next span ,
+.carousel-section .strategy-prev span {
     font-size: 0;
     display: block;
     width: 100px;
     height: 100px;
     background:url(../images/slide_arrow_right.svg) no-repeat center;
 }
-.carousel-section .owl-prev span {
+.carousel-section .skiResort-prev span,
+.carousel-section .strategy-prev span {
     transform: rotate(180deg);
 }
 @media (max-width:767px) {
