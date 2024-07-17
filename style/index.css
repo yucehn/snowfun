@@ -527,6 +527,7 @@ section {
 .section-skiResort {
     position: relative;
     overflow: hidden;
+    padding: 70px 0 0 0;
 }
 
 .section-skiResort .skiResort-tab {
@@ -586,9 +587,6 @@ img[alt="Google"],
 }
 
 @media (max-width:475px) {
-    .section-skiResort {
-        padding-bottom: 0;
-    }
     .section-skiResort .nav-link{
         font-size: 14px;
         width: 89px;
@@ -626,6 +624,12 @@ img[alt="Google"],
 
 
 /* coach owl*/
+@media (max-width:992px) {
+    .coach-container {
+        padding-left: 16px;
+    }
+}
+
 .owl-carousel-coach .owl-item img {
 	width: 100%;
 	height: auto;
@@ -700,6 +704,24 @@ img[alt="Google"],
   font-size: 18px;
   font-weight: 700;
   position: relative;
+}
+
+.item-group-img .state {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+}
+
+.item-group-img .state div {
+	width: 74px;
+	height: 30px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 20px;
+}
+
+.item-group-img .state .state-open {
+	background-color: #C3F3C0;
 }
 
 .item-group-fraction {

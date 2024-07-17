@@ -29,10 +29,10 @@
   <body>
     <main>
       <nav class="navbar" aria-label="Light offcanvas navbar">
-        <div class="container-lg container-fluid justify-content-between">
+        <div class="container-fluid justify-content-between">
           <div class="d-flex align-items-center flex-grow-1">
             <div class="me-4 me-lg-0" id="offcanvasNavbarLightLabel">
-              <a href="index.html">
+              <a href="index.html" class="logo">
                 <img src="./images/logo.svg" />
               </a>
             </div>
@@ -320,7 +320,7 @@
       </section>
 
       <!-- 教練 -->
-      <section>
+      <div>
         <div class="container">
           <div class="section-title d-flex justify-content-between">
             <h2>教練團隊，最<span class="noto-serif-jp-900">fun</span>心</h2>
@@ -329,7 +329,7 @@
             </div>
           </div>
         </div>
-        <div class="container-fluid my-3">
+        <div class="coach-container mt-3">
           <div class="owl-carousel owl-carousel-coach">
             <div class="item">
               <a href="go教練個人頁.com">
@@ -351,10 +351,60 @@
                     </div>
                   </div>
                   <div class="item-group-img d-flex">
-                    <img src="images/coach.png"/>
-                      <div class="name d-flex justify-content-center">
-                        <span class="d-flex justify-content-center align-items-center text-white">Name</span>
+                    <div class="state">
+                      <div class="state-open d-flex justify-content-center align-items-center">
+                        開課中
                       </div>
+                    </div>
+                    <img src="images/coach.png"/>
+                    <div class="name d-flex justify-content-center">
+                      <span class="d-flex justify-content-center align-items-center text-white">Name</span>
+                    </div>
+                  </div>
+                  <div class="item-group-fraction d-flex align-items-center">
+                    <img class="star" src="images/star.png"/>
+                    <div class="fraction">4.6</div>
+                  </div>
+                  <div class="item-group-rate d-flex flex-column justify-content-center">
+                    <div class="title">
+                      教練收費
+                    </div>
+                    <div class="amount">JPY 14,000 / hr
+                      <span class="amount-up">起</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="item">
+              <a href="go教練個人頁.com">
+                <div class="item-group">
+                  <div class="item-group-header d-flex justify-content-between">
+                    <div class="level d-flex flex-column">
+                        <div class="level-title">
+                          證照等級
+                        </div>
+                        <div class="level-number">Level 1</div>
+                    </div>
+                    <div class="sort d-flex">
+                      <div class="type d-flex flex-column justify-content-center">
+                        <span class="d-flex justify-content-center">單</span>
+                      </div>
+                      <div class="type d-flex flex-column justify-content-center">
+                        <span class="d-flex justify-content-center">雙</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item-group-img d-flex">
+                    <div class="state">
+                      <div class="state-open d-flex justify-content-center align-items-center">
+                        開課中
+                      </div>
+                    </div>
+                    <img src="images/coach2.png"/>
+                    <div class="name d-flex justify-content-center">
+                      <span class="d-flex justify-content-center align-items-center text-white">Name</span>
+                    </div>
                   </div>
                   <div class="item-group-fraction d-flex align-items-center">
                     <img class="star" src="images/star.png"/>
@@ -373,7 +423,7 @@
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
       <!-- 雪場 -->
       <section class="section-skiResort">
@@ -1031,25 +1081,93 @@
           </div>
         </div>
       </section>
-      
+
       <!-- 成為教練 -->
-      <section class="section-join">
-        <div class="container">
-          <h2 class="section-title">加入我們，大<span class="noto-serif-jp-900">fun</span>異彩</h2>
-          <p class="section-subTitle">來這裡，學生馬上找到你</p>
-          <button type="button" class="btn btn-primary join-btn">成為教練</button>
-        </div>
-      </section>
-      <!-- pc footer -->
-      <footer class="footer-pc">
-        <div class="container">
-          <div class="row">
-            <div class="col-9">
-              <div>
-                <img src="./images/logo_white.svg">
-              </div>
+        <footer>
+          <section class="section-join">
+            <div class="container">
+              <h2 class="section-title">加入我們，大<span class="noto-serif-jp-900">fun</span>異彩</h2>
+              <p class="section-subTitle">來這裡，學生馬上找到你</p>
+              <button type="button" class="btn btn-primary join-btn">成為教練</button>
+            </div>
+          </section>
+          <div class="footer-pc">
+            <div class="container">
               <div class="row">
-                <div class="col-4">
+                <div class="col-9">
+                  <div>
+                    <img src="./images/logo_white.svg">
+                  </div>
+                  <div class="row">
+                    <div class="col-4">
+                      <ul>
+                        <li>滑雪趣有限公司 </li>
+                        <li>Snow Fun International Co., Ltd.</li>
+                        <li>統一編號 82841380</li>
+                        <li>Email : info@snowfun.com.tw</li>
+                      </ul>
+                    </div>
+                    <div class="col-8 align-self-end">
+                      <ul class="social-box">
+                        <li>
+                          <a href="//www.facebook.com/groups/453785412129721/" target="_blank">
+                            <img src="./images/fb.svg">
+                          </a>
+                        </li>
+                        <li>
+                          <a href="//www.instagram.com/snowfunfun/" target="_blank">
+                            <img src="./images/ig.svg">
+                          </a>
+                        </li>
+                        <li><a href="#">
+                            <img src="./images/tk.svg">
+                          </a></li>
+                        <li><a href="#">
+                            <img src="./images/wc.svg">
+                          </a></li>
+                        <li><a href="#">
+                            <img src="./images/yt.svg">
+                          </a></li>
+                      </ui>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-3">
+                  <div class="row">
+                    <div class="col">
+                      <p class="footer-title">信息</p>
+                      <ul class="footer-link">
+                        <li><a class="link-underline link-underline-opacity-0" href="#">關於我們</a></li>
+                        <li><a class="link-underline link-underline-opacity-0" href="#">常見問題</a></li>
+                        <li><a class="link-underline link-underline-opacity-0" href="#">聯絡我們</a></li>
+                      </ul>
+                    </div>
+                    <div class="col">
+                      <p class="footer-title">合作</p>
+                        <ul class="footer-link">
+                          <li><a class="link-underline link-underline-opacity-0" href="#">成為教練</a></li>
+                          <li><a class="link-underline link-underline-opacity-0" href="#">合作夥伴申請</a></li>
+                        </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="d-flex justify-content-between footer-bottom">
+                <ul class="row g-3">
+                  <li class="col"><a class="link-underline link-underline-opacity-0" href="#">網站使用聲明</a></li>
+                  <li class="col"><a class="link-underline link-underline-opacity-0" href="#">隱私權條款</a></li>
+                </ul>
+                <div>© 2024 SnowFun ALL RIGHTS RESERVED.</div>
+              </div>
+            </div>
+          </div>
+          <div class="footer-mb">
+            <div class="container">
+              <div class="row">
+                <div class="col-6 d-flex justify-content-center">
+                    <img src="./images/logo_white.svg" width="100%">          
+                </div>
+                <div class="col-6 d-flex justify-content-center align-items-center">
                   <ul>
                     <li>滑雪趣有限公司 </li>
                     <li>Snow Fun International Co., Ltd.</li>
@@ -1057,133 +1175,66 @@
                     <li>Email : info@snowfun.com.tw</li>
                   </ul>
                 </div>
-                <div class="col-8 align-self-end">
-                  <ul class="social-box">
-                    <li>
-                      <a href="//www.facebook.com/groups/453785412129721/" target="_blank">
-                        <img src="./images/fb.svg">
-                      </a>
-                    </li>
-                    <li>
-                      <a href="//www.instagram.com/snowfunfun/" target="_blank">
-                        <img src="./images/ig.svg">
-                      </a>
-                    </li>
-                    <li><a href="#">
-                        <img src="./images/tk.svg">
-                      </a></li>
-                    <li><a href="#">
-                        <img src="./images/wc.svg">
-                      </a></li>
-                    <li><a href="#">
-                        <img src="./images/yt.svg">
-                      </a></li>
-                  </ui>
+                <div class="row mt-3 mb-3">
+                  <div class="col-12 align-self-end">
+                    <ul class="social-box d-flex justify-content-center">
+                      <li>
+                        <a href="//www.facebook.com/groups/453785412129721/" target="_blank">
+                          <img src="./images/fb.svg">
+                        </a>
+                      </li>
+                      <li>
+                        <a href="//www.instagram.com/snowfunfun/" target="_blank">
+                          <img src="./images/ig.svg">
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <img src="./images/tk.svg">
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <img src="./images/wc.svg">
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <img src="./images/yt.svg">
+                        </a>
+                      </li>
+                    </ui>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-4">
+                    <p class="footer-title">信息</p>
+                      <ul class="footer-link">
+                        <li><a class="link-underline link-underline-opacity-0" href="#">關於我們</a></li>
+                        <li><a class="link-underline link-underline-opacity-0" href="#">常見問題</a></li>
+                        <li><a class="link-underline link-underline-opacity-0" href="#">聯絡我們</a></li>
+                      </ul>
+                  </div>
+                  <div class="col-4">
+                    <p class="footer-title">合作</p>
+                        <ul class="footer-link">
+                          <li><a class="link-underline link-underline-opacity-0" href="#">成為教練</a></li>
+                          <li><a class="link-underline link-underline-opacity-0" href="#">合作夥伴申請</a></li>
+                        </ul>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="col-3">
-              <div class="row">
-                <div class="col">
-                  <p class="footer-title">信息</p>
-                  <ul class="footer-link">
-                    <li><a class="link-underline link-underline-opacity-0" href="#">關於我們</a></li>
-                    <li><a class="link-underline link-underline-opacity-0" href="#">常見問題</a></li>
-                    <li><a class="link-underline link-underline-opacity-0" href="#">聯絡我們</a></li>
+              <div class="d-flex justify-content-between footer-bottom flex-column">
+                  <ul class="mb-4 g-3 statement">
+                    <li class=""><a class="link-underline link-underline-opacity-0" href="#">網站使用聲明</a></li>
+                    <li class=""><a class="link-underline link-underline-opacity-0" href="#">隱私權條款</a></li>
                   </ul>
-                </div>
-                <div class="col">
-                  <p class="footer-title">合作</p>
-                    <ul class="footer-link">
-                      <li><a class="link-underline link-underline-opacity-0" href="#">成為教練</a></li>
-                      <li><a class="link-underline link-underline-opacity-0" href="#">合作夥伴申請</a></li>
-                    </ul>
-                </div>
+                  <div class="col-12 copyright">© 2024 SnowFun ALL RIGHTS RESERVED.</div>
               </div>
             </div>
           </div>
-          <div class="d-flex justify-content-between footer-bottom">
-            <ul class="row g-3">
-              <li class="col"><a class="link-underline link-underline-opacity-0" href="#">網站使用聲明</a></li>
-              <li class="col"><a class="link-underline link-underline-opacity-0" href="#">隱私權條款</a></li>
-            </ul>
-            <div>© 2024 SnowFun ALL RIGHTS RESERVED.</div>
-          </div>
-        </div>
-      </footer>
-      <!-- mb footer -->
-      <footer class="footer-mb">
-        <div class="container">
-          <div class="row">
-            <div class="col-6 d-flex justify-content-center">
-                <img src="./images/logo_white.svg" width="100%">          
-            </div>
-            <div class="col-6 d-flex justify-content-center align-items-center">
-              <ul>
-                <li>滑雪趣有限公司 </li>
-                <li>Snow Fun International Co., Ltd.</li>
-                <li>統一編號 82841380</li>
-                <li>Email : info@snowfun.com.tw</li>
-              </ul>
-            </div>
-            <div class="row mt-3 mb-3">
-              <div class="col-12 align-self-end">
-                <ul class="social-box d-flex justify-content-center">
-                  <li>
-                    <a href="//www.facebook.com/groups/453785412129721/" target="_blank">
-                      <img src="./images/fb.svg">
-                    </a>
-                  </li>
-                  <li>
-                    <a href="//www.instagram.com/snowfunfun/" target="_blank">
-                      <img src="./images/ig.svg">
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <img src="./images/tk.svg">
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <img src="./images/wc.svg">
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <img src="./images/yt.svg">
-                    </a>
-                  </li>
-                </ui>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-4">
-                <p class="footer-title">信息</p>
-                  <ul class="footer-link">
-                    <li><a class="link-underline link-underline-opacity-0" href="#">關於我們</a></li>
-                    <li><a class="link-underline link-underline-opacity-0" href="#">常見問題</a></li>
-                    <li><a class="link-underline link-underline-opacity-0" href="#">聯絡我們</a></li>
-                  </ul>
-              </div>
-              <div class="col-4">
-                <p class="footer-title">合作</p>
-                    <ul class="footer-link">
-                      <li><a class="link-underline link-underline-opacity-0" href="#">成為教練</a></li>
-                      <li><a class="link-underline link-underline-opacity-0" href="#">合作夥伴申請</a></li>
-                    </ul>
-              </div>
-            </div>
-          </div>
-          <div class="d-flex justify-content-between footer-bottom flex-column">
-              <ul class="mb-4 g-3 statement">
-                <li class=""><a class="link-underline link-underline-opacity-0" href="#">網站使用聲明</a></li>
-                <li class=""><a class="link-underline link-underline-opacity-0" href="#">隱私權條款</a></li>
-              </ul>
-              <div class="col-12 copyright">© 2024 SnowFun ALL RIGHTS RESERVED.</div>
-          </div>
-        </div>
-      </footer>
+        </footer>
+        
       <!-- 登入 modal -->
       <div
         class="modal fade"

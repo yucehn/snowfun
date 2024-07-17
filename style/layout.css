@@ -54,6 +54,7 @@ a {
     font-optical-sizing: auto;
     font-weight: 900;
     font-style: normal;
+    font-size: 32px;
   }
 /* ------- */
 
@@ -90,10 +91,28 @@ a {
     background-color: var(--primary-color);
 }
 
+.navbar .logo {
+    padding-right: 16px;
+}
 .navbar-toggler:focus{
     outline: none;
     box-shadow: none;
 }
+@media (min-width:1200px){
+    .navbar {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+}
+@media (max-width:991px){
+    .navbar {
+        padding: 0;
+    }
+    .navbar .logo img{
+        height: 60px;
+    }
+}
+
 .offcanvas.nav-offcanvas {
     width: 50%;
 }
@@ -101,15 +120,8 @@ a {
     border: none;
 }
 
-
 footer {
-    font-size: 14px;
-    line-height: 18px;
-    height: 280px;
-    padding: 24px 0;
-    color: white;
-    background-color: var(--primary-color);
-    border-radius: 12px 12px 0 0;
+ position: relative;
 }
 
 .social-box {
@@ -146,7 +158,47 @@ footer {
 .footer-bottom li {
     white-space: nowrap;
 }
-
+.footer-mb ,
+.footer-pc {
+    font-size: 14px;
+    line-height: 18px;
+    height: 280px;
+    padding: 24px 0;
+    color: white;
+    background-color: var(--primary-color);
+    border-radius: 12px 12px 0 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+.footer-pc {
+    top: 405px;
+}
+.footer-mb {
+    display: none;
+}
+@media(max-width:768px) {
+    .footer-pc {
+        display: none;
+    }
+    .footer-mb {
+        display: block;
+        height: auto;
+        top: 390px;
+    }
+    .copyright {
+        text-align: right;
+    }
+    .statement {
+        display: flex;
+    }
+    .statement li {
+        margin-right: 16px;
+    }
+    .footer-bottom {
+        padding-top: 24px;
+    }
+}
 
 /* modal */
 .modal-content {
@@ -227,33 +279,6 @@ footer {
     margin: 0 0 32px;
 }
 
-/* footer */
-.footer-mb {
-    display: none;
-}
-@media(max-width:768px) {
-    .footer-pc {
-        display: none;
-    }
-    .footer-mb {
-        display: block;
-    }
-    footer {
-        height: auto;
-    }
-    .copyright {
-        text-align: right;
-    }
-    .statement {
-        display: flex;
-    }
-    .statement li {
-        margin-right: 16px;
-    }
-    .footer-bottom {
-        padding-top: 24px;
-    }
-}
 
 /* float */
 .float-bar{
