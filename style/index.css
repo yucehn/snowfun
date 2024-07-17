@@ -31,7 +31,7 @@
     position: absolute;
     right: 0;
     bottom: -40px;
-    width: 1290px;
+    width: 100%;
     height: 305px;
     border-radius: 16px 0 0 16px;
     background: linear-gradient(to bottom,  rgba(210,211,215,.7) 0%,rgba(228,230,234,1) 29%,rgba(240,241,244,1) 40%,rgba(255,255,255,1) 50%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
@@ -456,12 +456,32 @@ section {
     position: absolute;
     top: 0;
     left: 0;
-    width: 1370px;
+    width: 100%;
     height: 220px;
     background: #fff;
     border-radius: 0px 16px 16px 0px;
     z-index: 1;
 }
+
+@media (min-width:992px) {
+    .section-title-box::after,
+    .banner-box::after {
+        width: calc(100% - (100% - 960px) / 2);
+    }
+} 
+@media (min-width: 1200px) {
+    .section-title-box::after,
+    .banner-box::after {
+        width: calc(100% - (100% - 1140px) / 2);
+    }
+}
+@media (min-width: 1400px) {
+    .section-title-box::after,
+    .banner-box::after {
+        width: calc(100% - (100% - 1320px) / 2);
+    }
+}
+
 @media (max-width:391px) {
     .section-title-box .container {
         /* padding: 0; */
