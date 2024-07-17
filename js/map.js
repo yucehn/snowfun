@@ -8,12 +8,12 @@
     var newPosition = new google.maps.LatLng(latitude, longitude);
     var newCenter= new google.maps.LatLng(latitude, longitude + 0.3);
     map.setCenter(newCenter);
-    marker.setPosition(newPosition);
+    // marker.setPosition(newPosition);
   }
 
   function init() {
     var mapOptions = {
-      zoom: 11,
+      zoom: 10,
       center: new google.maps.LatLng(43.17411408806869, 142.80809972631752 + 0.3),
       styles: [
         {
@@ -69,7 +69,7 @@
     map = new google.maps.Map(mapElement, mapOptions);
 
     marker = new google.maps.Marker({
-      position: new google.maps.LatLng(43.17411408806869, 142.80809972631752),
+      // position: new google.maps.LatLng(43.17411408806869, 142.80809972631752),
       // animation: google.maps.Animation.BOUNCE,
       // icon: 'https://cdn2.iconfinder.com/data/icons/travel-solid-world-is-beautiful/512/Plane-24.png',
       // title: 'sahoro',
