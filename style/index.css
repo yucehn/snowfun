@@ -1131,8 +1131,7 @@ section {
     pointer-events: none;
 }
 .calendar td.before_day {
-    color: gray;
-    opacity: 0.25;
+    color: #c2c2c2;
     pointer-events: none;
     background-color: transparent;
 }
