@@ -260,15 +260,24 @@ $(document).ready(function() {
   function generateHtml(data, keyId) {
       return data.map((item, index) => `
           <div class="collapseSelectPlace-item col-6 col-sm-4 col-md-3 col-lg-3">
-              <input type="radio" class="btn-check" name="options-base" id="${keyId}_${index + 1}" autocomplete="off">
+              <input type="radio" class="btn-check" name="selectPlaceModal" id="${keyId}_${index + 1}" autocomplete="off">
               <label class="btn btn-radio btn-radio-lg" for="${keyId}_${index + 1}">${item.name}</label>
           </div>
       `).join('');
   }
+  function modal_generateHtml(data, keyId) {
+    return data.map((item, index) => `
+        <div class="collapseSelectPlace-item col-6 col-sm-4">
+            <input type="radio" class="btn-check" name="selectPlaceModal" id="modal_${keyId}_${index + 1}" autocomplete="off">
+            <label class="btn btn-radio btn-radio-lg" for="modal_${keyId}_${index + 1}">${item.name}</label>
+        </div>
+    `).join('');
+}
     
   const listKey = Object.keys(data);
     listKey.map((keyId) => {
         document.getElementById(keyId).innerHTML = generateHtml(data[keyId], keyId);
+        document.getElementById(`modal_${keyId}`).innerHTML = modal_generateHtml(data[keyId], keyId);
     });
     
     // 確定選擇雪場

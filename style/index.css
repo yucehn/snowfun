@@ -1236,3 +1236,8 @@ img[alt="Google"],
     top: 40px;
     right: 30px; 
 }
+
+.selectBox-dialog .modal-body {
+    max-height: 400px;
+    overflow-y: scroll;
+}
