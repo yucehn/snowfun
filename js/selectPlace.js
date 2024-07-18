@@ -259,7 +259,7 @@ $(document).ready(function() {
   // Function to generate HTML
   function generateHtml(data, keyId) {
       return data.map((item, index) => `
-          <div class="col-6 col-sm-4 col-md-3 col-lg-3">
+          <div class="collapseSelectPlace-item col-6 col-sm-4 col-md-3 col-lg-3">
               <input type="radio" class="btn-check" name="options-base" id="${keyId}_${index + 1}" autocomplete="off">
               <label class="btn btn-radio btn-radio-lg" for="${keyId}_${index + 1}">${item.name}</label>
           </div>

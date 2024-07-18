@@ -327,9 +327,18 @@
     overflow-y: scroll; */
     padding: 20px;
 }
+.collapseSelectPlace-item {
+    margin-top: 10px;
+}
 
 #collapseSelectType .card-body {
     padding: 32px;
+}
+.collapseSelectType-item {
+    padding: 0;
+}
+.collapseSelectType-item + .collapseSelectType-item {
+    margin-left: 10px;
 }
 .selectPlace-area {
     white-space: nowrap;
