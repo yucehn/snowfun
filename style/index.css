@@ -161,9 +161,9 @@
     border: 1px solid #c2c2c2;
     position: absolute;
     left: -2px;
-    top: -2px;
+    top: -1px;
     right: 0px;
-    bottom: -2px;
+    bottom: -1px;
     z-index: -1;
 }
 .selectDate-btn-group .btn-select-type .btn::after {
@@ -521,23 +521,23 @@ section {
         margin-top: 80px;
     }
 }
-.section-title .more {
+.section-title .more a{
     font-size: 16px;
     color: #666;
+    display: flex;
+    text-decoration: none;   
 }
-.section-title .more::after,
-.more_arrow::after {
-    content: '';
-    display: inline-block;
-    width: 24px;
-    height: 24px;
-    background: url(../images/arrow_left.svg);
-    background-position-y: -2px;
-    vertical-align: middle;
+.more a i {
+    color: #C2C2C2;
+    margin: 0 8px;
 }
+.more a:hover,.more a:hover i {
+    color: #00558F;
+}
+
 .section-title .more span {
     color: #1ba4ed;
-    margin-left: 10px;
+    margin: 0 8px;
 }
 .section-subTitle {
     color: #444;

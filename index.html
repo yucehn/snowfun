@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <!-- font -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/fontawesome.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+JP:wght@200..900&display=swap" rel="stylesheet">
@@ -325,7 +326,9 @@
           <div class="section-title d-flex justify-content-between">
             <h2>教練團隊，最<span class="noto-serif-jp-900">fun</span>心</h2>
             <div class="more">
-              <a class="link-underline link-underline-opacity-0" href="#">查看更多教練<span>200+</span></a>
+              <a class="d-flex justify-content-center align-items-center nderline link-underline-opacity-0" href="#">查看更多教練<span>200+</span>
+                <i class="fa-solid fa-angle-right"></i>
+              </a>
             </div>
           </div>
         </div>
@@ -433,7 +436,9 @@
             <div class="section-title d-flex justify-content-between">
               <h2>主題雪場，超<span class="noto-serif-jp-900">fun</span>鬆</h2>
               <div class="more">
-                <a class="link-underline link-underline-opacity-0" href="#">查看更多雪場</a>
+                <a class="link-underline d-flex ljustify-content-center align-items-center ink-underline-opacity-0" href="#">查看更多雪場
+                  <i class="fa-solid fa-angle-right"></i>
+                </a>
               </div>
             </div>
             <!-- tab選單 -->
@@ -1028,7 +1033,9 @@
           <div class="section-title mb-4 d-flex justify-content-between">
             <h2>旅遊攻略，新<span class="noto-serif-jp-900">fun</span>送</h2>
             <div class="more">
-              <a class="link-underline link-underline-opacity-0" href="#">查看更多攻略</a>
+              <a class="link-underline d-flex align-items-center  justify-content-center  link-underline-opacity-0" href="#">查看更多攻略
+                <i class="fa-solid fa-angle-right"></i>
+              </a>
             </div>
           </div>
         </div>
@@ -1274,10 +1281,10 @@
                     <input type="text" class="form-control" id="pw" placeholder="請輸入6~16位密碼" required>
                   </div>
                   <div class="d-flex justify-content-end">
-                    <button class="btn more_arrow btn-forgetPw" onclick="forgetPwModal()">忘記密碼</button>
+                    <button class="btn btn-forgetPw border-0" onclick="forgetPwModal()">忘記密碼</button>
                   </div>
                   <div class="d-flex justify-content-center">
-                    <button type="submit" class="btn btn-primary btn-login">
+                    <button type="submit" class="btn border-0 btn-primary btn-login">
                       登入
                     </button>
                   </div>
@@ -1292,7 +1299,7 @@
               <p class="bold">尚未加入會員？</p>
               <button
                 type="button"
-                class="btn more_arrow"
+                class="btn border-0"
                 onclick="registerModal()"
               >
                 註冊
@@ -1362,7 +1369,7 @@
               <p class="bold">已有帳號？</p>
               <button
                 type="button"
-                class="btn more_arrow"
+                class="btn border-0"
                 onclick="loginModal()"
               >
                 登入
