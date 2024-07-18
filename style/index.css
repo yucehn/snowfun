@@ -234,7 +234,8 @@
 .btn-check+.btn:hover {
     color: #666;
 }
-.btn.btn-radio.selected {
+.btn.btn-radio.selected,
+.btn.btn-radio.selected-date {
     background-color: #ebf1f5;
 }
 /* #collapseSelectDate .btn.btn-radio{

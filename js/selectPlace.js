@@ -291,6 +291,17 @@ $(document).ready(function() {
         //   alert('請選擇一個選項');
         }
       });
+
+      $('#modal_selectPlace_confirmButton').on('click', function() {
+        const selectedRadio = $('input[name="selectPlaceModal"]:checked');
+        if (selectedRadio.length > 0) {
+          const selectedText = $('label[for="' + selectedRadio.attr('id') + '"]').text();
+          $('#selectPlaceButton').text(selectedText);
+          $("#selectPlaceModal").modal("hide");
+        } else {
+        //   alert('請選擇一個選項');
+        }
+      });
 });
   
 // collapseSelectType
@@ -306,6 +317,20 @@ $(document).ready(function() {
       }
       $('#selectTypeButton').text(selectedText);
       $('#collapseSelectType').collapse('hide');
+    } else {
+      // alert('請選擇一個雪板類型');
+    }
+  });
+  $('#modal_selectType_confirmButton').on('click', function() {
+    const selectedRadio = $('input[name="selectTypeModal"]:checked');
+    if (selectedRadio.length > 0) {
+      let selectedText = $('label[for="' + selectedRadio.attr('id') + '"]').text();
+      const selectedTextList = selectedText.split(" ");
+      if(selectedTextList.length > 1){
+          selectedText= selectedTextList[0];
+      }
+      $('#selectTypeButton').text(selectedText);
+      $('#selectTypeModal').collapse('hide');
     } else {
       // alert('請選擇一個雪板類型');
     }

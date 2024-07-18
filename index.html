@@ -163,19 +163,6 @@
           
           <div class="d-flex flex-column selectDate-wrapper">
             <div class="selectDate-btn-group d-flex justify-content-between align-items-center">
-              <!-- <div class="btn-select-place">
-                <button id="selectPlaceButton" class="btn collapsed" type="button" onclick="toggleDisplay()">選擇雪場</button>
-              </div>
-              <div class="btn-select-type">
-                <button id="selectTypeButton" class="btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSelectType" aria-expanded="false" aria-controls="collapseSelectType">
-                  雪板類型
-                </button>
-              </div>
-              <div id="selectDateButton" class="btn-select-date">
-                <button id="selectDateButton" class="btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSelectDate" aria-expanded="false" aria-controls="collapseSelectType">
-                  選擇日期
-                </button>
-              </div> -->
               <div class="btn-select-place">
                 <button
                   id="selectPlaceButton"
@@ -1474,7 +1461,7 @@
                   <label class="btn btn-radio w-full" for="selectPlaceModal_none">雪場不拘</label>
                 </div>
                 <div class="col">
-                  <button id="selectPlace_confirmButton" data-bs-dismiss="modal" type="button" class="btn btn-primary btn-rounded btn-selectPlaceLine confirmButton">
+                  <button id="modal_selectPlace_confirmButton" data-bs-dismiss="modal" type="button" class="btn btn-primary btn-rounded btn-selectPlaceLine confirmButton">
                     <div class="ms-1">確定</div>
                     <img src="./images/icon_arrow_right.svg">
                   </button>
@@ -1524,7 +1511,7 @@
                     <label class="btn btn-radio w-full" for="selectTypeNone_1">雪板類型不拘</label>
                   </div>
                   <div class="col">
-                    <button id="selectType_confirmButton_1" type="button" class="btn btn-primary btn-rounded btn-selectPlaceLine confirmButton" data-bs-dismiss="modal">
+                    <button id="modal_selectType_confirmButton" type="button" class="btn btn-primary btn-rounded btn-selectPlaceLine confirmButton" data-bs-dismiss="modal">
                       <div class="ms-1">確定</div>
                       <img src="./images/icon_arrow_right.svg">
                     </button>
@@ -1571,18 +1558,18 @@
               <div class="modal-footer">
                 <div class="d-flex flex-column gap-3 w-full">
                   <div class="d-flex gap-3 w-full justify-content-center align-items-center">
-                    <input aria-value="確切日期" type="radio" class="btn-check" name="options-base3" id="selectDate_day" autocomplete="off">
+                    <input aria-value="確切日期" type="radio" class="btn-check" name="selectDateModal" id="selectDate_day" autocomplete="off">
                     <label id="modal-single-date" class="btn btn-radio" for="selectDate_day">確切日期</label>
   
-                    <input aria-value="含前後兩日" type="radio" class="btn-check" name="options-base3" id="selectDate_towday" autocomplete="off">
+                    <input aria-value="含前後兩日" type="radio" class="btn-check" name="selectDateModal" id="selectDate_towday" autocomplete="off">
                     <label id="modal-highlight-range" class="btn btn-radio" for="selectDate_towday">含前後兩日</label>
   
-                    <input aria-value="含前後一週" type="radio" class="btn-check" name="options-base3" id="selectDate_week" autocomplete="off">
+                    <input aria-value="含前後一週" type="radio" class="btn-check" name="selectDateModal" id="selectDate_week" autocomplete="off">
                     <label id="modal-week-range" class="btn btn-radio" for="selectDate_week">含前後一週</label>
                   </div>
                   <div class="w-full d-flex justify-content-end">
-                    <button id="clear-button" class="btn">清除</button>
-                    <button id="date-submit" type="button" class="btn btn-primary btn-rounded btn-selectPlaceLine confirmButton" data-bs-dismiss="modal">
+                    <button id="modal-clear-button" class="btn">清除</button>
+                    <button id="modal-date-submit" type="button" class="btn btn-primary btn-rounded btn-selectPlaceLine confirmButton" data-bs-dismiss="modal">
                       <div class="ms-1">確定</div>
                       <img src="./images/icon_arrow_right.svg">
                     </button>

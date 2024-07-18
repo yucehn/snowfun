@@ -88,16 +88,16 @@ $(document).ready(function () {
 
     $("#highlight-range").click(function () {
       if (selectedDate) {
-        $(".selected").removeClass("selected");
-        $("#highlight-range").addClass("selected");
+        $(".selected-date").removeClass("selected-date");
+        $("#highlight-range").addClass("selected-date");
         highlightRange();
       }
     });
 
     $("#week-range").click(function () {
       if (selectedDate) {
-        $(".selected").removeClass("selected");
-        $("#week-range").addClass("selected");
+        $(".selected-date").removeClass("selected-date");
+        $("#week-range").addClass("selected-date");
         weekRange();
       }
     });
@@ -111,13 +111,21 @@ $(document).ready(function () {
 
     $('#clear-button').click(function() {
         clearHighlights();
+        const checkedRadio = $('input[name="options-base3"]:checked');
+      // If a radio button is checked, uncheck it
+      if (checkedRadio) {
+        checkedRadio.removeClass('selected-date')
+        checkedRadio.prop('checked', false)
+        $(".selected-date").removeClass("selected-date");
+      };
+        
     });
     $('#single-date').click(function() {
         if (selectedDate) {
             highlightSingleDate();
-            $("#single-date").addClass("selected");
-            $("#highlight-range").removeClass("selected");
-            $("#week-range").removeClass("selected");
+            $("#single-date").addClass("selected-date");
+            $("#highlight-range").removeClass("selected-date");
+            $("#week-range").removeClass("selected-date");
         }
     });
 
@@ -142,29 +150,36 @@ $(document).ready(function () {
 
     $('#modal-clear-button').click(function() {
       clearHighlights();
+      const checkedRadio = $('input[name="selectDateModal"]:checked');
+      // If a radio button is checked, uncheck it
+      if (checkedRadio) {
+        checkedRadio.removeClass('selected-date')
+        checkedRadio.prop('checked', false)
+        $(".selected-date").removeClass("selected-date");
+      };
     });
 
     $('#modal-single-date').click(function() {
         if (selectedDate) {
             highlightSingleDate();
-            $("#modal-single-date").addClass("selected");
-            $("#modal-highlight-range").removeClass("selected");
-            $("#modal-week-range").removeClass("selected");
+            $("#modal-single-date").addClass("selected-date");
+            $("#modal-highlight-range").removeClass("selected-date");
+            $("#modal-week-range").removeClass("selected-date");
         }
     });
 
     $('#modal-highlight-range').click(function () {
       if (selectedDate) {
-        $(".selected").removeClass("selected");
-        $("#modal-highlight-range").addClass("selected");
+        $(".selected-date").removeClass("selected-date");
+        $("#modal-highlight-range").addClass("selected-date");
         highlightRange();
       }
     });
 
     $('#modal-week-range').click(function () {
       if (selectedDate) {
-        $(".selected").removeClass("selected");
-        $("#modal-week-range").addClass("selected");
+        $(".selected-date").removeClass("selected-date");
+        $("#modal-week-range").addClass("selected-date");
         weekRange();
       }
     });
@@ -231,7 +246,7 @@ $(document).ready(function () {
     }
 
     function updateSelectDateButton() {
-      const selectedOption = $('input[name="options-base3"]:checked').attr('aria-value') || $('input[name="options-modal-base3"]:checked').attr('aria-value');
+      const selectedOption = $('input[name="options-base3"]:checked').attr('aria-value') || $('input[name="selectDateModal"]:checked').attr('aria-value');
       let formattedText = `
       <div class="inputSelectDate">
           ${selectedDate}
@@ -239,6 +254,7 @@ $(document).ready(function () {
       </div>`;
       $('#selectDateButton').html(formattedText);
       $('#collapseSelectDate').collapse('hide');
+      $('#selectDateModal').modal('hide');
     }
 
     updateCalendars();
