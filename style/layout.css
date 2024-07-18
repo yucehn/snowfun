@@ -112,6 +112,18 @@ a {
         height: 60px;
     }
 }
+.nav-link {
+    color: rgb(33, 37, 41);
+}
+.login-coach {
+    color: #1BA4ED;
+}
+.nav-link:hover,.nav-link.active,.login-coach:hover {
+    color: #00558F;
+}
+.login-coach {
+    border: 0;
+}
 
 .offcanvas.nav-offcanvas {
     width: 50%;
@@ -135,6 +147,9 @@ footer {
     height: 50px;
     width: 50px;
     border-radius: 50%;
+}
+.social-box li:hover{
+    background-color: #0F80BD;
 }
 
 .footer-title {
