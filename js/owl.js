@@ -5,6 +5,7 @@ $('.owl-carousel-coach').owlCarousel({
   nav:false,
   dots:false,
   center: true,
+  autoplayTimeout:2000,
   responsive:{
       0:{
         items:1.5,
