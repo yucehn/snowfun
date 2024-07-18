@@ -91,6 +91,10 @@
     width: 148px;
     text-align: center;
 }
+.collapse {
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 30px;
+}
 .collapseSelectDate-info {
     text-align: center;
     font-size: 14px;
@@ -362,6 +366,7 @@
     background-size: cover;
     background-position: bottom;
 }
+
 .confirmButton {
 	display: flex;
     align-items: center;
@@ -496,7 +501,7 @@ section {
         /* padding: 0; */
     }
     .section-title-box::after {
-        height: 174px;
+        /* height: 174px; */
     }
     .tab-content {
         margin-top: 80px;
@@ -598,7 +603,7 @@ img[alt="Google"],
 @media (max-width:475px) {
     .section-skiResort .nav-link{
         font-size: 14px;
-        width: 89px;
+        width: 85px;
     }
 }
 @media (max-width:380px) {
