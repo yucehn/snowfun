@@ -26,62 +26,63 @@ $('.owl-carousel-coach').owlCarousel({
   }
 });
 
-jQuery(document).ready(function ($) {
-  let slider = $(".owl-carousel-strategy");
-  slider.each(function () {
-    $(".owl-carousel-strategy").owlCarousel({
-      startPosition: 0,
-      nav: true,
-      loop: false,
-      dots: false,
-      pagination: false,
-      margin: 10,
-      autoHeight: false,
-      // center: true,
-      navClass:['strategy-prev','strategy-next'],
-      responsive: {
-        0: {
-          items: 1.3,
-          stagePadding: 0,
-          margin: 10,
-        },
-        470: {
-          items: 1.3,
-          stagePadding: 10,
-        },
-        640: {
-          items: 1.5,
-          stagePadding: 20,
-        },
-        767: {
-          items: 1.8,
-          stagePadding: 20,
-        },
-        1000: {
-          items: 2.6,
-          stagePadding: 20,
-        },
-        1440: {
-          items: 3.2,
-          stagePadding: 10,
-        }
-      },
-    });
 
-    $('.strategy .owl-nav').css('opacity', '0');
-    $('.owl-carousel-strategy').hover(
-      function() {
-        // 滑鼠進入時顯示按鈕
-        $('.strategy .owl-nav').css('opacity', '1');
-        // .css('opacity', '1');
-      },
-      function() {
-        // 滑鼠離開時隱藏按鈕
-        $('.strategy .owl-nav').css('opacity', '0');
-      }
-    );
-  });
+$(".owl-carousel-strategy").owlCarousel({
+  nav: true,
+  loop: false,
+  dots: false,
+  pagination: false,
+  margin: 10,
+  autoHeight: false,
+  center: true,
+  navClass:['strategy-prev','strategy-next'],
+  responsive: {
+    0: {
+      items: 1.3,
+      stagePadding: 0,
+      margin: 10,
+      center: false,
+    },
+    470: {
+      items: 1.3,
+      stagePadding: 10,
+      center: false,
+    },
+    640: {
+      items: 1.5,
+      stagePadding: 20,
+      center: false,
+    },
+    767: {
+      items: 1.8,
+      stagePadding: 20,
+      center: false,
+    },
+    992: {
+      startPosition: 1,
+      items: 2.7,
+      stagePadding: 20,
+    },
+    1440: {
+      startPosition: 1,
+      items: 3.5,
+      stagePadding: 10,
+    }
+  },
 });
+
+$('.strategy .owl-nav').css('opacity', '0');
+$('.owl-carousel-strategy').hover(
+  function() {
+    // 滑鼠進入時顯示按鈕
+    $('.strategy .owl-nav').css('opacity', '1');
+    // .css('opacity', '1');
+  },
+  function() {
+    // 滑鼠離開時隱藏按鈕
+    $('.strategy .owl-nav').css('opacity', '0');
+  }
+);
 
 $('.owl-carousel-skiResort').owlCarousel({
   nav: true,

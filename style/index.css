@@ -636,6 +636,9 @@ img[alt="Google"],
     }
 }
 
+@media (max-width:767px) {
+
+}
 
 /* coach owl*/
 @media (max-width:992px) {
@@ -863,6 +866,25 @@ img[alt="Google"],
     overflow: hidden;
     pointer-events: none;
 }
+.carousel-section .owl-carousel-strategy .owl-stage {
+    margin-left: 0;
+}
+@media (min-width:992px) {
+    .carousel-section .owl-carousel-strategy .owl-stage {
+        margin-left: -30%;;
+    }
+} 
+@media (min-width: 1200px) {
+    .carousel-section .owl-carousel-strategy .owl-stage {
+        margin-left: -31%;;
+    }
+}
+@media (min-width: 1400px) {
+    .carousel-section .owl-carousel-strategy .owl-stage {
+        margin-left: -7%;;
+    }
+}
+
 .carousel-section .owl-carousel-skiResort .owl-stage,
 .carousel-section .owl-carousel-strategy .owl-stage {
     padding-left: 0 !important;
