@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Button Toggle</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="btn-select-place">
+      <button
+        id="selectPlaceButton"
+        class="btn collapsed"
+        type="button"
+        onclick="toggleDisplay('place')"
+      >
+        選擇雪場
+      </button>
+    </div>
+    <div class="btn-select-type">
+      <button
+        id="selectTypeButton"
+        class="btn collapsed"
+        type="button"
+        onclick="toggleDisplay('type')"
+      >
+        雪板類型
+      </button>
+    </div>
+    <div class="btn-select-date">
+      <button
+        id="selectDateButton"
+        class="btn collapsed"
+        type="button"
+        onclick="toggleDisplay('date')"
+      >
+        選擇日期
+      </button>
+    </div>
+
+    <!-- Collapse Content -->
+    <div class="collapse" id="collapseSelectPlace">
+      <div class="card card-body">這是雪場的內容。</div>
+    </div>
+    <div class="collapse" id="collapseSelectType">
+      <div class="card card-body">這是雪板類型的內容。</div>
+    </div>
+    <div class="collapse" id="collapseSelectDate">
+      <div class="card card-body">這是日期選擇的內容。</div>
+    </div>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="selectPlaceModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="selectPlaceModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="selectPlaceModalLabel">選擇雪場</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">這是雪場的內容。</div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              關閉
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="modal fade"
+      id="selectTypeModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="selectTypeModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="selectTypeModalLabel">雪板類型</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">這是雪板類型的內容。</div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              關閉
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="modal fade"
+      id="selectDateModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="selectDateModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="selectDateModalLabel">選擇日期</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">這是日期選擇的內容。</div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              關閉
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script>
+      var isListeningForResize = false;
+
+      function closeAll() {
+        $("#selectPlaceModal").modal("hide");
+        $("#selectTypeModal").modal("hide");
+        $("#selectDateModal").modal("hide");
+        $("#collapseSelectPlace").collapse("hide");
+        $("#collapseSelectType").collapse("hide");
+        $("#collapseSelectDate").collapse("hide");
+      }
+
+      function toggleDisplay(button) {
+        closeAll();
+
+        if ($(window).width() <= 992) {
+          if (button === "place") {
+            $("#selectPlaceModal").modal("show");
+          } else if (button === "type") {
+            $("#selectTypeModal").modal("show");
+          } else if (button === "date") {
+            $("#selectDateModal").modal("show");
+          }
+        } else {
+          if (button === "place") {
+            $("#collapseSelectPlace").collapse("show");
+          } else if (button === "type") {
+            $("#collapseSelectType").collapse("show");
+          } else if (button === "date") {
+            $("#collapseSelectDate").collapse("show");
+          }
+        }
+
+        if (!isListeningForResize) {
+          isListeningForResize = true;
+          $(window).resize(function () {
+            if (
+              $("#selectPlaceModal").hasClass("show") ||
+              $("#selectTypeModal").hasClass("show") ||
+              $("#selectDateModal").hasClass("show") ||
+              $("#collapseSelectPlace").hasClass("show") ||
+              $("#collapseSelectType").hasClass("show") ||
+              $("#collapseSelectDate").hasClass("show")
+            ) {
+              toggleDisplay(button);
+            }
+          });
+        }
+      }
+    </script>
+  </body>
+</html>

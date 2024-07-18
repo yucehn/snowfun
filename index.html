@@ -163,10 +163,8 @@
           
           <div class="d-flex flex-column selectDate-wrapper">
             <div class="selectDate-btn-group d-flex justify-content-between align-items-center">
-              <div class="btn-select-place">
-                <button id="selectPlaceButton" class="btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSelectPlace" aria-expanded="false" aria-controls="collapseSelectPlace">
-                  選擇雪場
-                </button>
+              <!-- <div class="btn-select-place">
+                <button id="selectPlaceButton" class="btn collapsed" type="button" onclick="toggleDisplay()">選擇雪場</button>
               </div>
               <div class="btn-select-type">
                 <button id="selectTypeButton" class="btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSelectType" aria-expanded="false" aria-controls="collapseSelectType">
@@ -174,10 +172,37 @@
                 </button>
               </div>
               <div id="selectDateButton" class="btn-select-date">
-                <!-- <button id="selectDaterange" class="btn" type="button" aria-expanded="false">
-                  選擇日期
-                </button> -->
                 <button id="selectDateButton" class="btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSelectDate" aria-expanded="false" aria-controls="collapseSelectType">
+                  選擇日期
+                </button>
+              </div> -->
+              <div class="btn-select-place">
+                <button
+                  id="selectPlaceButton"
+                  class="btn collapsed"
+                  type="button"
+                  onclick="toggleDisplay('place')"
+                >
+                  選擇雪場
+                </button>
+              </div>
+              <div class="btn-select-type">
+                <button
+                  id="selectTypeButton"
+                  class="btn collapsed"
+                  type="button"
+                  onclick="toggleDisplay('type')"
+                >
+                  雪板類型
+                </button>
+              </div>
+              <div class="btn-select-date">
+                <button
+                  id="selectDateButton"
+                  class="btn collapsed"
+                  type="button"
+                  onclick="toggleDisplay('date')"
+                >
                   選擇日期
                 </button>
               </div>
@@ -1255,19 +1280,12 @@
         tabindex="-1"
         aria-hidden="true"
         >
-        
         <div class="login-dialog modal-dialog modal-dialog-centered">
           <!-- aria-labelledby="snowModalLabel" -->
           <!-- 登入 -->
           <div class="modal-content login-content">
             <div class="modal-header">
               <h5 class="modal-title mx-auto">登入</h5>
-              <!-- <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button> -->
             </div>
             <div class="modal-body">
               <div class="modal-wrapper">
@@ -1314,20 +1332,28 @@
             </div>
             <div class="modal-body">
               <div class="modal-wrapper">
-                <p class="forget-info">
-                  請輸入您的信箱，系統將會發送重設密碼連結至您的信箱
-                </p>
                 <form>
                   <div class="mb-3">
                     <label for="email" class="col-form-label">Email</label>
                     <input type="text" class="form-control" id="email" placeholder="請輸入您的電子郵件" required>
                   </div>
+                  <div class="mb-3">
+                    <label for="pw" class="col-form-label">密碼</label>
+                    <input type="text" class="form-control" id="pw" placeholder="請輸入6~16位密碼" required>
+                  </div>
+                  <div class="d-flex justify-content-end">
+                    <button class="btn more_arrow btn-forgetPw" onclick="forgetPwModal()">忘記密碼</button>
+                  </div>
                   <div class="d-flex justify-content-center">
                     <button type="submit" class="btn btn-primary btn-login">
-                      發送
+                      登入
                     </button>
                   </div>
                 </form>
+                <div class="login-info">
+                  滑雪趣已停用臉書登入功能，原帳號如綁定臉書登入<br>
+                  請點選「<button class="btn text-blue-light p-0" onclick="forgetPwModal()">忘記密碼</button>」以設定新密碼進行登入！
+                </div>
               </div>
             </div>
             <div class="modal-footer">
@@ -1379,6 +1405,155 @@
           </div>
         </div>
       </div>
+
+      <!-- 選擇雪場 -->
+      <div
+        class="modal fade"
+        id="selectPlaceModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="selectPlaceModalLabel"
+        aria-hidden="true"
+      >
+        <div class="selectBox-dialog modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content show">
+            <div class="modal-header">
+              <h5 class="modal-title mx-auto" id="selectPlaceModalLabel">選擇雪場</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body mx-auto">這是雪場的內容。</div>
+            <div class="modal-footer">
+              <div class="row w-full justify-content-between">
+                <div class="col">
+                  <input type="radio" class="btn-check" name="options-base" id="option1_none" autocomplete="off">
+                  <label class="btn btn-radio w-full" for="option1_none">雪場不拘</label>
+                </div>
+                <div class="col">
+                  <button id="selectPlace_confirmButton" data-bs-dismiss="modal" type="button" class="btn btn-primary btn-rounded btn-selectPlaceLine confirmButton">
+                    <div class="ms-1">確定</div>
+                    <img src="./images/icon_arrow_right.svg">
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 雪板類型 -->
+      <div
+        class="modal fade"
+        id="selectTypeModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="selectTypeModalLabel"
+        aria-hidden="true"
+      >
+        <div class="selectBox-dialog modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content show">
+            <div class="modal-header">
+              <h5 class="modal-title mx-auto" id="selectTypeModalLabel">雪板類型</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <form>
+              <div class="modal-body">
+                  <div class="d-flex">
+                    <div class="collapseSelectType-item col">
+                      <input type="radio" class="btn-check" name="selectTypeModal" id="snowboard_1" autocomplete="off">
+                      <label class="btn btn-radio w-full" for="snowboard_1">單板 snowboard</label>
+                    </div>
+                    <div class="collapseSelectType-item col">
+                      <input type="radio" class="btn-check" name="selectTypeModal" id="ski_1" autocomplete="off">
+                      <label class="btn btn-radio w-full" for="ski_1">雙板 ski</label>
+                    </div>
+                  </div>             
+              </div>
+              <div class="modal-footer">
+                <div class="row w-full justify-content-between">
+                  <div class="col">
+                    <input type="radio" class="btn-check" name="selectTypeModal" id="selectTypeNone_1" autocomplete="off">
+                    <label class="btn btn-radio w-full" for="selectTypeNone_1">雪板類型不拘</label>
+                  </div>
+                  <div class="col">
+                    <button id="selectType_confirmButton_1" type="button" class="btn btn-primary btn-rounded btn-selectPlaceLine confirmButton" data-bs-dismiss="modal">
+                      <div class="ms-1">確定</div>
+                      <img src="./images/icon_arrow_right.svg">
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- 選擇日期  -->
+      <div
+        class="modal fade"
+        id="selectDateModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="selectDateModalLabel"
+        aria-hidden="true"
+      >
+        <div class="selectBox-dialog modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content show">
+            <div class="modal-header">
+              <h5 class="modal-title  mx-auto" id="selectDateModalLabel">選擇日期</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <form>
+              <div class="modal-body">
+                <form class="row">
+                  <input type="text" name="daterange" style="display: none;" />
+                  <div class="collapseSelectDate-info">暫無教練暫無教練空堂，歡迎聯繫客服為您媒合教練</div>
+                </form> 
+                <div class="calendar-container">
+                  <button id="modal-prev-month" class="btn"></button>
+                  <button id="modal-next-month" class="btn"></button>
+                  <div id="modal-calendar-left" class="calendar"></div>
+                  <div id="modal-calendar-right" class="calendar d-none d-md-block"></div>      
+                </div>
+              </div>
+              <div class="modal-footer">
+                <div class="d-flex flex-column gap-3 w-full">
+                  <div class="d-flex gap-3 w-full justify-content-center align-items-center">
+                    <input aria-value="確切日期" type="radio" class="btn-check" name="options-base3" id="selectDate_day" autocomplete="off">
+                    <label id="modal-single-date" class="btn btn-radio" for="selectDate_day">確切日期</label>
+  
+                    <input aria-value="含前後兩日" type="radio" class="btn-check" name="options-base3" id="selectDate_towday" autocomplete="off">
+                    <label id="modal-highlight-range" class="btn btn-radio" for="selectDate_towday">含前後兩日</label>
+  
+                    <input aria-value="含前後一週" type="radio" class="btn-check" name="options-base3" id="selectDate_week" autocomplete="off">
+                    <label id="modal-week-range" class="btn btn-radio" for="selectDate_week">含前後一週</label>
+                  </div>
+                  <div class="w-full d-flex justify-content-end">
+                    <button id="clear-button" class="btn">清除</button>
+                    <button id="date-submit" type="button" class="btn btn-primary btn-rounded btn-selectPlaceLine confirmButton" data-bs-dismiss="modal">
+                      <div class="ms-1">確定</div>
+                      <img src="./images/icon_arrow_right.svg">
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
       <!-- float -->
       <div class="float-bar d-flex">
         <a href="https://line.me/R/ti/p/@648okivy" target="_blank"><img src="images/line.png" alt=""></a>
@@ -1409,9 +1584,8 @@
       <script src="./js/selectPlace.js"></script>
       <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
       <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script> -->
-      <script>
-      </script>
 
+      <!-- 登入 -->
       <script>
         function registerModal() {
           document.querySelector('.forgetPW-content').classList.remove('show');
@@ -1428,7 +1602,58 @@
           document.querySelector('.register-content').classList.remove('show');
           document.querySelector('.login-content').classList.add('show');
         }
-        // btn-login
+      </script>
+      <!-- 選擇 -->
+      <script>
+        var isListeningForResize = false;
+
+        function closeAll() {
+          $("#selectPlaceModal").modal("hide");
+          $("#selectTypeModal").modal("hide");
+          $("#selectDateModal").modal("hide");
+          $("#collapseSelectPlace").collapse("hide");
+          $("#collapseSelectType").collapse("hide");
+          $("#collapseSelectDate").collapse("hide");
+        }
+
+        function toggleDisplay(button) {
+          closeAll();
+
+          if ($(window).width() <= 992) {
+            if (button === "place") {
+              $("#selectPlaceModal").modal("show");
+            } else if (button === "type") {
+              $("#selectTypeModal").modal("show");
+            } else if (button === "date") {
+              $("#selectDateModal").modal("show");
+            }
+          } else {
+            if (button === "place") {
+              $("#collapseSelectPlace").collapse("show");
+            } else if (button === "type") {
+              $("#collapseSelectType").collapse("show");
+            } else if (button === "date") {
+              $("#collapseSelectDate").collapse("show");
+            }
+          }
+
+          if (!isListeningForResize) {
+            isListeningForResize = true;
+            $(window).resize(function () {
+              if (
+                $("#selectPlaceModal").hasClass("show") ||
+                $("#selectTypeModal").hasClass("show") ||
+                $("#selectDateModal").hasClass("show") ||
+                $("#collapseSelectPlace").hasClass("show") ||
+                $("#collapseSelectType").hasClass("show") ||
+                $("#collapseSelectDate").hasClass("show")
+              ) {
+                toggleDisplay(button);
+              }
+            });
+          }
+        }
+
       </script>
   </body>
 </html>

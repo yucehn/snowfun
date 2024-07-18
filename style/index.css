@@ -228,6 +228,9 @@
     box-shadow: none;
     background-color: #fff;
 }
+.modal-footer .btn.btn-radio {
+    width: 100%;
+}
 .btn-check+.btn:hover {
     color: #666;
 }
@@ -1096,7 +1099,8 @@ img[alt="Google"],
     cursor: pointer;
 }
 
-#prev-month, #next-month {
+#prev-month, #next-month,
+#modal-prev-month, #modal-next-month {
     position: absolute;
     top: 0;
     width: 50px;
@@ -1107,13 +1111,16 @@ img[alt="Google"],
     background: url(../images/date_arrow_left.svg) center no-repeat;
 }
 #prev-month:hover,
-#next-month:hover {
+#next-month:hover,
+#modal-prev-month:hover, #modal-next-month:hover {
     background-color: #ebf1f5;
 }
-#prev-month {
+#prev-month,
+#modal-prev-month {
     left: 0;
 }
-#next-month {
+#next-month,
+#modal-next-month  {
     right: 0;
     transform: rotate(180deg);
 }
@@ -1221,4 +1228,11 @@ img[alt="Google"],
 .calendar td:hover::before  {
     width: 50px;
     height: 50px;
+}
+
+/* selectBox-dialog */
+.selectBox-dialog .modal-header .btn-close {
+    position: absolute;
+    top: 40px;
+    right: 30px; 
 }

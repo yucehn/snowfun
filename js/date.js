@@ -66,17 +66,19 @@ $(document).ready(function () {
     function updateCalendars() {
       renderCalendar(0, "calendar-left", coachDates);
       renderCalendar(1, "calendar-right", coachDates);
+      renderCalendar(0, "modal-calendar-left", coachDates);
+      renderCalendar(1, "modal-calendar-right", coachDates);
     }
 
     $("#prev-month").click(function () {
       currentDate.setMonth(currentDate.getMonth() - 1);
       updateCalendars();
     });
-
     $("#next-month").click(function () {
       currentDate.setMonth(currentDate.getMonth() + 1);
       updateCalendars();
     });
+
 
     $(".calendar-container").on("click", "td[data-date]", function () {
       $("td").removeClass("active start-date end-date in-range");
@@ -124,6 +126,54 @@ $(document).ready(function () {
       if (selectedDate) {
           updateSelectDateButton();
       }
+  });
+  
+    // modal
+    $("#modal-prev-month").click(function(e) {
+      e.preventDefault();
+      currentDate.setMonth(currentDate.getMonth() - 1);
+      updateCalendars();
+    });
+    $("#modal-next-month").click(function(e) {
+      e.preventDefault();
+      currentDate.setMonth(currentDate.getMonth() + 1);
+      updateCalendars();
+    });
+
+    $('#modal-clear-button').click(function() {
+      clearHighlights();
+    });
+
+    $('#modal-single-date').click(function() {
+        if (selectedDate) {
+            highlightSingleDate();
+            $("#modal-single-date").addClass("selected");
+            $("#modal-highlight-range").removeClass("selected");
+            $("#modal-week-range").removeClass("selected");
+        }
+    });
+
+    $('#modal-highlight-range').click(function () {
+      if (selectedDate) {
+        $(".selected").removeClass("selected");
+        $("#modal-highlight-range").addClass("selected");
+        highlightRange();
+      }
+    });
+
+    $('#modal-week-range').click(function () {
+      if (selectedDate) {
+        $(".selected").removeClass("selected");
+        $("#modal-week-range").addClass("selected");
+        weekRange();
+      }
+    });
+
+  $('#modal-date-submit').click(function(e) {
+    e.preventDefault();
+    if (selectedDate) {
+        updateSelectDateButton();
+    }
   });
 
     function highlightSingleDate() {
@@ -181,7 +231,7 @@ $(document).ready(function () {
     }
 
     function updateSelectDateButton() {
-      const selectedOption = $('input[name="options-base3"]:checked').attr('aria-value');
+      const selectedOption = $('input[name="options-base3"]:checked').attr('aria-value') || $('input[name="options-modal-base3"]:checked').attr('aria-value');
       let formattedText = `
       <div class="inputSelectDate">
           ${selectedDate}

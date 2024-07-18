@@ -49,6 +49,9 @@ a {
 ::-webkit-scrollbar {
     display: none;
 }
+.btn-close:focus {
+    box-shadow: none;
+}
 .noto-serif-jp-900 {
     font-family: "Noto Serif JP", serif;
     font-optical-sizing: auto;
@@ -226,7 +229,7 @@ footer {
 }
 .modal-header, .modal-footer {
     border: none;
-    height: 97px;
+    min-height: 97px;
 }
 .modal-title {
     font-size: 32px;
