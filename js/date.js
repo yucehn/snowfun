@@ -249,7 +249,7 @@ $(document).ready(function () {
       const selectedOption = $('input[name="options-base3"]:checked').attr('aria-value') || $('input[name="selectDateModal"]:checked').attr('aria-value');
       let formattedText = `
       <div class="inputSelectDate">
-          ${selectedDate}
+          ${selectedDate.replaceAll('-', '/')}
           <span>${selectedOption}</span>
       </div>`;
       $('#selectDateButton').html(formattedText);
