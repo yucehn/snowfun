@@ -13,10 +13,12 @@ $('.owl-carousel-coach').owlCarousel({
       0:{
         items:1.5,
         center: false,
+        stagePadding: 10,
       },
       576:{
         items:2.5,
         center: false,
+        stagePadding: 10,
       },
       992:{
         items:3.5

@@ -106,7 +106,7 @@
     display: inline-block;
     width: 10px;
     height: 10px;
-    background-color: #c2c2c2;
+    background-color: #9FB4C7;
     border-radius: 50%;
     margin-right: 10px;
 }
@@ -652,17 +652,6 @@ img[alt="Google"],
 @media (max-width:475px) {
     .section-join {
         background-position-x: right;
-    }
-}
-
-@media (max-width:767px) {
-
-}
-
-/* coach owl*/
-@media (max-width:992px) {
-    .coach-container {
-        padding-left: 16px;
     }
 }
 
