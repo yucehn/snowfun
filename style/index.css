@@ -230,6 +230,7 @@
 }
 .modal-footer .btn.btn-radio {
     width: 100%;
+    min-width: auto;
 }
 .btn-check+.btn:hover {
     color: #666;
