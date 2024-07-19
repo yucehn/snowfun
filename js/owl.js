@@ -1,11 +1,14 @@
 $('.owl-carousel-coach').owlCarousel({
   loop:true,
   margin: 12,
-  autoplay: true,
   nav:false,
   dots:false,
   center: true,
-  autoplayTimeout:2000,
+  autoplay: true,
+  slideTransition: 'linear',
+  autoplayTimeout: 2000,
+  autoplaySpeed: 2000,
+  autoplayHoverPause: true,
   responsive:{
       0:{
         items:1.5,
