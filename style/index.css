@@ -1208,10 +1208,11 @@ img[alt="Google"],
     bottom: 0;
     right: 0;
     width: 50px;
-    /* height: 50px; */
+    height: 50px;
     border: 1px solid #c2c2c2;
     border-radius: 50%;
 }
+
 .calendar td.full_day {
     color: #9FB4C7;
 }
@@ -1229,19 +1230,30 @@ img[alt="Google"],
     display: none;
 }
 
-.calendar td:hover::before  {
-    width: 50px;
-    height: 50px;
-}
-
 /* selectBox-dialog */
 .selectBox-dialog .modal-header .btn-close {
     position: absolute;
-    top: 40px;
+    top: 25px;
     right: 30px; 
 }
 
 .selectBox-dialog .modal-body {
     max-height: 510px;
     overflow-y: scroll;
+}
+
+.selectBox-dialog .modal-title{
+    font-size: 24px;
+}
+.selectBox-dialog .modal-header{
+    min-height: 50px;
+}
+
+@media(max-width:992px){
+    .calendar td:hover::before {
+        border: 0;
+    }
+    .selectBox-dialog .modal-body {
+        padding-top: 0;
+    }
 }
