@@ -1256,4 +1256,12 @@ img[alt="Google"],
     .selectBox-dialog .modal-body {
         padding-top: 0;
     }
+    .selectDate-btn-group .btn.collapsed::before {
+        display: none;
+    }
+}
+@media(max-width:475px){
+    .selectDate-btn-group .btn {
+        font-size: 14px;
+    }
 }
