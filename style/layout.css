@@ -130,7 +130,7 @@ a {
 }
 
 .offcanvas.nav-offcanvas {
-    width: 50%;
+    width: 250px;
 }
 .offcanvas.nav-offcanvas .btn:active {
     border: none;
@@ -314,4 +314,43 @@ footer {
         width: 30px;
         height: 30px;
     }
+}
+
+/* sidebar */
+.offcanvas-header {
+    padding: 0 0 0 16px;
+    border-bottom: 1px solid rgb(0 0 0 / 20%);
+}
+.offcanvas-body {
+    padding: 0;
+}
+.offcanvas-body .nav-item {
+    padding: 12px 32px;
+    font-size: 16px;
+    font-weight: 500;
+}
+.coach-register {
+    padding: 0;
+    font-size: 16px;
+    color: #1BA4ED;
+    font-weight: 500;
+    border: 0;
+}
+.coach-register:hover{
+    color: #00558F;
+}
+.offcanvas-body .nav-item:last-child{
+    padding: 16px 32px;
+    position: relative;
+}
+.offcanvas-body .nav-item:last-child::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 16px;
+    width: 218px;
+    border-top: 1px solid #E8E8E8;
+    z-index: -1;
 }
