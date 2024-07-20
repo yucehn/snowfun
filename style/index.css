@@ -89,7 +89,7 @@
     background-color: #fff;
     /* line-height: 60px; */
 }
-.selectDate-btn-group .btn {
+.selectDate-btn-group button {
     color: #666666;
     height: 60px;
     border-radius: 30px;
@@ -97,6 +97,7 @@
     text-align: left;
     transition: all .3s;
     z-index: 1;
+    padding:0 10px 0 15px;
 }
 .selectDate-btn-group .btn[type="submit"]{
     color: #fff;
@@ -157,10 +158,7 @@
 .btn-select-date .btn {
     padding-left: 20px;
 }
-.btn-select-type {
-    max-width: 162px;
-    width: 100%;
-}
+
 
 .selectDate-btn-group .btn {
     position: relative;
@@ -236,9 +234,7 @@
     position: absolute;
     right: 0;
 }
-.btn-select-date {
-    width: 311px;
-}
+
 .btn-select-date input{
     width: 204px;
 }
@@ -526,12 +522,12 @@
     .selectDate-box {
         top: 230px;
     }
-    .btn-select-place{
+    /* .btn-select-place{
         width: 126px;
     }
     .btn-select-date {
-        max-width: 163px;
-    }
+        width: 163px;
+    } */
 }
 @media (max-width:440px) {
     .btn-select-type {
@@ -1332,6 +1328,9 @@ img[alt="Google"],
     }
 }
 @media(max-width:475px){
+    .btn-select-date .btn {
+        padding-right: 70px;
+    }
     .selectDate-btn-group .btn,
     .inputSelectDate {
         font-size: 14px;
