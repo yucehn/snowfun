@@ -566,6 +566,7 @@ section {
         width: 120px;
         font-size: 24px;
         line-height: 1.2;
+        font-weight: 600;
     }
 }
 
@@ -1266,3 +1267,47 @@ img[alt="Google"],
         font-size: 14px;
     }
 }
+
+
+/* test */
+.carousel-section-test .owl-carousel-test .owl-stage {
+    padding-left: 0 !important;
+  }
+  .carousel-section-test .owl-carousel-test .owl-stage-outer {
+    overflow: unset;
+  }
+  .carousel-section-test .owl-carousel-test .owl-nav .owl-next,
+  .carousel-section-test .owl-carousel-test .owl-nav .owl-prev {
+    width: 50px;
+    border: 1px solid #c3c3c3;
+    border-radius: 50%;
+    height: 50px;
+    font-size: 30px;
+  }
+  .carousel-section-test .owl-carousel-test .owl-nav .owl-next:focus,
+  .carousel-section-test .owl-carousel-test .owl-nav .owl-prev:focus {
+    outline: 0;
+  }
+ 
+  .carousel-container-test {
+    /* max-width: 1140px; */
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .carousel-item-test {
+    margin: 20px 0;
+  }
+  .carousel-item-test__card {
+    box-shadow: 0 13px 31px #dce1ed;
+    height: 300px;
+    border-radius: 12px;
+    margin: 30px 0 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: 500;
+    border: 1px solid #dddddd;
+  }
