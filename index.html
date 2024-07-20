@@ -1643,6 +1643,11 @@
           $("#collapseSelectPlace").collapse("hide");
           $("#collapseSelectType").collapse("hide");
           $("#collapseSelectDate").collapse("hide");
+
+          $("#selectPlaceButton").removeClass('selected');
+          $("#selectTypeButton").removeClass('selected');
+          $("#selectDateButton").removeClass('selected');
+
         }
 
         function toggleDisplay(button) {
@@ -1651,18 +1656,24 @@
           if ($(window).width() <= 992) {
             if (button === "place") {
               $("#selectPlaceModal").modal("show");
+              $("#selectPlaceButton").addClass('selected')
             } else if (button === "type") {
               $("#selectTypeModal").modal("show");
+              $("#selectTypeButton").addClass('selected')
             } else if (button === "date") {
               $("#selectDateModal").modal("show");
+              $("#selectDateButton").addClass('selected')
             }
           } else {
             if (button === "place") {
               $("#collapseSelectPlace").collapse("show");
+              $("#selectPlaceButton").addClass('selected')
             } else if (button === "type") {
               $("#collapseSelectType").collapse("show");
+              $("#selectTypeButton").addClass('selected')
             } else if (button === "date") {
               $("#collapseSelectDate").collapse("show");
+              $("#selectDateButton").addClass('selected')
             }
           }
 
