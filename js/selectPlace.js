@@ -260,7 +260,7 @@ $(document).ready(function() {
   function generateHtml(data, keyId) {
       return data.map((item, index) => `
           <div class="collapseSelectPlace-item col-6 col-sm-4 col-md-3 col-lg-3">
-              <input type="radio" class="btn-check" name="selectPlaceModal" id="${keyId}_${index + 1}" autocomplete="off">
+              <input type="radio" class="btn-check" name="selectPlaceCollapse" id="${keyId}_${index + 1}" value="${item.value}" autocomplete="off">
               <label class="btn btn-radio btn-radio-lg" for="${keyId}_${index + 1}">${item.name}</label>
           </div>
       `).join('');
@@ -268,7 +268,7 @@ $(document).ready(function() {
   function modal_generateHtml(data, keyId) {
     return data.map((item, index) => `
         <div class="collapseSelectPlace-item col-6 col-sm-4">
-            <input type="radio" class="btn-check" name="selectPlaceModal" id="modal_${keyId}_${index + 1}" autocomplete="off">
+            <input type="radio" class="btn-check" name="selectPlaceModal" id="modal_${keyId}_${index + 1}" value="${item.value}" autocomplete="off">
             <label class="btn btn-radio btn-radio-lg" for="modal_${keyId}_${index + 1}">${item.name}</label>
         </div>
     `).join('');
@@ -282,7 +282,9 @@ $(document).ready(function() {
     
     // 確定選擇雪場
     $('#selectPlace_confirmButton').on('click', function() {
-        const selectedRadio = $('input[name="options-base"]:checked');
+        const selectedRadio = $('input[name="selectPlaceCollapse"]:checked');
+        $('input[name="selectPlaceModal"]:checked').prop('checked', false);
+        $(`input[name="selectPlaceModal"][value="${selectedRadio[0].value}"]`).prop('checked', true);
         if (selectedRadio.length > 0) {
           const selectedText = $('label[for="' + selectedRadio.attr('id') + '"]').text();
           $('#selectPlaceButton').text(selectedText);
@@ -294,6 +296,8 @@ $(document).ready(function() {
 
       $('#modal_selectPlace_confirmButton').on('click', function() {
         const selectedRadio = $('input[name="selectPlaceModal"]:checked');
+        $('input[name="selectPlaceCollapse"]:checked').prop('checked', false);
+        $(`input[name="selectPlaceCollapse"][value="${selectedRadio[0].value}"]`).prop('checked', true);
         if (selectedRadio.length > 0) {
           const selectedText = $('label[for="' + selectedRadio.attr('id') + '"]').text();
           $('#selectPlaceButton').text(selectedText);
@@ -308,7 +312,9 @@ $(document).ready(function() {
 $(document).ready(function() {
   // 確定選擇雪板類型
   $('#selectType_confirmButton').on('click', function() {
-    const selectedRadio = $('input[name="options-base2"]:checked');
+    const selectedRadio = $('input[name="selectTypeCollapse"]:checked');
+    $('input[name="selectTypeModal"]:checked').prop('checked', false);
+    $(`input[name="selectTypeModal"][value="${selectedRadio[0].value}"]`).prop('checked', true);
     if (selectedRadio.length > 0) {
       let selectedText = $('label[for="' + selectedRadio.attr('id') + '"]').text();
       const selectedTextList = selectedText.split(" ");
@@ -323,6 +329,8 @@ $(document).ready(function() {
   });
   $('#modal_selectType_confirmButton').on('click', function() {
     const selectedRadio = $('input[name="selectTypeModal"]:checked');
+    $('input[name="selectTypeCollapse"]:checked').prop('checked', false);
+    $(`input[name="selectTypeCollapse"][value="${selectedRadio[0].value}"]`).prop('checked', true);
     if (selectedRadio.length > 0) {
       let selectedText = $('label[for="' + selectedRadio.attr('id') + '"]').text();
       const selectedTextList = selectedText.split(" ");

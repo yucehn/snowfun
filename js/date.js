@@ -91,6 +91,10 @@ $(document).ready(function () {
         $(".selected-date").removeClass("selected-date");
         $("#highlight-range").addClass("selected-date");
         highlightRange();
+
+        const itemValue =  $('#selectDate_towday')[0].value;
+        $('input[name="selectDateModal"]:checked').prop('checked', false);
+        $(`input[name="selectDateModal"][value="${itemValue}"]`).prop('checked', true);
       }
     });
 
@@ -99,6 +103,10 @@ $(document).ready(function () {
         $(".selected-date").removeClass("selected-date");
         $("#week-range").addClass("selected-date");
         weekRange();
+
+        const itemValue =  $('#selectDate_week')[0].value;
+        $('input[name="selectDateModal"]:checked').prop('checked', false);
+        $(`input[name="selectDateModal"][value="${itemValue}"]`).prop('checked', true);
       }
     });
 
@@ -111,7 +119,7 @@ $(document).ready(function () {
 
     $('#clear-button').click(function() {
         clearHighlights();
-        const checkedRadio = $('input[name="options-base3"]:checked');
+        const checkedRadio = $('input[name="selectDateCollapse"]:checked');
       // If a radio button is checked, uncheck it
       if (checkedRadio) {
         checkedRadio.removeClass('selected-date')
@@ -121,12 +129,16 @@ $(document).ready(function () {
         
     });
     $('#single-date').click(function() {
-        if (selectedDate) {
-            highlightSingleDate();
-            $("#single-date").addClass("selected-date");
-            $("#highlight-range").removeClass("selected-date");
-            $("#week-range").removeClass("selected-date");
-        }
+      if (selectedDate) {
+        highlightSingleDate();
+        $("#single-date").addClass("selected-date");
+        $("#highlight-range").removeClass("selected-date");
+        $("#week-range").removeClass("selected-date");
+        
+        const itemValue =  $('#selectDay')[0].value;
+        $('input[name="selectDateModal"]:checked').prop('checked', false);
+        $(`input[name="selectDateModal"][value="${itemValue}"]`).prop('checked', true);
+      }
     });
 
     $('#date-submit').click(function(e) {
@@ -165,6 +177,10 @@ $(document).ready(function () {
             $("#modal-single-date").addClass("selected-date");
             $("#modal-highlight-range").removeClass("selected-date");
             $("#modal-week-range").removeClass("selected-date");
+
+          const itemValue =  $('#selectDate_day')[0].value;
+          $('input[name="selectDateCollapse"]:checked').prop('checked', false);
+          $(`input[name="selectDateCollapse"][value="${itemValue}"]`).prop('checked', true);
         }
     });
 
@@ -173,6 +189,10 @@ $(document).ready(function () {
         $(".selected-date").removeClass("selected-date");
         $("#modal-highlight-range").addClass("selected-date");
         highlightRange();
+
+        const itemValue =  $('#selectDate_towday')[0].value;
+        $('input[name="selectDateCollapse"]:checked').prop('checked', false);
+        $(`input[name="selectDateCollapse"][value="${itemValue}"]`).prop('checked', true);
       }
     });
 
@@ -181,6 +201,10 @@ $(document).ready(function () {
         $(".selected-date").removeClass("selected-date");
         $("#modal-week-range").addClass("selected-date");
         weekRange();
+
+        const itemValue =  $('#selectDate_week')[0].value;
+        $('input[name="selectDateCollapse"]:checked').prop('checked', false);
+        $(`input[name="selectDateCollapse"][value="${itemValue}"]`).prop('checked', true);
       }
     });
 
@@ -211,7 +235,7 @@ $(document).ready(function () {
       endDate.setDate(date.getDate() + 1);
 
       $(`td[data-date="${formatDate(startDate)}"]`).addClass("start-date");
-      $(`td[data-date="${selectedDate}"]`).addClass("in-range");
+      $(`td[data-date="${selectedDate}"]`).addClass("active in-range");
       $(`td[data-date="${formatDate(endDate)}"]`).addClass("end-date");
     }
 
@@ -246,11 +270,17 @@ $(document).ready(function () {
     }
 
     function updateSelectDateButton() {
-      const selectedOption = $('input[name="options-base3"]:checked').attr('aria-value') || $('input[name="selectDateModal"]:checked').attr('aria-value');
+      const selectedOption = $('input[name="selectDateCollapse"]:checked').attr('aria-value') || $('input[name="selectDateModal"]:checked').attr('aria-value');
+      if(!selectedOption){
+        highlightSingleDate();
+        $(`input[name="selectDateCollapse"][value="selectDay"]`).prop('checked', true);
+        $(`input[name="selectDateModal"][value="selectDay"]`).prop('checked', true);
+      }
+      console.log('selectedDate', selectedDate)
       let formattedText = `
       <div class="inputSelectDate">
           ${selectedDate.replaceAll('-', '/')}
-          <span>${selectedOption}</span>
+          <span>${selectedOption?selectedOption: '確切日期'}</span>
       </div>`;
       $('#selectDateButton').html(formattedText);
       $('#collapseSelectDate').collapse('hide');
