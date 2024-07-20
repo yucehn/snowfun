@@ -112,15 +112,18 @@ $('.owl-carousel-skiResort').owlCarousel({
         items: 1.2,
         center: false,
         nav:false,
+        loop: true,
       },
       390: {
         items: 1.4,
         center: false,
         nav:false,
+        loop: true,
       },
       576:{
         items: 1.6,
         center: false,
+        loop: true,
       },
       768:{
         items: 2.6
