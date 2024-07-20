@@ -44,25 +44,33 @@ $(".owl-carousel-strategy").owlCarousel({
   navClass:['strategy-prev','strategy-next'],
   responsive: {
     0: {
+      startPosition: 0,
       items: 1.3,
       stagePadding: 0,
       margin: 10,
       center: false,
+      loop: true,
     },
     470: {
+      startPosition: 0,
       items: 1.3,
       stagePadding: 10,
       center: false,
+      loop: true,
     },
     640: {
+      startPosition: 0,
       items: 1.5,
       stagePadding: 20,
       center: false,
+      loop: true,
     },
     767: {
+      startPosition: 0,
       items: 1.8,
       stagePadding: 20,
       center: false,
+      loop: true,
     },
     992: {
       startPosition: 1,
