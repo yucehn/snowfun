@@ -148,11 +148,29 @@
         width: calc(-22px + 100vw);
         margin-left: -9px;
     }
+ 
 }
 
-.btn-select-place {
-    max-width: 276px;
-    width: 100%;
+@media(min-width:768px) {
+    .btn-select-type {
+        max-width: 162px;
+        width: 100%;
+    }
+    .btn-select-place {
+        max-width: 276px;
+        width: 100%;
+    }
+    .btn-select-date {
+        width: 311px;
+    }
+    .selectDate-btn-group button {
+        padding: 0 15px;
+    }
+}
+@media(min-width:993px) {
+    .selectDate-btn-group button {
+        padding: 0 5px;
+    }
 }
 .btn-select-place .btn,
 .btn-select-date .btn {
@@ -253,6 +271,7 @@
     width: 100%;
     min-width: auto;
 }
+
 .btn-check+.btn:hover {
     color: #666;
 }
@@ -432,6 +451,26 @@
 #clear-button:hover{
     color: #0F80BD;
 }
+@media (max-width:767px) {
+    /* .btn-select-place {
+        min-width: 126px;
+        width: 155px;
+    } */
+    .modal-footer #modal-single-date,
+    .modal-footer #modal-highlight-range,
+    .modal-footer #modal-week-range{
+        margin: 0 5px;
+    }
+
+}
+@media (max-width:340px){
+    .modal-footer #modal-single-date,
+    .modal-footer #modal-highlight-range,
+    .modal-footer #modal-week-range{
+        margin: 0 3px;
+    }
+}
+
 #clear-button:hover::before{
     background: #0F80BD;
 }
