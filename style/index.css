@@ -217,6 +217,11 @@
     right: -8px;
     border: none;
 }
+@media (max-width:767px){
+    .selectDate-btn-group .btn.collapsed::after {
+        right: 0;
+    }
+}
 .selectDate-btn-group .btn-select-date .btn.collapsed::after {
     display: none;
 }
@@ -1263,7 +1268,8 @@ img[alt="Google"],
     }
 }
 @media(max-width:475px){
-    .selectDate-btn-group .btn {
+    .selectDate-btn-group .btn,
+    .inputSelectDate {
         font-size: 14px;
     }
 }
