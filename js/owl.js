@@ -50,6 +50,7 @@ $(".owl-carousel-strategy").owlCarousel({
       margin: 10,
       center: false,
       loop: true,
+      nav:false,
     },
     470: {
       startPosition: 0,
@@ -57,6 +58,7 @@ $(".owl-carousel-strategy").owlCarousel({
       stagePadding: 10,
       center: false,
       loop: true,
+      nav:false,
     },
     640: {
       startPosition: 0,
@@ -64,13 +66,15 @@ $(".owl-carousel-strategy").owlCarousel({
       stagePadding: 20,
       center: false,
       loop: true,
+      nav:false,
     },
-    767: {
+    768: {
       startPosition: 0,
       items: 1.8,
       stagePadding: 20,
       center: false,
       loop: true,
+      nav:false,
     },
     992: {
       startPosition: 1,
@@ -124,9 +128,13 @@ $('.owl-carousel-skiResort').owlCarousel({
         items: 1.6,
         center: false,
         loop: true,
+        nav:false,
       },
       768:{
-        items: 2.6
+        items: 2.6,
+        center: false,
+        loop: true,
+        nav:false,
       },
       992:{
         items: 2.8
