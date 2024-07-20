@@ -129,7 +129,6 @@
     color: #000000;
     font-size: 16px;
     font-weight: 500;
-    gap: 5px;
 }
 .inputSelectDate span {
     font-size: 14px;
@@ -149,7 +148,6 @@
         margin-left: -9px;
     }
 }
-
 
 .btn-select-place {
     max-width: 276px;
@@ -415,6 +413,7 @@
     position: relative;
     height: 50px;
     color: #666;
+    border: none;
 }
 #clear-button::before {
     content: "";
@@ -425,10 +424,27 @@
     height: 1px;
     background: #666;
 }
+#clear-button:hover{
+    color: #0F80BD;
+}
+#clear-button:hover::before{
+    background: #0F80BD;
+}
+
 @media (max-width:767px) {
     .btn-select-place {
         min-width: 126px;
         width: 155px;
+    }
+    .card .btn-radio {
+        padding: 0 10px;
+        min-width: auto;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .card .btn-radio-lg {
+        padding: 0 5px;
     }
 }
 @media (max-width:575px){
@@ -468,18 +484,6 @@
     }
     .btn-select-date {
         width: 163px;
-    }
-}
-@media (max-width:767px) {
-    .card .btn-radio {
-        padding: 0 10px;
-        min-width: auto;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-    }
-    .card .btn-radio-lg {
-        padding: 0 5px;
     }
 }
 
