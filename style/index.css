@@ -279,6 +279,10 @@
 .btn.btn-radio.selected-date {
     background-color: #ebf1f5;
 }
+.btn.selectBox-selected {
+    border: 1px solid #c2c2c2;
+}
+
 /* #collapseSelectDate .btn.btn-radio{
     min-width: auto;
     padding: 0 20px;
