@@ -167,14 +167,14 @@
         padding: 0 15px;
     }
 }
-@media(min-width:993px) {
+/* @media(min-width:993px) {
     .selectDate-btn-group button {
         padding: 0 5px;
     }
-}
+} */
 .btn-select-place .btn,
 .btn-select-date .btn {
-    padding-left: 20px;
+    padding-left: 15px;
 }
 
 
@@ -213,7 +213,7 @@
     background: url(../images/select_down.svg) no-repeat;
 }
 .selectDate-btn-group .btn-select-date .btn.collapsed::before {
-    right: 50%;
+    right: 47%;
 }
 
 @media (max-width:471px) {
@@ -245,7 +245,6 @@
 .selectDate-btn-group .btn.selectBox-selected::after,
 .selectDate-btn-group .btn.afterHidden::after {
     display: none;
-
 }
 
 .btn-select-submit {
@@ -278,6 +277,7 @@
 .btn.selectBox-selected,
 .btn.btn-radio.selected-date {
     background-color: #ebf1f5;
+    border: 1px solid #C2C2C2;
 }
 .btn.selectBox-selected {
     border: 1px solid #c2c2c2;
