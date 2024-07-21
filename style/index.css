@@ -507,6 +507,7 @@
         max-width: 120px;
     }
     .btn-select-place .btn,
+    .btn-select-type .btn,
     .btn-select-date .btn {
         padding-left: 8px;
     }
@@ -516,9 +517,11 @@
         max-width: 130px;
     }
 
-    .btn-select-place .btn,
     .btn-select-date .btn {
         padding: 6px 8px;
+    }
+    .btn-select-place .btn{
+        padding-left: 16px;
     }
 }
 @media (max-width:389px) {
@@ -531,7 +534,7 @@
 }
 @media (max-width:375px) {
     .btn-select-place .btn {
-        padding-left: 8px;
+        padding-left: 12px;
     }
     .btn-select-place {
         max-width: 85px;
@@ -570,7 +573,7 @@
 }
 @media (max-width:440px) {
     .btn-select-type {
-        max-width: 80px;
+        max-width: 82px;
     }
 }
 @media (max-width:340px) {
