@@ -159,6 +159,7 @@ footer {
 .footer-title {
     font-size: 20px;
     line-height: 51.5px;
+    font-weight: bold;
 }
 .footer-link li {
     color: #C2C2C2;
@@ -166,6 +167,7 @@ footer {
 }
 .footer-link li a {
     color: inherit;
+    font-size: 15px;
 }
 
 .footer-bottom {
@@ -176,6 +178,7 @@ footer {
 }
 .footer-bottom li {
     white-space: nowrap;
+    font-size: 13px;
 }
 .footer-mb ,
 .footer-pc {
@@ -196,6 +199,7 @@ footer {
 .footer-mb {
     display: none;
 }
+
 @media(max-width:768px) {
     .footer-pc {
         display: none;
@@ -217,7 +221,20 @@ footer {
     .footer-bottom {
         padding-top: 24px;
     }
+    .about-company {
+        font-size: 12px;
+    }
+    .footer-title {
+        font-size: 18px;
+    }
+    .footer-link li a {
+        font-size: 13px;
+    }
+    .footer-bottom li {
+        font-size: 12px;
+    }
 }
+
 
 /* modal */
 .modal-content {
