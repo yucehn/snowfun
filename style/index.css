@@ -510,7 +510,9 @@
     .btn-select-type {
         max-width: 120px;
     }
-    .btn-select-place .btn,
+    .btn-select-place .btn {
+        padding-left: 20px;
+    }
     .btn-select-type .btn,
     .btn-select-date .btn {
         padding-left: 8px;
@@ -529,9 +531,6 @@
     }
 }
 @media (max-width:389px) {
-    .btn-select-place .btn {
-        padding-left: 20px;
-    }
     .btn-select-place {
         max-width: 100px;
     }
