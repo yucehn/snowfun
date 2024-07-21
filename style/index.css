@@ -153,7 +153,8 @@
     max-width: 276px;
     width: 100%;
 }
-.btn-select-place .btn {
+.btn-select-place .btn,
+.btn-select-date .btn {
     padding-left: 20px;
 }
 .btn-select-type {
@@ -161,9 +162,13 @@
     width: 100%;
 }
 
-.selectDate-btn-group .btn{
+.selectDate-btn-group .btn {
     position: relative;
     border: none;
+}
+
+.selectDate-btn-group > div {
+    flex: 1;
 }
 .selectDate-btn-group .btn::after {
     content: '';
@@ -177,19 +182,14 @@
     bottom: -1px;
     z-index: -1;
 }
-.selectDate-btn-group .btn-select-type .btn::after {
-    left: -13px;
-}
-.selectDate-btn-group .btn-select-date  .btn::after {
-    left: -15px;
-}
+
 .selectDate-btn-group .btn-select-submit .btn::after {
     display: none;
 }
 .selectDate-btn-group .btn.collapsed::before {
     content: '';
     position: absolute;
-    right: 0;
+    right: 10px;
     top: 50%;
     width: 12px;
     height: 10px;
@@ -199,6 +199,7 @@
 .selectDate-btn-group .btn-select-date .btn.collapsed::before {
     right: 50%;
 }
+
 @media (max-width:471px) {
     .selectDate-btn-group .btn-select-date .btn.collapsed::before {
         right: 41%;
@@ -212,7 +213,7 @@
     left: initial;
     bottom: inherit;
     top: 9px;
-    right: -8px;
+    right: 0;
     border: none;
 }
 @media (max-width:767px){
@@ -223,6 +224,14 @@
 .selectDate-btn-group .btn-select-date .btn.collapsed::after {
     display: none;
 }
+
+.selectDate-btn-group .btn.selectBox-selected::before,
+.selectDate-btn-group .btn.selectBox-selected::after,
+.selectDate-btn-group .btn.afterHidden::after {
+    display: none;
+
+}
+
 .btn-select-submit {
     position: absolute;
     right: 0;
@@ -251,7 +260,7 @@
 .btn-check+.btn:hover {
     color: #666;
 }
-.btn.selected,
+.btn.selectBox-selected,
 .btn.btn-radio.selected-date {
     background-color: #ebf1f5;
 }
@@ -433,8 +442,8 @@
 
 @media (max-width:767px) {
     .btn-select-place {
-        min-width: 126px;
         width: 155px;
+        max-width: 250px;
     }
     .card .btn-radio {
         padding: 0 10px;
@@ -447,8 +456,7 @@
         padding: 0 5px;
     }
 }
-@media (max-width:575px){
-    
+@media (max-width:768px){
 	.selectDate-btn-group .btn[type="submit"] {
 		width: 60px;
         display: flex;
@@ -456,8 +464,50 @@
         align-items: center;
 	}
 }
+@media (max-width:575px) {
+    .btn-select-place {
+        max-width: 200px;
+    }
+    .btn-select-type {
+        max-width: 120px;
+    }
+    .btn-select-place .btn,
+    .btn-select-date .btn {
+        padding-left: 8px;
+    }
+}
 @media (max-width:475px) {
+    .btn-select-place {
+        max-width: 130px;
+    }
 
+    .btn-select-place .btn,
+    .btn-select-date .btn {
+        padding: 6px 8px;
+    }
+}
+@media (max-width:389px) {
+    .btn-select-place .btn {
+        padding-left: 20px;
+    }
+    .btn-select-place {
+        max-width: 100px;
+    }
+}
+@media (max-width:375px) {
+    .btn-select-place .btn {
+        padding-left: 8px;
+    }
+    .btn-select-place {
+        max-width: 85px;
+    }
+    .btn-select-type .btn {
+        padding: 8px;
+    }
+}
+
+@media (max-width:475px) {
+   
     .banner-box {
         padding: 0;
         margin-bottom: 55px;
@@ -479,11 +529,21 @@
     .btn-select-place{
         width: 126px;
     }
-    .btn-select-type {
-        max-width: 65px;
-    }
     .btn-select-date {
-        width: 163px;
+        max-width: 163px;
+    }
+}
+@media (max-width:440px) {
+    .btn-select-type {
+        max-width: 80px;
+    }
+}
+@media (max-width:340px) {
+    .btn-select-place {
+        max-width: 72px;
+    }
+    .btn-select-type {
+        max-width: 57px;
     }
 }
 
@@ -1275,6 +1335,7 @@ img[alt="Google"],
     .selectDate-btn-group .btn,
     .inputSelectDate {
         font-size: 14px;
+        line-height: 1.15;
     }
 }
 

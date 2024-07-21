@@ -196,8 +196,8 @@
               
               <div class="btn-select-submit">
                 <button type="submit" class="btn btn-primary btn-rounded">
-                  <span class="d-none d-sm-block">馬上搜尋</span>
-                  <img class="d-block d-sm-none" src="./images/icon_search_white.svg">
+                  <span class="d-none d-md-block">馬上搜尋</span>
+                  <img class="d-block d-md-none" src="./images/icon_search_white.svg">
                 </button>
               </div>
             </div>
@@ -1636,6 +1636,34 @@
       <script>
         var isListeningForResize = false;
 
+        // close remove selected
+        $('#selectPlaceModal').on('hidden.bs.modal', function () {
+          $('#selectPlaceButton').removeClass('selectBox-selected');
+        });
+        $('#collapseSelectPlace').on('hidden.bs.collapse', function () {
+          $('#selectPlaceButton').removeClass('selectBox-selected');
+        });
+
+        $('#selectTypeModal').on('hidden.bs.modal', function () {
+          $('#selectTypeButton').removeClass('selectBox-selected');
+          $("#selectPlaceButton").removeClass('afterHidden')
+        });
+        $('#collapseSelectType').on('hidden.bs.collapse', function () {
+          $('#selectTypeButton').removeClass('selectBox-selected');
+          $("#selectPlaceButton").removeClass('afterHidden')
+        });
+
+
+        $('#selectDateModal').on('hidden.bs.modal', function () {
+          $('#selectDateButton').removeClass('selectBox-selected');
+          $("#selectTypeButton").removeClass('afterHidden')
+        });
+        $('#collapseSelectDate').on('hidden.bs.collapse', function () {
+          $('#selectDateButton').removeClass('selectBox-selected');
+          $("#selectTypeButton").removeClass('afterHidden')
+        });
+
+
         function closeAll() {
           $("#selectPlaceModal").modal("hide");
           $("#selectTypeModal").modal("hide");
@@ -1644,9 +1672,11 @@
           $("#collapseSelectType").collapse("hide");
           $("#collapseSelectDate").collapse("hide");
 
-          $("#selectPlaceButton").removeClass('selected');
-          $("#selectTypeButton").removeClass('selected');
-          $("#selectDateButton").removeClass('selected');
+          $("#selectPlaceButton").removeClass('selectBox-selected');
+          $("#selectTypeButton").removeClass('selectBox-selected');
+          $("#selectDateButton").removeClass('selectBox-selected');
+
+          $(".afterHidden").removeClass('afterHidden')
 
         }
 
@@ -1656,24 +1686,28 @@
           if ($(window).width() <= 992) {
             if (button === "place") {
               $("#selectPlaceModal").modal("show");
-              $("#selectPlaceButton").addClass('selected')
+              $("#selectPlaceButton").addClass('selectBox-selected')
             } else if (button === "type") {
               $("#selectTypeModal").modal("show");
-              $("#selectTypeButton").addClass('selected')
+              $("#selectTypeButton").addClass('selectBox-selected')
+              $("#selectPlaceButton").addClass('afterHidden')
             } else if (button === "date") {
               $("#selectDateModal").modal("show");
-              $("#selectDateButton").addClass('selected')
+              $("#selectDateButton").addClass('selectBox-selected')
+              $("#selectTypeButton").addClass('afterHidden')
             }
           } else {
             if (button === "place") {
               $("#collapseSelectPlace").collapse("show");
-              $("#selectPlaceButton").addClass('selected')
+              $("#selectPlaceButton").addClass('selectBox-selected')
             } else if (button === "type") {
               $("#collapseSelectType").collapse("show");
-              $("#selectTypeButton").addClass('selected')
+              $("#selectTypeButton").addClass('selectBox-selected')
+              $("#selectPlaceButton").addClass('afterHidden')
             } else if (button === "date") {
               $("#collapseSelectDate").collapse("show");
-              $("#selectDateButton").addClass('selected')
+              $("#selectDateButton").addClass('selectBox-selected')
+              $("#selectTypeButton").addClass('afterHidden')
             }
           }
 

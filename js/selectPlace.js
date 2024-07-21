@@ -288,6 +288,7 @@ $(document).ready(function() {
         if (selectedRadio.length > 0) {
           const selectedText = $('label[for="' + selectedRadio.attr('id') + '"]').text();
           $('#selectPlaceButton').text(selectedText);
+          $('#selectPlaceButton').addClass('text-black')
           $('#collapseSelectPlace').collapse('hide');
         } else {
         //   alert('請選擇一個選項');
@@ -301,6 +302,7 @@ $(document).ready(function() {
         if (selectedRadio.length > 0) {
           const selectedText = $('label[for="' + selectedRadio.attr('id') + '"]').text();
           $('#selectPlaceButton').text(selectedText);
+          $('#selectPlaceButton').addClass('text-black')
           $("#selectPlaceModal").modal("hide");
         } else {
         //   alert('請選擇一個選項');
@@ -322,6 +324,7 @@ $(document).ready(function() {
           selectedText= selectedTextList[0];
       }
       $('#selectTypeButton').text(selectedText);
+      $('#selectTypeButton').addClass('text-black')
       $('#collapseSelectType').collapse('hide');
     } else {
       // alert('請選擇一個雪板類型');
@@ -338,6 +341,7 @@ $(document).ready(function() {
           selectedText= selectedTextList[0];
       }
       $('#selectTypeButton').text(selectedText);
+      $('#selectTypeButton').addClass('text-black')
       $('#selectTypeModal').collapse('hide');
     } else {
       // alert('請選擇一個雪板類型');

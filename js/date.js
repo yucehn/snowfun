@@ -276,11 +276,11 @@ $(document).ready(function () {
         $(`input[name="selectDateCollapse"][value="selectDay"]`).prop('checked', true);
         $(`input[name="selectDateModal"][value="selectDay"]`).prop('checked', true);
       }
-      console.log('selectedDate', selectedDate)
+      
       let formattedText = `
       <div class="inputSelectDate">
           ${selectedDate.replaceAll('-', '/')}
-          <span>${selectedOption?selectedOption: '確切日期'}</span>
+          <span class="text-black">${selectedOption?selectedOption: '確切日期'}</span>
       </div>`;
       $('#selectDateButton').html(formattedText);
       $('#collapseSelectDate').collapse('hide');
