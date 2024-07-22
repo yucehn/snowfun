@@ -674,14 +674,17 @@ section {
     line-height: 23px;
 }
 @media (max-width:475px) {
-    .section-title {
-        font-weight: 600;
-    }
-    .section-title h2{
-        width: 120px;
+    .section-title h2,
+    .section-join .section-title {
         font-size: 24px;
         line-height: 1.2;
         font-weight: 600;
+    }
+    .section-title h2 {
+        width: 120px;
+    }
+    .section-join .section-title {
+        margin-bottom: 8px;
     }
 }
 
@@ -791,12 +794,22 @@ img[alt="Google"],
 .owl-carousel-coach img.star {
     width: auto;
 }
-
-.item a {
+.owl-carousel-coach .item,
+.carousel-item {
+    padding: 10px 0;
+}
+.owl-carousel-coach .item a {
 	text-decoration: none;
 }
 
-.item-group {
+.owl-carousel-coach .item a:hover .item-group,
+.carousel-item a:hover .card-snowPlace,
+.carousel-item a:hover .card-strategy{
+	box-shadow: 0 0 10px rgba( 0, 0, 0, 0.2);
+    border-radius: 16px;
+}
+
+.owl-carousel-coach .item-group {
 	padding: 10px 16px 10px 16px;
 	position: relative;
 	background: #ffffff;
