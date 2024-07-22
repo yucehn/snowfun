@@ -83,6 +83,11 @@ $(document).ready(function () {
     $(".calendar-container").on("click", "td[data-date]", function () {
       $("td").removeClass("active start-date end-date in-range");
       $(this).addClass("active");
+      // 清除選項
+      $(".selected-date").removeClass("selected-date");
+      $('input[name="selectDateModal"]:checked').prop('checked', false);
+      $('input[name="selectDateCollapse"]:checked').prop('checked', false);
+
       selectedDate = $(this).data("date");
     });
 
