@@ -1,6 +1,6 @@
 function createLoginModal() {
     return `
-       <div
+    <div
         class="modal fade"
         id="snowModal"
         tabindex="-1"
@@ -24,7 +24,7 @@ function createLoginModal() {
                     <input type="text" class="form-control" id="pw" placeholder="請輸入6~16位密碼" required>
                   </div>
                   <div class="d-flex justify-content-end">
-                    <button class="btn btn-forgetPw border-0" onclick="forgetPwModal()">忘記密碼</button>
+                    <button type="button" class="btn btn-forgetPw border-0 arrow-right" onclick="forgetPwModal()">忘記密碼</button>
                   </div>
                   <div class="d-flex justify-content-center">
                     <button type="submit" class="btn border-0 btn-primary btn-login">
@@ -34,7 +34,7 @@ function createLoginModal() {
                 </form>
                 <div class="login-info">
                   滑雪趣已停用臉書登入功能，原帳號如綁定臉書登入<br>
-                  請點選「<button class="btn text-blue-light p-0" onclick="forgetPwModal()">忘記密碼</button>」以設定新密碼進行登入！
+                  請點選「<button type="button" class="btn text-blue-light p-0" onclick="forgetPwModal()">忘記密碼</button>」以設定新密碼進行登入！
                 </div>
               </div>
             </div>
@@ -42,12 +42,11 @@ function createLoginModal() {
               <p class="bold">尚未加入會員？</p>
               <button
                 type="button"
-                class="btn border-0"
+                class="btn border-0 button-link arrow-right"
                 onclick="registerModal()"
               >
                 註冊
               </button>
-              <!-- data-bs-dismiss="modal" -->
             </div>
           </div>
           <!-- 忘記密碼 -->
@@ -57,28 +56,20 @@ function createLoginModal() {
             </div>
             <div class="modal-body">
               <div class="modal-wrapper">
+                <p class="forget-info">
+                  請輸入您的信箱，系統將會發送重設密碼連結至您的信箱
+                </p>
                 <form>
                   <div class="mb-3">
                     <label for="email" class="col-form-label">Email</label>
                     <input type="text" class="form-control" id="email" placeholder="請輸入您的電子郵件" required>
                   </div>
-                  <div class="mb-3">
-                    <label for="pw" class="col-form-label">密碼</label>
-                    <input type="text" class="form-control" id="pw" placeholder="請輸入6~16位密碼" required>
-                  </div>
-                  <div class="d-flex justify-content-end">
-                    <button class="btn more_arrow btn-forgetPw" onclick="forgetPwModal()">忘記密碼</button>
-                  </div>
                   <div class="d-flex justify-content-center">
                     <button type="submit" class="btn btn-primary btn-login">
-                      登入
+                      發送
                     </button>
                   </div>
                 </form>
-                <div class="login-info">
-                  滑雪趣已停用臉書登入功能，原帳號如綁定臉書登入<br>
-                  請點選「<button class="btn text-blue-light p-0" onclick="forgetPwModal()">忘記密碼</button>」以設定新密碼進行登入！
-                </div>
               </div>
             </div>
             <div class="modal-footer">
@@ -120,17 +111,15 @@ function createLoginModal() {
               <p class="bold">已有帳號？</p>
               <button
                 type="button"
-                class="btn border-0"
+                class="btn border-0 arrow-right button-link"
                 onclick="loginModal()"
               >
                 登入
               </button>
-              <!-- data-bs-dismiss="modal" -->
             </div>
           </div>
         </div>
-      </div>
-    `;
+      </div>`;
   }
 
   // 在页面加载完成后插入模态框
