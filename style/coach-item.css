@@ -207,3 +207,7 @@
 .filter-btn img{
   margin-left: 8px;
 }
+
+.footer-pc {
+  position: static;
+}
