@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <title>月历标记</title>
+    <style>
+      #calendar table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      #calendar th,
+      #calendar td {
+        width: 14%;
+        text-align: center;
+        padding: 8px;
+      }
+
+      #calendar .calendar-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      #calendar .calendar-header button {
+        padding: 5px 10px;
+      }
+      #calendar table tr.more-info > td {
+        padding: 0;
+        border: none;
+        box-shadow: none;
+      }
+      #calendar .more-info-content {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+      }
+      #calendar .more-info-content .tag {
+        width: fit-content;
+        background: #eeecfd;
+        border-radius: 8px;
+        padding: 4px;
+      }
+      #calendar .more-btn {
+        color: #8d8888;
+        font-size: 14px;
+        line-height: 100%;
+        font-weight: 500;
+      }
+      #calendar .before-day {
+        color: #8d8888;
+        pointer-events: none;
+        background-color: transparent;
+      }
+      #calendar .active-day {
+        border: 1px solid;
+      }
+    </style>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+      integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="calendar-header">
+      <button id="prevMonth">上个月</button>
+      <!-- <div id="calendarTitle"></div> -->
+      <button id="nextMonth">下个月</button>
+    </div>
+    <div id="calendar"></div>
+
+    <script>
+      $(document).ready(function () {
+        const today = new Date();
+        let currentYear = today.getFullYear();
+        let currentMonth = today.getMonth() + 1;
+        const currentDateStr = today.toISOString().split("T")[0];
+
+        const events = [
+          { date: "2024-07-25", place: ["东京"] },
+          { date: "2024-07-27", place: ["清井澤", "东京", "京都"] },
+          { date: "2024-07-30", place: ["清井澤", "东京"] },
+          { date: "2024-08-15", place: ["东京"] },
+          { date: "2024-08-03", place: ["京都", "大阪", "清井澤"] },
+          { date: "2024-09-10", place: ["京都", "大阪"] },
+        ];
+
+        function generateCalendar(year, month) {
+          const monthNames = [
+            "一月",
+            "二月",
+            "三月",
+            "四月",
+            "五月",
+            "六月",
+            "七月",
+            "八月",
+            "九月",
+            "十月",
+            "十一月",
+            "十二月",
+          ];
+          const daysInMonth = new Date(year, month, 0).getDate();
+          const firstDay = new Date(year, month - 1, 1).getDay();
+
+          let calendarHtml = `<table class="table"><thead><tr><th colspan="7">${year}年 ${
+            monthNames[month - 1]
+          }</th></tr><tr>`;
+          const dayNames = ["日", "一", "二", "三", "四", "五", "六"];
+          for (let day of dayNames) {
+            calendarHtml += `<th>${day}</th>`;
+          }
+          calendarHtml += `</tr></thead><tbody>`;
+
+          for (let i = 0; i < firstDay; i++) {
+            calendarHtml += `<td></td>`;
+          }
+
+          for (let day = 1; day <= daysInMonth; day++) {
+            if ((day + firstDay - 1) % 7 === 0 && day > 1) {
+              calendarHtml += `</tr><tr>`;
+            }
+            const dateId = `${year}-${month.toString().padStart(2, "0")}-${day
+              .toString()
+              .padStart(2, "0")}`;
+            let additionalClass = dateId < currentDateStr ? "before-day" : "";
+            calendarHtml += `<td id="${dateId}" class="${additionalClass}">${day}</td>`;
+          }
+          calendarHtml += `</tr></tbody></table>`;
+
+          $("#calendar").html(calendarHtml);
+          $("#calendarTitle").text(`${year}年 ${monthNames[month - 1]}`);
+
+          markDates(events);
+        }
+
+        function markDates(events) {
+          events.forEach((event) => {
+            const date = event.date;
+            const places = event.place;
+            const dateElement = $(`#${date}`);
+            if (dateElement.length) {
+              dateElement.append(`<br><span>${places[0]}</span>`);
+              if (places.length > 1) {
+                dateElement.append(
+                  `<br><button class="more-btn btn btn-link" data-bs-toggle="collapse" data-bs-target="#collapse-${date}">+more</button>`
+                );
+              }
+
+              // add MoreInfo
+              let moreInfoHtml = `<tr class="more-info"><td colspan="7"><div class="collapse text-start" id="collapse-${date}"><div class="more-info-content">`;
+              moreInfoHtml += places
+                .map((place) => `<span class="tag">${place}</span>`)
+                .join(" ");
+              moreInfoHtml += `</div></div></td></tr>`;
+
+              const currentRow = dateElement.closest("tr");
+
+              currentRow.after(moreInfoHtml);
+            }
+          });
+        }
+
+        function changeMonth(offset) {
+          currentMonth += offset;
+          if (currentMonth > 12) {
+            currentMonth = 1;
+            currentYear++;
+          } else if (currentMonth < 1) {
+            currentMonth = 12;
+            currentYear--;
+          }
+          generateCalendar(currentYear, currentMonth);
+        }
+
+        $("#prevMonth").click(function () {
+          changeMonth(-1);
+        });
+
+        $("#nextMonth").click(function () {
+          changeMonth(1);
+        });
+
+        let currentExpanded = null;
+        $(document).on("click", ".more-btn", function () {
+          const target = $(this).data("bs-target");
+          if (currentExpanded && currentExpanded !== target) {
+            $(currentExpanded).collapse("hide");
+          }
+
+          $(target).collapse("toggle");
+
+          $(".active-day").removeClass("active-day");
+          const parentTd = $(this).closest("td");
+          parentTd.addClass("active-day");
+          if (currentExpanded === target) {
+            $(".active-day").removeClass("active-day");
+          }
+
+          currentExpanded = target;
+        });
+
+        generateCalendar(currentYear, currentMonth); // init
+      });
+    </script>
+  </body>
+</html>
