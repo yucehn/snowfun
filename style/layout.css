@@ -275,11 +275,23 @@ footer {
     padding:  17px 37px;
     border-radius: 30px;
 }
+.button-link,
 .btn-forgetPw {
     color: #666666;
     font-family: "NotoSansTc-Medium", sans-serif;
     font-size: 16px;
     font-weight: 500;
+}
+.arrow-right::after {
+    content: '';
+    display: inline-block;
+    height: 24px;
+    width: 24px;
+    vertical-align: bottom;
+    background: url(../images/modal_arrow_right.svg) no-repeat;
+}
+.arrow-right:hover::after {
+    background-image: url(../images/modal_arrow_right_h.svg);
 }
 .login-info {
     font-size: 14px;
