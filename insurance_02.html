@@ -16,8 +16,7 @@
 		/>
 		<link
 			rel="stylesheet"
-			type="text/css"
-			href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"
+			href="//apps.bdimg.com/libs/jqueryui/1.10.4/css/jquery-ui.min.css"
 		/>
 
 		<link
@@ -47,9 +46,10 @@
 		<link href="./style/layout.css" rel="stylesheet" />
 		<link href="./style/index.css" rel="stylesheet" />
 		<link href="./style/insurance.css" rel="stylesheet" />
+		<link href="./style/datepicker.css" rel="stylesheet" />
 	</head>
 	<body class="insurance">
-		<main class="max-w-920 mx-auto">
+		<main class="max-w-1030 mx-auto">
 			<div class="alert alert-danger lh-base" role="alert">
 				請於課前72小時填妥正確資料送出，否則視同已自行購買保險，放棄贈送選項
 			</div>
@@ -121,11 +121,10 @@
 								<label class="mb-2" for="inputDate">生日(年/月/日)</label>
 								<input
 									type="text"
-									class="form-control"
-									id="inputDate"
+									class="form-control datepicker"
 									placeholder="請選擇生日"
-									onclick="toggleDisplay()"
 								/>
+
 								<!-- date -->
 								<div class="collapse position-relative" id="collapseSelectDate">
 									<div class="card position-absolute w-100 z-3">
@@ -202,11 +201,10 @@
 								<label class="mb-2" for="inputDate">生日(年/月/日)</label>
 								<input
 									type="text"
-									class="form-control"
-									id="inputDate"
+									class="form-control datepicker"
 									placeholder="請選擇生日"
-									onclick="toggleDisplay()"
 								/>
+
 								<!-- date -->
 								<div class="collapse position-relative" id="collapseSelectDate">
 									<div class="card position-absolute w-100 z-3">
@@ -248,7 +246,7 @@
 					<hr class="mb-4 mt-2" />
 					<label class="mb-2" for="inputAddress">本次訂單代表人電子簽名</label>
 					<div
-						class="w-100 rounded-2 border border-1 bg-light"
+						class="w-100 rounded-2 border border-1 bg-light overflow-hidden"
 						style="height: 150px;"
 					>
 						<div class="js-signature"></div>
@@ -296,6 +294,7 @@
 				</div>
 			</div>
 		</main>
+		<div class="fade"></div>
 
 		<!-- Optional JavaScript -->
 		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -316,6 +315,9 @@
 			crossorigin="anonymous"
 		></script>
 
+		<script src="//apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+		<script src="i18n/datepicker-zh-TW.js"></script>
+
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 		<script src="js/owl.js"></script>
 
@@ -326,119 +328,7 @@
 		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
 		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script> -->
 
-		<!-- 燈箱 function -->
 		<script>
-			var isListeningForResize = false;
-			let currentDate = new Date();
-			const weekDays = ["日", "一", "二", "三", "四", "五", "六"];
-			const coachDates = [
-				"2024-08-16",
-				"2024-08-17",
-				"2024-08-18",
-				"2024-08-19",
-			];
-
-			updateCalendar();
-
-			$("#prev-month").click(function() {
-				currentDate.setMonth(currentDate.getMonth() - 1);
-				updateCalendar();
-			});
-
-			$("#next-month").click(function() {
-				currentDate.setMonth(currentDate.getMonth() + 1);
-				updateCalendar();
-			});
-
-			$("#prev-year").click(function() {
-				currentDate.setFullYear(currentDate.getFullYear() - 1);
-				updateCalendar();
-			});
-
-			$("#next-year").click(function() {
-				currentDate.setFullYear(currentDate.getFullYear() + 1);
-				updateCalendar();
-			});
-
-			function renderCalendar(calendarId, year, month) {
-				let date = new Date(year, month, 1);
-				let daysInMonth = new Date(year, month + 1, 0).getDate();
-				let firstDayOfWeek = new Date(year, month, 1).getDay();
-
-				let html = `<table class="table calendar-table"><thead><tr><th colspan="7">${year}年 ${date.toLocaleString(
-					"default",
-					{ month: "long" }
-				)}</th></tr><tr>`;
-				weekDays.forEach((day) => {
-					html += `<th>${day}</th>`;
-				});
-				html += `</tr></thead><tbody><tr>`;
-
-				for (let i = 0; i < firstDayOfWeek; i++) {
-					html += "<td></td>";
-				}
-
-				for (let day = 1; day <= daysInMonth; day++) {
-					let fullDate = new Date(year, month, day);
-					let dateString = `${fullDate.getFullYear()}-${(
-						"0" +
-						(fullDate.getMonth() + 1)
-					).slice(-2)}-${("0" + fullDate.getDate()).slice(-2)}`;
-					let isCoachDate = coachDates.includes(dateString)
-						? " coach-date"
-						: "";
-					if ((day + firstDayOfWeek - 1) % 7 === 0 && day > 1) {
-						html += "</tr><tr>";
-					}
-					html += `<td class="calendar-day${isCoachDate}" data-date="${dateString}">${day}</td>`;
-				}
-
-				for (let i = (firstDayOfWeek + daysInMonth - 1) % 7; i < 6; i++) {
-					html += "<td></td>";
-				}
-				html += "</tr></tbody></table>";
-				$("#" + calendarId).html(html);
-
-				// 添加點擊事件至每個日期
-				$(".calendar-day").click(function() {
-					var $this = $(this);
-					$this.addClass("active");
-					let selectedDate = $this.data("date"); // 從data-date屬性獲取日期
-					selectedDate = selectedDate.replace(/-/g, "/"); // 將日期格式由"年-月-日"改為"年/月/日"
-					$("#inputDate").val(selectedDate); // 將選擇的日期填充到輸入框中
-
-					setTimeout(function() {
-						$("#selectDateModal").modal("hide");
-						$("#collapseSelectDate").collapse("hide");
-						$this.removeClass("active");
-					}, 200);
-				});
-			}
-
-			function updateCalendar() {
-				renderCalendar(
-					"calendar-left",
-					currentDate.getFullYear(),
-					currentDate.getMonth()
-				);
-			}
-
-			function toggleDisplay() {
-				if ($(window).width() <= 992) {
-					$("#selectDateModal").modal("show");
-				} else {
-					$("#collapseSelectDate").collapse("show");
-				}
-
-				if (!isListeningForResize) {
-					isListeningForResize = true;
-					$(window).resize(function() {
-						if ($("#collapseSelectDate").hasClass("show")) {
-							toggleDisplay();
-						}
-					});
-				}
-			}
 			$(function() {
 				$(".js-signature").jqSignature({
 					autoFit: true,
@@ -450,6 +340,19 @@
 				$(window).on("resize", function() {
 					location.reload();
 				});
+
+				$(".datepicker").datepicker({
+					changeMonth: true,
+					changeYear: true,
+					beforeShow: function() {
+						$(".fade").addClass("show");
+					},
+					onClose: function() {
+						$(".fade").removeClass("show");
+					},
+				});
+
+				$.datepicker.setDefaults($.datepicker.regional["zh-TW"]);
 			});
 		</script>
 	</body>
