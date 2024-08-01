@@ -64,7 +64,7 @@
 								id="C1"
 								type="checkbox"
 								aria-label="Checkbox for following text input mr-2"
-								onchange="$('.more_detail').toggleClass('d-none')"
+								onchange="$('.more_detail').toggleClass('d-none'); initSignature();"
 							/>
 							<label for="C1" class="f16 f-b f-gray-dark lh-base"
 								>「我確認本訂單符合贈送保險之學員，滿足以下所有條件。」</label
@@ -366,13 +366,6 @@
 			$(function() {
 				var lastWidth = $(window).width();
 
-				$(".js-signature").jqSignature({
-					autoFit: true,
-					height: 150,
-					border: "none",
-					background: "#f5f5f5",
-				});
-
 				clearSignature = () => {
 					$(".js-signature").jqSignature("clearCanvas");
 				};
@@ -400,6 +393,15 @@
 
 				$.datepicker.setDefaults($.datepicker.regional["zh-TW"]);
 			});
+
+			function initSignature() {
+				$(".js-signature").jqSignature({
+					autoFit: true,
+					height: 150,
+					border: "none",
+					background: "#f5f5f5",
+				});
+			}
 			function addMember() {
 				$("#member_01").removeClass("d-none");
 			}
