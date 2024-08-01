@@ -237,6 +237,10 @@ input[type=checkbox] {
 .insurance .remove-member:hover img {
   filter: invert(1);
 }
+.insurance #signature img {
+  right: 10px;
+  top: 10px;
+}
 
 @media (max-width: 767px) {
   .fade {

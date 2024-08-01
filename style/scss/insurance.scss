@@ -251,6 +251,12 @@ input[type="checkbox"] {
 	// button {
 	// 	line-height: 50px;
 	// }
+	#signature {
+		img {
+			right: 10px;
+			top: 10px;
+		}
+	}
 }
 
 @media (max-width: 767px) {

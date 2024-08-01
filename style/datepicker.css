@@ -52,6 +52,7 @@
   background-repeat: no-repeat !important;
   background-position: center !important;
   top: 3px !important;
+  color: #000;
 }
 @media (max-width: 767px) {
   .ui-datepicker .ui-datepicker-header .ui-datepicker-prev,
