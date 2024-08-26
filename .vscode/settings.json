@@ -3,5 +3,6 @@
         "format": "expanded",
         "extensionName": ".css",
         "savePath": "/style"
-    }]
+    }],
+    "editor.hover.enabled": false
 }
