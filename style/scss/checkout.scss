@@ -42,6 +42,10 @@
 	color: #ed8c19;
 }
 
+.f-66 {
+	color: #666666;
+}
+
 .f-44 {
 	color: #444444;
 }
@@ -65,6 +69,9 @@
 	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 	border-radius: 30px;
 	padding: 24px;
+	@media (max-width: 767px) {
+		padding: 12px 16px;
+	}
 	h5 {
 		line-height: 40px;
 	}
@@ -76,6 +83,9 @@
 	}
 	.member {
 		width: calc(50% - 8px);
+		@media (max-width: 767px) {
+			width: 100%;
+		}
 	}
 }
 
@@ -88,7 +98,7 @@ input {
 	border-radius: 8px;
 	border: 1px solid #c2c2c2;
 	background-color: #f5f5f5;
-	color: #666666;
+	color: #666;
 	width: 100%;
 	&:disabled {
 		background-color: #e1e1e1;
@@ -133,12 +143,17 @@ select {
 
 li {
 	line-height: 1.5;
-	margin-bottom: 8px;
 }
 
-.f-b {
-	font-weight: bold;
+.f-b,
+b {
+	font-weight: 500;
 }
+
+.f-700 {
+	font-weight: 700;
+}
+
 .f-gray-light {
 	color: #858585;
 }
@@ -264,6 +279,10 @@ li {
 		&:last-child {
 			transform: rotate(180deg);
 		}
+		@media (max-width: 767px) {
+			width: 22px;
+			padding: 5px 6px 5px 4px;
+		}
 	}
 }
 
@@ -275,6 +294,8 @@ li {
 	--bs-danger-rgb: 255, 45, 85;
 	--bs-warning-text-emphasis: #ed8c19;
 	--bs-heading-color: #000;
+	--bs-primary-text-emphasis: #0f80bd;
+	--bs-primary-bg-subtle: #1ba4ed1a;
 }
 
 input[type="checkbox"] {
@@ -298,11 +319,6 @@ input[type="checkbox"] {
 	.tooltip-inner {
 		padding: 10px 10px 5px 25px;
 	}
-	.tooltip-inner,
-	.tooltip-arrow {
-		// background-color: #fff;
-		// color: #000;
-	}
 }
 
 .person {
@@ -324,6 +340,9 @@ input[type="checkbox"] {
 			font-size: 20px;
 			font-weight: bold;
 			color: #000;
+			@media (max-width: 767px) {
+				font-size: 18px;
+			}
 		}
 		a {
 			font-size: 14px;
@@ -382,8 +401,12 @@ input[type="checkbox"] {
 }
 
 .checkout {
-	padding: 60px 24px;
+	padding: 40px 24px 60px;
 	font-size: 16px;
+	@media (max-width: 767px) {
+		padding: 20px 12px 250px;
+		font-size: 15px;
+	}
 	ul {
 		padding-left: 20px;
 		li {
@@ -394,9 +417,11 @@ input[type="checkbox"] {
 	}
 	textarea {
 		height: 150px;
+		line-height: 1.5;
 	}
 	.section {
-		*:not(h5) {
+		p,
+		div {
 			color: #666;
 		}
 		.ep_arrow {
@@ -404,44 +429,27 @@ input[type="checkbox"] {
 			&:not(.collapsed) {
 				transform: rotate(180deg);
 			}
-		}
-	}
-}
-
-.date_item {
-	width: 122px;
-	border-top: 3px solid #c2c2c2;
-	font-size: 20px;
-	text-align: center;
-	padding: 12px 0;
-	color: #666666;
-	.person {
-		border: 1px solid #dedede;
-		border-radius: 8px;
-		text-align: left;
-		padding: 8px 4px;
-		.avatar {
-			width: 32px;
-			height: 32px;
-		}
-		font {
-			color: #959595;
-		}
-		&.other {
-			background: #ebf1f5;
-			color: #1ba4ed;
-			border: none;
-			> img {
-				width: 16px !important;
+			@media (max-width: 767px) {
+				position: absolute;
+				right: 8px;
+				top: 5px;
+				width: 21px;
 			}
 		}
 	}
 }
-
+.member {
+	width: 380px;
+	align-self: flex-start;
+	@media (max-width: 992px) {
+		width: 100%;
+	}
+}
 .total-price {
 	width: 380px;
 	align-self: flex-start;
-	padding-top: 87px;
+	padding-top: 15px;
+	margin-top: 72px;
 	flex-shrink: 0;
 	> .border {
 		overflow: hidden;
@@ -460,6 +468,42 @@ input[type="checkbox"] {
 		left: 0;
 		width: 100%;
 		position: fixed;
+		z-index: 2;
+		.border {
+			background-color: #fff;
+			position: relative;
+			border-bottom-left-radius: 0;
+			border-bottom-right-radius: 0;
+		}
+		// .current-note {
+		// 	position: absolute;
+		// 	bottom: -2px;
+		// 	left: 24px;
+		// 	font-size: 11px;
+		// 	color: #666;
+		// }
+		.handler {
+			width: 100%;
+			height: 20px;
+			position: absolute;
+			top: 0;
+			left: 0;
+			&::after {
+				content: "";
+				display: block;
+				width: 40px;
+				height: 1px;
+				border: 2px solid #666666;
+				border-radius: 4px;
+				margin: 10px auto;
+			}
+		}
+		.mb_collapsed {
+			display: none;
+			&.show {
+				display: block;
+			}
+		}
 	}
 }
 
@@ -495,6 +539,10 @@ input[type="checkbox"] {
 				.name {
 					font-weight: 500;
 				}
+				.f12 {
+					color: #959595;
+					text-wrap: nowrap;
+				}
 				.avatar {
 					width: 32px;
 					height: 32px;
@@ -526,35 +574,24 @@ input[type="checkbox"] {
 	}
 }
 
-// /* fix blank or flashing items on carousel */
-// .owl-carousel .item {
-// 	position: relative;
-// 	z-index: 100;
-// 	-webkit-backface-visibility: hidden;
-// }
-
-// /* end fix */
-// .owl-nav > div {
-// 	margin-top: -26px;
-// 	position: absolute;
-// 	top: 50%;
-// 	color: #cdcbcd;
-// }
-
-// .owl-nav i {
-// 	font-size: 52px;
-// }
-@media (max-width: 1200px) {
-	#Courses {
-		> .d-flex {
-			// flex-direction: column;
-			// justify-content: flex-start !important;
+#Courses {
+	> div {
+		&:not(:first-child) {
+			border-top: 1px solid #c2c2c2;
+		}
+	}
+	.course-detail {
+		@media (max-width: 1200px) {
+			gap: 0;
+			.detail {
+				padding: 4px 0;
+			}
 		}
 	}
 }
 
 @media (max-width: 767px) {
-	.fade {
+	.fade_bg {
 		position: fixed;
 		top: 0;
 		left: 0;
@@ -564,10 +601,59 @@ input[type="checkbox"] {
 		overflow-y: auto;
 		outline: 0;
 		z-index: -1;
-		background-color: rgba(0, 0, 0, 0.3);
 		transition: all 0.6s;
 		&.show {
 			z-index: 10;
+			background-color: rgba(0, 0, 0, 0.3);
 		}
+	}
+	.gap-8px {
+		gap: 4px;
+	}
+
+	.gap-16px {
+		gap: 8px;
+	}
+
+	.gap-24px {
+		gap: 12px;
+	}
+
+	.gap-40px {
+		gap: 25px;
+	}
+
+	.item-group-rate {
+		.amount {
+			font-size: 15px;
+			line-height: 1.5;
+		}
+	}
+
+	.f16 {
+		font-size: 15px !important;
+	}
+
+	.f18 {
+		font-size: 16px;
+	}
+
+	.f20 {
+		font-size: 19px;
+	}
+
+	.f24 {
+		font-size: 21px;
+	}
+
+	.f28 {
+		font-size: 23px;
+	}
+
+	.f32 {
+		font-size: 29px;
+	}
+	.item-group {
+		padding: 10px;
 	}
 }
